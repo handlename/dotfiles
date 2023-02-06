@@ -2,6 +2,8 @@
 
 set -eux
 
+script_dir=$(cd $(dirname $0); pwd)
+
 function install_packages {
     sudo apt update
     sudo apt-get install -y \
@@ -12,7 +14,7 @@ function install_packages {
 }
 
 function setup_github {
-    cat gitconfig > ~/.gitconfig
+    cat "${script_dir}/gitconfig" > ~/.gitconfig
 }
 
 function setup_fish {
