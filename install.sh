@@ -2,6 +2,8 @@
 
 set -eux
 
+script_dir=$(cd $(dirname $0); pwd)
+
 if [[ "$CODESPACES" == 'true' ]]; then
-    ./codespaces/install.sh
+    ${script_dir}/codespaces/install.sh
 fi
