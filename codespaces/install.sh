@@ -40,6 +40,22 @@ function setup_fish {
     cat ~/.config/fish/fisher/fishfile | xargs -n1 -I{} fish -c 'fisher install {}'
 }
 
+function setup_actionlint {
+    local version=1.6.23
+    local workdir=/tmp/actionlint
+
+    if which actionlint >/dev/null && actionlint -version | grep "$version" >/dev/null; then
+        echo "actionlint v${version} is already installed" >&2
+        return
+    fi
+
+    mkdir -p "$workdir"
+    cd "$workdir"
+    curl -sL "https://github.com/rhysd/actionlint/releases/download/v${version}/actionlint_${version}_linux_amd64.tar.gz" | tar xzf -
+    sudo install actionlint /usr/local/bin/actionlint
+    rm -rf "$workdir"
+}
+
 function setup_awscli {
     # install session-manager-plugin
     curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb" -o "session-manager-plugin.deb"
@@ -70,5 +86,6 @@ EOH
 install_packages
 setup_github
 setup_fish
+setup_actionlint
 setup_awscli
 setup_ecsta
