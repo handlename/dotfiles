@@ -57,20 +57,28 @@ function setup_actionlint {
 }
 
 function setup_awscli {
+    local workdir=/tmp/awscli
+    mkdir -p "$workdir"
+
     # install session-manager-plugin
-    curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb" -o "session-manager-plugin.deb"
-    sudo dpkg -i session-manager-plugin.deb
+    if ! which sesion-manager-plugin >/dev/null; then
+        cd "$workdir"
+        curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb" -o "session-manager-plugin.deb"
+        sudo dpkg -i session-manager-plugin.deb
+    fi
+
+    rm -rf "$workdir"
 }
 
 function setup_ecsta {
     local ecsta_version=0.2.0
+    local workdir=/tmp/ecsta
+    mkdir -p "$workdir"
 
     if ! which ecsta >/dev/null; then
-        cd /tmp
+        cd "$workdir"
         curl -sL "https://github.com/fujiwara/ecsta/releases/download/v${ecsta_version}/ecsta_${ecsta_version}_linux_amd64.tar.gz" | tar zxf -
         sudo install ecsta /usr/local/bin/ecsta
-        rm -rf ecsta
-        cd -
     fi
 
     mkdir -p ~/.config/ecsta
@@ -81,6 +89,8 @@ function setup_ecsta {
   "task_format_query": ""
 }
 EOH
+
+    rm -rf "$workdir"
 }
 
 install_packages
