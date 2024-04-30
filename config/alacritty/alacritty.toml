@@ -1,0 +1,30 @@
+shell = "/opt/homebrew/bin/fish"
+
+[window.padding]
+x = 5
+y = 5
+
+[cursor.style]
+shape = "Beam"
+blinking = "On"
+
+[cursor.vi_mode_style]
+shape = "Block"
+
+[font]
+normal = { family = "Moralerspace Argon NF" }
+size = 13
+
+[hints]
+alphabet = "aoeuidhtns"
+
+[[keyboard.bindings]]
+key = "T"
+mods = "Control"
+action = "ToggleViMode"
+
+[[keyboard.bindings]]
+key = "Escape"
+mode = "Vi"
+action = "ToggleViMode"
+
