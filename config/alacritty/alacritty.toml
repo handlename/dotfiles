@@ -18,6 +18,12 @@ size = 13
 [hints]
 alphabet = "aoeuidhtns"
 
+[[hints.enabled]]
+regex = "[^ ]+\\.[-0-9a-z]+(:\\d+)?(:\\d+)?[ $\"]"
+command = { program = "/opt/homebrew/bin/code", args = [ "--goto" ] }
+binding = { key = "C", mods = "Control|Shift" }
+mouse.enabled = true
+
 [[keyboard.bindings]]
 key = "T"
 mods = "Control"
@@ -27,4 +33,3 @@ action = "ToggleViMode"
 key = "Escape"
 mode = "Vi"
 action = "ToggleViMode"
-
