@@ -19,6 +19,15 @@ size = 13
 alphabet = "aoeuidhtns"
 
 [[hints.enabled]]
+# default. see `man 5 alacritty` > HINTS > enabled
+command = "open"
+hyperlinks = true
+post_processing = true
+persist = false
+mouse.enabled = true
+binding  = { key = "U", mods = "Control|Shift" }
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+
 [[hints.enabled]]
 regex = "[^ ]+\\.(go|json|jsonnet|libsonnet|md|pl|rb|rs|sh|tf|toml|txt|ya?ml)(:\\d+)?(:\\d+)?"
 command = { program = "/opt/homebrew/bin/code", args = ["--goto"] }
