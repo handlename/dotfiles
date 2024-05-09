@@ -19,8 +19,9 @@ size = 13
 alphabet = "aoeuidhtns"
 
 [[hints.enabled]]
-regex = "[^ ]+\\.[-0-9a-z]+(:\\d+)?(:\\d+)?[ $\"]"
-command = { program = "/opt/homebrew/bin/code", args = [ "--goto" ] }
+[[hints.enabled]]
+regex = "[^ ]+\\.(go|json|jsonnet|libsonnet|md|pl|rb|rs|sh|tf|toml|txt|ya?ml)(:\\d+)?(:\\d+)?"
+command = { program = "/opt/homebrew/bin/code", args = ["--goto"] }
 binding = { key = "C", mods = "Control|Shift" }
 mouse.enabled = true
 
