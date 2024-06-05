@@ -40,6 +40,6 @@ mods = "Control"
 action = "ToggleViMode"
 
 [[keyboard.bindings]]
-key = "Escape"
+key = "Q"
 mode = "Vi"
 action = "ToggleViMode"
