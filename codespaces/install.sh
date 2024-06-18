@@ -93,9 +93,27 @@ EOH
     rm -rf "$workdir"
 }
 
+function setup_zellij {
+    local zellij_version=0.40.1
+    local workdir=/tmp/zellij
+    mkdir -p "$workdir"
+
+    if ! which zellij >/dev/null; then
+        cd "$workdir"
+        curl -sL "https://github.com/zellij-org/zellij/releases/download/v${zellij_version}/zellij-x86_64-unknown-linux-musl.tar.gz" | tar zxf -
+        sudo install zellij /usr/local/bin/zellij
+    fi
+
+    mkdir -p ~/.config/zellij
+    cp "${script_dir}/../config/zellij/config.kdl" ~/.config/zellij/config.kdl
+
+    rm -rf "$workdir"
+}
+
 install_packages
 setup_github
 setup_fish
 setup_actionlint
 setup_awscli
 setup_ecsta
+setup_zellij

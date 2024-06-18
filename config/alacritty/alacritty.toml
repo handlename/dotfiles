@@ -1,5 +1,8 @@
 shell = "/opt/homebrew/bin/fish"
 
+[window]
+option_as_alt = "Both"
+
 [window.padding]
 x = 8
 y = 8
