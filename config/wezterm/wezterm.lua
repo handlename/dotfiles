@@ -5,6 +5,6 @@ config.default_prog = { '/opt/homebrew/bin/fish', '-l' }
 
 config.font = wezterm.font 'Moralerspace Argon NF'
 config.font_size = 13.0
-config.color_scheme = 'Selenized Dark (Gogh)'
+config.color_scheme = 'Solarized Dark Higher Contrast'
 
 return config
