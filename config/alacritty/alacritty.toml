@@ -1,5 +1,9 @@
 shell = "/opt/homebrew/bin/fish"
 
+import = [
+    "~/.config/alacritty/themes/themes/solarized_dark.toml"
+]
+
 [window]
 option_as_alt = "Both"
 
