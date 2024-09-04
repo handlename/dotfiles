@@ -110,6 +110,17 @@ function setup_zellij {
     rm -rf "$workdir"
 }
 
+function setup_alacritty {
+    local workdir=/tmp/alacritty
+    mkdir -p "$workdir"
+
+    git clone --depth 1 https://github.com/alacritty/alacritty.git "$workdir"
+    cd "$workdir"
+    sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
+
+    rm -rf "$workdir"
+}
+
 install_packages
 setup_github
 setup_fish
@@ -117,3 +128,4 @@ setup_actionlint
 setup_awscli
 setup_ecsta
 setup_zellij
+setup_alacritty
