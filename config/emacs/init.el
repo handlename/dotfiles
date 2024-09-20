@@ -10,6 +10,10 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
+;;; Editing
+
+(electric-pair-mode t)
+
 ;;; Packages
 
 (require 'package)
