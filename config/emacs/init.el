@@ -122,3 +122,14 @@
 (use-package projectile
   :config
   (projectile-mode +1))
+
+(use-package fontaine
+  :config
+  (setq fontaine-presets
+	'((regular
+	   :default-family "Moralerspace Xenon NF"
+	   :fixed-pitch-family "Moralerspace Xenon NF"
+	   :variable-pitch-family "Moralerspace Xenon NF"
+	   :italic-family "Moralerspace Xenon NF")))
+  (fontaine-set-preset (or (fontaine-restore-latest-preset) 'regular))
+  (add-hook 'kill-emacs-hook #'fontaine-store-latest-preset))
