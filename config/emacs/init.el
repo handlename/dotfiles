@@ -25,20 +25,30 @@
   :after projectile
   :init
   (setq evil-want-keybinding nil) ; for evil-collection
-  (define-prefix-command 'my/leader-map)
+  (define-prefix-command 'my/evil-leader-map)
+  (define-prefix-command 'my/evil-buffer-map)
+  (define-prefix-command 'my/evil-git-map)
+  (define-prefix-command 'my/evil-window-map)
   :config
-  (keymap-set evil-normal-state-map "SPC" 'my/leader-map)
-  (evil-define-key nil my/leader-map
+  (keymap-set evil-normal-state-map "SPC" 'my/evil-leader-map)
+  (evil-define-key nil my/evil-buffer-map
+    "b" 'switch-to-buffer
+    "r" 'recentf
+    "D" 'kill-current-buffer)
+  (evil-define-key nil my/evil-git-map
+    "s" 'magit-status)
+  (evil-define-key nil my/evil-window-map
+    "m" 'maximize-window
+    "n" 'next-window-any-frame
+    "-" 'split-window-vertically
+    "|" 'split-window-horizontally
+    "D" 'delete-window)
+  (evil-define-key nil my/evil-leader-map
     (kbd "SPC") 'execute-extended-command
-    "bb" 'switch-to-buffer
-    "br" 'recentf
-    "bD" 'kill-current-buffer
-    "gs" 'magit-status
-    "wm" 'maximize-window
-    "wn" 'next-window-any-frame
-    "w-" 'split-window-vertically
-    "w|" 'split-window-horizontally
-    "wD" 'delete-window
+    (kbd "TAB") 'previous-buffer
+    "b" 'my/evil-buffer-map
+    "g" 'my/evil-git-map
+    "w" 'my/evil-window-map
     "p" 'projectile-command-map)
   (define-key evil-insert-state-map (kbd "C-h") 'delete-backward-char)
   (evil-mode 1))
