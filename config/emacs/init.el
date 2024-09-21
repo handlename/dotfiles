@@ -133,3 +133,7 @@
 	   :italic-family "Moralerspace Xenon NF")))
   (fontaine-set-preset (or (fontaine-restore-latest-preset) 'regular))
   (add-hook 'kill-emacs-hook #'fontaine-store-latest-preset))
+
+(use-package solarized-theme
+  :config
+  (load-theme 'solarized-light t))
