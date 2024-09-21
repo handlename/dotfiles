@@ -137,3 +137,18 @@
 (use-package solarized-theme
   :config
   (load-theme 'solarized-light t))
+
+;;; Languages
+
+(use-package lsp-mode
+  :init
+  (setq lsp-enable-snippet nil
+	lsp-completion-provider nil)
+  :hook ((rust-mode . lsp-deferred)
+	 (lsp-mode . lsp-enable-which-key-integration))
+  :commands (lsp lsp-deferrerd))
+
+(use-package rust-mode
+  :hook ((rust-mode . (lambda () (setq indent-tabs-mode nil))))
+  :config
+  (setq rust-format-on-save t))
