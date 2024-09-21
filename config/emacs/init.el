@@ -62,6 +62,10 @@
   :config
   (evil-collection-init))
 
+(use-package evil-surround
+  :config
+  (global-evil-surround-mode 1))
+
 (use-package files
   :ensure nil
   :config
