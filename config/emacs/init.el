@@ -144,6 +144,9 @@
   :init
   (setq lsp-enable-snippet nil
 	lsp-completion-provider nil)
+  :config
+  (add-to-list 'warning-suppress-log-types '(lsp-mode))
+  (add-to-list 'warning-suppress-types '(lsp-mode))
   :hook ((rust-mode . lsp-deferred)
 	 (lsp-mode . lsp-enable-which-key-integration))
   :commands (lsp lsp-deferrerd))
