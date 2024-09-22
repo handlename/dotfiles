@@ -87,6 +87,9 @@
   (setq vertico-cycle t)
   (vertico-mode))
 
+(use-package consult
+  :bind (("M-f" . 'consult-line)))
+
 (use-package marginalia
   :init
   (marginalia-mode))
