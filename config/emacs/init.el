@@ -14,6 +14,11 @@
 
 (electric-pair-mode t)
 
+;;; Keys
+
+(setq ns-command-modifier 'meta)
+(setq ns-alternate-modifier 'super)
+
 ;;; Packages
 
 (require 'package)
