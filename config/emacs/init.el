@@ -167,6 +167,10 @@
 	 (lsp-mode . lsp-enable-which-key-integration))
   :commands (lsp lsp-deferrerd))
 
+(use-package lsp-ui
+  :config
+  (setq lsp-ui-sideline-show-hover t))
+
 (use-package rust-mode
   :hook ((rust-mode . (lambda () (setq indent-tabs-mode nil))))
   :config
