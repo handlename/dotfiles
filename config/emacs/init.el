@@ -147,6 +147,9 @@
   (fontaine-set-preset (or (fontaine-restore-latest-preset) 'regular))
   (add-hook 'kill-emacs-hook #'fontaine-store-latest-preset))
 
+(use-package rg
+  :defer t)
+
 (use-package solarized-theme
   :config
   (load-theme 'solarized-light t))
