@@ -171,6 +171,12 @@
   :config
   (setq lsp-ui-sideline-show-hover t))
 
+(use-package flycheck
+  :config
+  (add-hook 'after-init-hook #'global-flycheck-mode))
+
+(use-package flycheck-projectile)
+
 (use-package rust-mode
   :hook ((rust-mode . (lambda () (setq indent-tabs-mode nil))))
   :config
