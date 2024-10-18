@@ -53,6 +53,8 @@ function setup_actionlint {
     cd "$workdir"
     curl -sL "https://github.com/rhysd/actionlint/releases/download/v${version}/actionlint_${version}_linux_amd64.tar.gz" | tar xzf -
     sudo install actionlint /usr/local/bin/actionlint
+
+    cd -
     rm -rf "$workdir"
 }
 
@@ -67,6 +69,7 @@ function setup_awscli {
         sudo dpkg -i session-manager-plugin.deb
     fi
 
+    cd -
     rm -rf "$workdir"
 }
 
@@ -90,6 +93,7 @@ function setup_ecsta {
 }
 EOH
 
+    cd -
     rm -rf "$workdir"
 }
 
@@ -107,6 +111,7 @@ function setup_zellij {
     mkdir -p ~/.config/zellij
     cp "${script_dir}/../config/zellij/config.kdl" ~/.config/zellij/config.kdl
 
+    cd -
     rm -rf "$workdir"
 }
 
@@ -118,6 +123,7 @@ function setup_alacritty {
     cd "$workdir"
     sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
 
+    cd -
     rm -rf "$workdir"
 }
 
