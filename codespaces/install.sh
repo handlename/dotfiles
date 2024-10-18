@@ -117,9 +117,12 @@ function setup_zellij {
 
 function setup_alacritty {
     local workdir=/tmp/alacritty
-    mkdir -p "$workdir"
 
-    git clone --depth 1 https://github.com/alacritty/alacritty.git "$workdir"
+    if [ ! -e $workdir ]; then
+        mkdir -p "$workdir"
+        git clone --depth 1 https://github.com/alacritty/alacritty.git "$workdir"
+    fi
+
     cd "$workdir"
     sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
 
