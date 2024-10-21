@@ -1,6 +1,13 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
+with lib;
+
+let
+  # Path to home.nix itself.
+  homeNixPath = toString ./.;
+in
 {
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "nagata-hiroaki";
@@ -34,6 +41,34 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+
+    pkgs.awscli
+    pkgs.docker-compose
+    pkgs.fzf
+    pkgs.gh
+    pkgs.ghq
+    pkgs.git
+    pkgs.git-secrets
+    pkgs.glib
+    pkgs.graphviz
+    pkgs.imagemagick
+    pkgs.jq
+    pkgs.jsonnet
+    pkgs.keychain
+    pkgs.mise
+    pkgs.netcat
+    pkgs.nixpkgs-fmt
+    pkgs.openssl
+    pkgs.pcre
+    pkgs.pkg-config
+    pkgs.readline
+    pkgs.ripgrep
+    pkgs.tig
+    pkgs.tree
+    pkgs.vim
+    pkgs.watch
+    pkgs.wget
+    pkgs.zellij
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -69,6 +104,39 @@
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
+  };
+
+  xdg.enable = true;
+
+  programs.mise = {
+    enable = true;
+    enableFishIntegration = true;
+    globalConfig = {
+      env =
+        {
+          XDG_CACHE_HOME = "${config.xdg.cacheHome}";
+          XDG_CONFIG_HOME = "${config.xdg.configHome}";
+          XDG_DATA_HOME = "${config.xdg.dataHome}";
+          XDG_STATE_HOME = "${config.xdg.stateHome}";
+        };
+      settings.experimental = true;
+      tools = {
+        usage = "latest";
+      };
+    };
+  };
+
+  programs.zellij = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
+  home.activation = {
+    symlinkConfiglations = lib.mkAfter ''
+      run mkdir -p ${config.xdg.configHome}
+      run ln -sf ${homeNixPath}/config/alacritty ${config.xdg.configHome}/alacritty
+      run ln -sf ${homeNixPath}/config/zellij ${config.xdg.configHome}/zellij
+    '';
   };
 
   # Let Home Manager install and manage itself.
