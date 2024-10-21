@@ -3,8 +3,7 @@
 with lib;
 
 let
-  # Path to home.nix itself.
-  homeNixPath = toString ./.;
+  vars = import ./vars.nix;
 in
 {
 
@@ -134,9 +133,9 @@ in
   home.activation = {
     symlinkConfiglations = lib.mkAfter ''
       run mkdir -p ${config.xdg.configHome}
-      run ln -sf ${homeNixPath}/config/alacritty ${config.xdg.configHome}/
-      run ln -sf ${homeNixPath}/config/git ${config.xdg.configHome}/
-      run ln -sf ${homeNixPath}/config/zellij ${config.xdg.configHome}/
+      run ln -sf ${vars.homeManagerHome}/config/alacritty ${config.xdg.configHome}/
+      run ln -sf ${vars.homeManagerHome}/config/git ${config.xdg.configHome}/
+      run ln -sf ${vars.homeManagerHome}/config/zellij ${config.xdg.configHome}/
     '';
   };
 
