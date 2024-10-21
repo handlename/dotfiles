@@ -1,0 +1,64 @@
+[user]
+	name = NAGATA Hiroaki
+	email = nagata@handlena.me
+[core]
+	editor = vim
+	ignorecase = false
+	precomposeunicode = true
+	quotepath = false
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[alias]
+	a = add
+	aa = add -A :/
+	amend = commit --amend
+	au = add -u :/
+	clear = !sh -c 'git reset HEAD && git checkout :/ && git clean -df'
+	cm = commit -m
+	co = checkout
+	d = diff
+	dc = diff --cached
+	find = !git ls-files | grep -i
+	l = log
+	lo = log --oneline
+	ls = log --stat
+	patch = diff --no-prefix
+	pl = !sh -c 'git pull \"origin\" \"$(git rev-parse --symbolic-full-name HEAD)\"' -
+	pr = pull-request
+	sd = svn dcommit
+	sl = stash list
+	sp = stash pop
+	sr = svn rebase
+	ss = stash save
+	st = status
+	sync = fetch --prune origin
+	update = !sh -c 'git pull origin \"$(git rev-parse --symbolic-full-name HEAD)\"' -
+[merge]
+	ff = true
+[pull]
+	rebase = true
+[push]
+	default = current
+[pager]
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
+[ghq]
+	root = /Users/nagata-hiroaki/src
+[secrets]
+	providers = git secrets --aws-provider
+	patterns = (A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}
+	patterns = (\"|')?(AWS|aws|Aws)?_?(SECRET|secret|Secret)?_?(ACCESS|access|Access)?_?(KEY|key|Key)(\"|')?\\s*(:|=>|=)\\s*(\"|')?[A-Za-z0-9/\\+=]{40}(\"|')?
+	patterns = (\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?
+	allowed = AKIAIOSFODNN7EXAMPLE
+	allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+	allowed = GOPRIVATE
+	patterns = -----BEGIN .*PRIVATE KEY-----
+	patterns = xox[bp]-[0-9]+-[a-zA-Z0-9]+
+[init]
+    templateDir = ~/.git-templates/git-secrets
+	defaultBranch = main
+[include]
+	path = ~/.config/git/darwin

@@ -133,6 +133,7 @@ in
   home.activation = {
     symlinkConfiglations = lib.mkAfter ''
       run mkdir -p ${config.xdg.configHome}
+      run ln -sf ${homeNixPath}/config/alacritty ${config.xdg.configHome}/
       run ln -sf ${homeNixPath}/config/git ${config.xdg.configHome}/
       run ln -sf ${homeNixPath}/config/zellij ${config.xdg.configHome}/
     '';
