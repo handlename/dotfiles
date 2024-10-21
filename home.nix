@@ -50,6 +50,7 @@ in
     pkgs.git
     pkgs.git-secrets
     pkgs.glib
+    pkgs.gnupg
     pkgs.graphviz
     pkgs.imagemagick
     pkgs.jq
