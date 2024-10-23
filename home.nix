@@ -21,6 +21,10 @@ in
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
+  imports = [
+    ./modules/fish
+  ];
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
@@ -55,6 +59,7 @@ in
     pkgs.jq
     pkgs.jsonnet
     pkgs.keychain
+    pkgs.miller
     pkgs.mise
     pkgs.netcat
     pkgs.nixpkgs-fmt
@@ -118,6 +123,9 @@ in
         XDG_CONFIG_HOME = "${config.xdg.configHome}";
         XDG_DATA_HOME = "${config.xdg.dataHome}";
         XDG_STATE_HOME = "${config.xdg.stateHome}";
+
+        ZELLIJ_LAYOUT_DIR = "${config.xdg.configHome}/zellij/layouts";
+        ZELLIJ_LAYOUT_ROOT = "${config.home.homeDirectory}";
       };
       tools = {
         usage = "latest";
