@@ -9,13 +9,24 @@ in
   programs.fish = {
     enable = true;
     plugins = [
-      # {
-      #   name = "bd";
-      #   src = pkgs.fishPlugins.fish-bd;
-      # }
+      {
+        name = "bd";
+        src = pkgs.fetchFromGitHub
+          {
+            owner = "0rax";
+            repo = "fish-bd";
+            rev = "v1.3.3";
+            sha256 = "GeWjoakXa0t2TsMC/wpLEmsSVGhHFhBVK3v9eyQdzv0=";
+          };
+      }
       {
         name = "tide";
-        src = pkgs.fishPlugins.tide;
+        src = pkgs.fetchFromGitHub {
+          owner = "IlanCosman";
+          repo = "tide";
+          rev = "v5";
+          sha256 = "cCI1FDpvajt1vVPUd/WvsjX/6BJm6X1yFPjqohmo1rI=";
+        };
       }
     ];
   };
