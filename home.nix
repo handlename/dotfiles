@@ -23,6 +23,7 @@ in
 
   imports = [
     ./modules/fish
+    ./modules/git
     ./modules/mise
     ./modules/zellij
   ];
@@ -52,7 +53,6 @@ in
     pkgs.fzf
     pkgs.gh
     pkgs.ghq
-    pkgs.git
     pkgs.git-secrets
     pkgs.glib
     pkgs.gnupg
@@ -124,7 +124,6 @@ in
     symlinkConfiglations = lib.mkAfter ''
       run mkdir -p ${config.xdg.configHome}
       run ln -sf ${vars.homeManagerHome}/config/alacritty ${config.xdg.configHome}/
-      run ln -sf ${vars.homeManagerHome}/config/git ${config.xdg.configHome}/
     '';
   };
 
