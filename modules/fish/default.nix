@@ -51,6 +51,7 @@ in
     ./git.nix # bind prefix: \cxg
     ./github.nix # bind prefix: \cxh
     ./ssh.nix
+    ./terraform.nix
     ./tide.nix
     ./zellij.nix
   ];
