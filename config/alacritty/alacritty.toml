@@ -1,4 +1,4 @@
-shell = "/opt/homebrew/bin/fish"
+shell = "/Users/nagata-hiroaki/.nix-profile/bin/fish"
 
 import = [
     "~/.config/alacritty/themes/themes/solarized_osaka.toml"
