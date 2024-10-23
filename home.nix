@@ -62,7 +62,6 @@ in
     pkgs.jsonnet
     pkgs.keychain
     pkgs.miller
-    pkgs.mise
     pkgs.netcat
     pkgs.nixpkgs-fmt
     pkgs.openssl
