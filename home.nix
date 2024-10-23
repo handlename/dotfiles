@@ -23,6 +23,7 @@ in
 
   imports = [
     ./modules/fish
+    ./modules/mise
   ];
 
   # The home.packages option allows you to install Nix packages into your
@@ -112,26 +113,6 @@ in
   };
 
   xdg.enable = true;
-
-  programs.mise = {
-    enable = true;
-    enableFishIntegration = true;
-    globalConfig = {
-      settings.experimental = true;
-      env = {
-        XDG_CACHE_HOME = "${config.xdg.cacheHome}";
-        XDG_CONFIG_HOME = "${config.xdg.configHome}";
-        XDG_DATA_HOME = "${config.xdg.dataHome}";
-        XDG_STATE_HOME = "${config.xdg.stateHome}";
-
-        ZELLIJ_LAYOUT_DIR = "${config.xdg.configHome}/zellij/layouts";
-        ZELLIJ_LAYOUT_ROOT = "${config.home.homeDirectory}";
-      };
-      tools = {
-        usage = "latest";
-      };
-    };
-  };
 
   programs.zellij = {
     enable = true;
