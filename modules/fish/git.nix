@@ -14,6 +14,10 @@ in
     git_switch_branch = builtins.readFile ./functions/git_switch_branch.fish;
   };
 
+  programs.fish.shellAbbrs = {
+    g = "git";
+  };
+
   programs.fish.shellInit = ''
     bind \cxgb git_switch_branch
     bind \cxgc git_cd
