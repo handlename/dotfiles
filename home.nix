@@ -24,6 +24,7 @@ in
   imports = [
     ./modules/fish
     ./modules/mise
+    ./modules/zellij
   ];
 
   # The home.packages option allows you to install Nix packages into your
@@ -124,7 +125,6 @@ in
       run mkdir -p ${config.xdg.configHome}
       run ln -sf ${vars.homeManagerHome}/config/alacritty ${config.xdg.configHome}/
       run ln -sf ${vars.homeManagerHome}/config/git ${config.xdg.configHome}/
-      run ln -sf ${vars.homeManagerHome}/config/zellij ${config.xdg.configHome}/
     '';
   };
 
