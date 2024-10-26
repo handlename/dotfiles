@@ -9,23 +9,29 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, darwin, ... }: {
-    darwinConfigurations."macbook" =
-      darwin.lib.darwinSystem {
+  outputs = inputs@{ nixpkgs, home-manager, darwin, ... }:
+    let
+      system = "aarch64-darwin";
+    in
+    {
+      homeConfigurations."myhome" = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          inherit system;
+        };
+        modules = [
+          ./home.nix
+        ];
+        extraSpecialArgs = {
+          inherit inputs;
+        };
+      };
+
+      darwinConfigurations."macbook" = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
           ./configuration.nix
           ./darwin.nix
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.nagata-hiroaki = import ./home.nix;
-
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
-          }
         ];
       };
-  };
+    };
 }
