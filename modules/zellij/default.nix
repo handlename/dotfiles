@@ -7,6 +7,8 @@ let
   moduleHome = toString ./.;
 in
 {
+  programs.zellij.enable = true;
+
   home.activation = {
     # symlink config because programs.zellij not supports kdl format
     zellijSymlinkConfig = lib.mkAfter ''

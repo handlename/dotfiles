@@ -74,7 +74,6 @@ in
     pkgs.vim
     pkgs.watch
     pkgs.wget
-    pkgs.zellij
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -113,11 +112,6 @@ in
   };
 
   xdg.enable = true;
-
-  programs.zellij = {
-    enable = true;
-    enableFishIntegration = true;
-  };
 
   home.activation = {
     symlinkConfiglations = lib.mkAfter ''
