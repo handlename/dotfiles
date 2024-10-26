@@ -10,9 +10,9 @@
   };
 
   outputs = inputs@{ nixpkgs, home-manager, darwin, ... }: {
-    darwinConfigurations = {
-      hostname = darwin.lib.darwinSystem {
-        system = "x86_64-darwin";
+    darwinConfigurations."macbook" =
+      darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
         modules = [
           ./configuration.nix
           home-manager.darwinModules.home-manager
@@ -26,6 +26,5 @@
           }
         ];
       };
-    };
   };
 }
