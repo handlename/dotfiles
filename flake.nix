@@ -12,12 +12,14 @@
   outputs = inputs@{ nixpkgs, home-manager, darwin, ... }:
     let
       system = "aarch64-darwin";
+      pkgs = import nixpkgs {
+        system = system;
+        config.allowUnfree = true;
+      };
     in
     {
       homeConfigurations."myhome" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {
-          inherit system;
-        };
+        pkgs = pkgs;
         modules = [
           ./home.nix
         ];

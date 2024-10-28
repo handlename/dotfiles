@@ -73,6 +73,7 @@ in
     pkgs.tig
     pkgs.tree
     pkgs.vim
+    pkgs.vscode
     pkgs.watch
     pkgs.wget
   ];
