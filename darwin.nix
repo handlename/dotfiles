@@ -43,9 +43,12 @@
       "bettertouchtool"
       "dash"
       "docker"
+      "discord"
       "font-monaspace-nerd-font"
       "google-japanese-ime"
+      "karabiner-elements"
       "obsidian"
+      "slack"
       "toggl-track"
     ];
 
