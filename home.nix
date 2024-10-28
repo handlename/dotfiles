@@ -64,7 +64,7 @@ in
     pkgs.keychain
     pkgs.miller
     pkgs.netcat
-    pkgs.nixpkgs-fmt
+    pkgs.nixfmt-rfc-style
     pkgs.openssl
     pkgs.pcre
     pkgs.pkg-config
