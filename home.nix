@@ -73,6 +73,7 @@ in
     pkgs.openssl
     pkgs.pcre
     pkgs.pkg-config
+    pkgs.pngquant
     pkgs.readline
     pkgs.ripgrep
     pkgs.tig
