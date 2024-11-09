@@ -50,6 +50,7 @@
       "obsidian"
       "slack"
       "toggl-track"
+      "visual-studio-code"
     ];
 
     masApps = {
