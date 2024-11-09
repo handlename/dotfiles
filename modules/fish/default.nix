@@ -56,6 +56,12 @@ in
     rsync = "rsync -P";
   };
 
+  programs.fish.shellInit = ''
+    if test -d /opt/homebrew
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+    end
+  '';
+
   imports = [
     ./1password.nix
     ./aws.nix # bind prefix: \cxa
