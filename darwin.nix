@@ -49,13 +49,13 @@
       "karabiner-elements"
       "obsidian"
       "slack"
-      "toggl-track"
       "visual-studio-code"
     ];
 
     masApps = {
       kindle = 302584613;
       reeder = 6475002485;
+      toggl-track = 1291898086;
     };
   };
 }
