@@ -55,7 +55,7 @@ in
     # '')
 
     pkgs.awscli
-    pkgs.docker-compose
+    pkgs.docker
     pkgs.fzf
     pkgs.gh
     pkgs.ghq

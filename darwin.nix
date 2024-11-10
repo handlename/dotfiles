@@ -42,12 +42,12 @@
       "arc"
       "bettertouchtool"
       "dash"
-      "docker"
       "discord"
       "font-monaspace-nerd-font"
       "google-japanese-ime"
       "karabiner-elements"
       "obsidian"
+      "orbstack"
       "slack"
       "visual-studio-code"
     ];
