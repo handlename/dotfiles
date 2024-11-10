@@ -9,6 +9,9 @@ install/home-manager:
 	nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 	nix-channel --update
 
+build/home:
+	nix run nixpkgs#home-manager -- build --flake .#myhome
+
 switch:
 	$(MAKE) switch/home
 	$(MAKE) switch/darwin
