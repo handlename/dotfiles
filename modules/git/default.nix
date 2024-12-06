@@ -40,7 +40,7 @@ in
       ls = "log --stat";
 
       patch = "diff --no-prefix";
-      pl = ''!sh -c 'git pull \"origin\" \"$(git rev-parse --symbolic-full-name HEAD)\"' -'';
+      pl = "pull";
       pr = "pull-request";
 
       # stash
@@ -55,7 +55,6 @@ in
       clear = "!sh -c 'git reset HEAD && git checkout :/ && git clean -df'";
       find = "!git ls-files | grep -i";
       sync = "fetch --prune origin";
-      update = ''!sh -c 'git pull origin \"$(git rev-parse --symbolic-full-name HEAD)\"' -'';
     };
 
     extraConfig = {
@@ -77,6 +76,7 @@ in
       };
 
       pull = {
+        default = "current";
         rebase = "true";
       };
 
