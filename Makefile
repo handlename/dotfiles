@@ -6,8 +6,9 @@ install/nix:
 	curl -L https://nixos.org/nix/install | sh
 
 install/home-manager:
-	nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+	nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.11.tar.gz home-manager
 	nix-channel --update
+	nix-shell '<home-manager>' -A install
 
 build/home:
 	nix run nixpkgs#home-manager -- build --flake .#myhome
