@@ -1,6 +1,5 @@
 [user]
-	name = handlename
-	email = nagata@handlena.me
+	# use /etc/gitconfig
 [core]
 	attributesfile = ~/.gitattributes
 	editor = vim
