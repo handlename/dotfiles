@@ -69,6 +69,7 @@ in
     keychain
     miller
     netcat
+    nixd
     nixfmt-rfc-style
     openssl
     pcre
