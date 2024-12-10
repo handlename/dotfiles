@@ -29,6 +29,7 @@ in
   imports = [
     ./modules/fish
     ./modules/git
+    ./modules/lazygit
     ./modules/mise
     ./modules/zellij
     ./modules/ssh
