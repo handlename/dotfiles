@@ -21,6 +21,7 @@ in
 
   programs.fish.shellAbbrs = {
     g = "git";
+    lg = "lazygit";
   };
 
   programs.fish.shellInit = ''
