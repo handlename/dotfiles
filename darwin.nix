@@ -23,6 +23,8 @@
         show-recents = false;
         orientation = "left";
       };
+
+      WindowManager.EnableTiledWindowMargins = false;
     };
   };
 
