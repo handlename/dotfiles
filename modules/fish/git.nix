@@ -1,15 +1,7 @@
 {
-  config,
-  lib,
-  pkgs,
   ...
 }:
 
-with lib;
-
-let
-  vars = import ../../vars.nix;
-in
 {
   programs.fish.functions = {
     git_cd = builtins.readFile ./functions/git_cd.fish;
