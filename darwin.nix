@@ -12,11 +12,7 @@
   system = {
     defaults = {
       NSGlobalDomain.AppleShowAllExtensions = true;
-
-      finder = {
-        AppleShowAllFiles = true;
-        AppleShowAllExtensions = true;
-      };
+      WindowManager.EnableTiledWindowMargins = false;
 
       dock = {
         autohide = true;
@@ -24,7 +20,10 @@
         orientation = "left";
       };
 
-      WindowManager.EnableTiledWindowMargins = false;
+      finder = {
+        AppleShowAllFiles = true;
+        AppleShowAllExtensions = true;
+      };
     };
   };
 
