@@ -68,6 +68,7 @@ in
     jq
     jsonnet
     keychain
+    kubectl
     miller
     netcat
     nixd
