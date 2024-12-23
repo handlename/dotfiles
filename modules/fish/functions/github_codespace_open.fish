@@ -5,4 +5,4 @@ if ! test -n "$space"
     return
 end
 
-run-gh codespace code -c $space
+run_gh codespace code -c $space

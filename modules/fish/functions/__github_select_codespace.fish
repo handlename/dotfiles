@@ -1,4 +1,4 @@
-set -l candidates (run-gh codespace list \
+set -l candidates (run_gh codespace list \
     --json 'repository,gitStatus,name,state,createdAt' \
     --jq '
         ["Repository", "Branch", "Name", "State", "CreatedAt"],

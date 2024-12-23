@@ -5,4 +5,4 @@ if ! test -n "$space"
     return
 end
 
-run-gh codespace ssh -c $space
+run_gh codespace ssh -c $space
