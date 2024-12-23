@@ -55,7 +55,7 @@ in
     #   echo "Hello, ${config.home.username}!"
     # '')
 
-    awscli
+    awscli2
     docker
     fzf
     gh
