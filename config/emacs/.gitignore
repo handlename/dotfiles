@@ -56,5 +56,6 @@ custom.el
 # caches
 eln-cache/
 
-recentf/
+recentf
 transient/
+*.eld
