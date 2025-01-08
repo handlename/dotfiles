@@ -41,6 +41,7 @@
   :after projectile
   :init
   (setq evil-want-keybinding nil) ; for evil-collection
+  (setq evil-undo-system 'undo-fu)
   (define-prefix-command 'my/evil-leader-map)
   (define-prefix-command 'my/evil-buffer-map)
   (define-prefix-command 'my/evil-git-map)
@@ -77,6 +78,8 @@
 (use-package evil-surround
   :config
   (global-evil-surround-mode 1))
+
+(use-package undo-fu)
 
 (use-package files
   :ensure nil
