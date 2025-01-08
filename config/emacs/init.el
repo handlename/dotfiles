@@ -26,6 +26,8 @@
 (setq ns-command-modifier 'meta)
 (setq ns-alternate-modifier 'super)
 
+(setq scroll-step 1)
+
 ;;; Packages
 
 (require 'package)
@@ -37,6 +39,7 @@
   :config
   (setq use-package-always-ensure t))
 
+(defvar evil-want-C-u-scroll t) ; need to set before evil loaded. set in :init not satisfies condition.
 (use-package evil
   :after projectile
   :init
