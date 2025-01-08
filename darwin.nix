@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   nix = {
     optimise.automatic = true;
@@ -12,16 +12,17 @@
   system = {
     defaults = {
       NSGlobalDomain.AppleShowAllExtensions = true;
-
-      finder = {
-        AppleShowAllFiles = true;
-        AppleShowAllExtensions = true;
-      };
+      WindowManager.EnableTiledWindowMargins = false;
 
       dock = {
         autohide = true;
         show-recents = false;
         orientation = "left";
+      };
+
+      finder = {
+        AppleShowAllFiles = true;
+        AppleShowAllExtensions = true;
       };
     };
   };

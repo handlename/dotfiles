@@ -1,6 +1,6 @@
-set -l pr (run-gh pr list --state open --limit 100 2>/dev/null \
-| fzf --preview 'run-gh pr view (echo {} | cut -f1)' \
-        --bind    'ctrl-e:execute(run-gh pr view --web (echo {} | cut -f1))' \
+set -l pr (run_gh pr list --state open --limit 100 2>/dev/null \
+| fzf --preview 'run_gh pr view (echo {} | cut -f1)' \
+    --bind    'ctrl-e:execute(run_gh pr view --web (echo {} | cut -f1))' \
 | cut -f1
 )
 
@@ -9,7 +9,7 @@ if ! test -n "$pr"
     return
 end
 
-run-gh pr checkout "$pr"
+run_gh pr checkout "$pr"
 
 echo -e '\n'
 commandline --function repaint

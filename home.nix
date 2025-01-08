@@ -29,6 +29,7 @@ in
   imports = [
     ./modules/fish
     ./modules/git
+    ./modules/lazygit
     ./modules/mise
     ./modules/zellij
     ./modules/ssh
@@ -36,7 +37,7 @@ in
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -54,33 +55,35 @@ in
     #   echo "Hello, ${config.home.username}!"
     # '')
 
-    pkgs.awscli
-    pkgs.docker
-    pkgs.fzf
-    pkgs.gh
-    pkgs.ghq
-    pkgs.git-secrets
-    pkgs.glib
-    pkgs.gnupg
-    pkgs.graphviz
-    pkgs.imagemagick
-    pkgs.jq
-    pkgs.jsonnet
-    pkgs.keychain
-    pkgs.miller
-    pkgs.netcat
-    pkgs.nixfmt-rfc-style
-    pkgs.openssl
-    pkgs.pcre
-    pkgs.pkg-config
-    pkgs.pngquant
-    pkgs.readline
-    pkgs.ripgrep
-    pkgs.tig
-    pkgs.tree
-    pkgs.vim
-    pkgs.watch
-    pkgs.wget
+    awscli2
+    docker
+    fzf
+    gh
+    ghq
+    git-secrets
+    glib
+    gnupg
+    graphviz
+    imagemagick
+    jq
+    jsonnet
+    keychain
+    kubectl
+    miller
+    netcat
+    nixd
+    nixfmt-rfc-style
+    openssl
+    pcre
+    pkg-config
+    pngquant
+    readline
+    ripgrep
+    tig
+    tree
+    vim
+    watch
+    wget
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
