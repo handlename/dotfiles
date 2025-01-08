@@ -27,6 +27,7 @@ in
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   imports = [
+    ./modules/emacs
     ./modules/fish
     ./modules/git
     ./modules/lazygit
@@ -127,7 +128,6 @@ in
     symlinkConfiglations = lib.mkAfter ''
       run mkdir -p ${config.xdg.configHome}
       run ln -sf ${vars.homeManagerHome}/config/alacritty ${config.xdg.configHome}/
-      run ln -sf ${vars.homeManagerHome}/config/emacs ${config.xdg.configHome}/
     '';
   };
 
