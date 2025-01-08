@@ -127,6 +127,7 @@ in
     symlinkConfiglations = lib.mkAfter ''
       run mkdir -p ${config.xdg.configHome}
       run ln -sf ${vars.homeManagerHome}/config/alacritty ${config.xdg.configHome}/
+      run ln -sf ${vars.homeManagerHome}/config/emacs ${config.xdg.configHome}/
     '';
   };
 
