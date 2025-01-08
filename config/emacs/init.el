@@ -92,8 +92,9 @@
 
 (use-package server
   :config
-  (unless (server-running-p)
-    (server-start)))
+  (if (and (fboundp 'server-running-p)
+	   (not (server-running-p)))
+      (server-start)))
 
 (use-package vertico
   :init
