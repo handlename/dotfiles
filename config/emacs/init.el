@@ -39,11 +39,11 @@
   :config
   (setq use-package-always-ensure t))
 
+(defvar evil-want-keybinding nil) ; for evil-collection
 (defvar evil-want-C-u-scroll t) ; need to set before evil loaded. set in :init not satisfies condition.
 (use-package evil
   :after projectile
   :init
-  (setq evil-want-keybinding nil) ; for evil-collection
   (setq evil-undo-system 'undo-fu)
   (define-prefix-command 'my/evil-leader-map)
   (define-prefix-command 'my/evil-buffer-map)
