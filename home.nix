@@ -27,6 +27,7 @@ in
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   imports = [
+    ./modules/emacs
     ./modules/fish
     ./modules/git
     ./modules/lazygit

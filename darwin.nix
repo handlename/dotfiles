@@ -44,6 +44,7 @@
       "bettertouchtool"
       "dash"
       "discord"
+      "emacs"
       "font-monaspace-nerd-font"
       "google-japanese-ime"
       "karabiner-elements"
