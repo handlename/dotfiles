@@ -170,8 +170,8 @@
 
 (use-package lsp-mode
   :init
-  (setq lsp-enable-snippet nil
-	lsp-completion-provider nil)
+  (defvar lsp-completion-provider nil)
+  (setq lsp-enable-snippet nil)
   :config
   (add-to-list 'warning-suppress-log-types '(lsp-mode))
   (add-to-list 'warning-suppress-types '(lsp-mode))
