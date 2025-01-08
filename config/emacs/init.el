@@ -1,3 +1,9 @@
+;;; package --- init
+;;; Commentary:
+;;; Configurations for my Emacs.
+
+;;; Code:
+
 ;;; Custom variables
 
 (setq custom-file (locate-user-emacs-file "custom.el"))
@@ -181,3 +187,5 @@
   :hook ((rust-mode . (lambda () (setq indent-tabs-mode nil))))
   :config
   (setq rust-format-on-save t))
+
+;;; init.el ends here
