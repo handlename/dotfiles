@@ -71,6 +71,7 @@
     "w" 'my/evil-window-map
     "p" 'projectile-command-map)
   (define-key evil-insert-state-map (kbd "C-h") 'delete-backward-char)
+  (define-key evil-normal-state-map (kbd "C-t") 'next-window-any-frame)
   (evil-mode 1))
 
 (use-package evil-collection
