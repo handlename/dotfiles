@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   ...
 }:
@@ -78,7 +79,7 @@
       };
 
       ghq = {
-        root = "/Users/nagata-hiroaki/src";
+        root = "/Users/${config.home.username}/src";
       };
 
       secrets = {
