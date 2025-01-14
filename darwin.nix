@@ -46,6 +46,7 @@
 
     casks = [
       "1password-cli"
+      "alacritty"
       "alfred"
       "appcleaner"
       "arc"
@@ -60,6 +61,7 @@
       "orbstack"
       "slack"
       "visual-studio-code"
+      "zed"
     ];
 
     masApps = {
