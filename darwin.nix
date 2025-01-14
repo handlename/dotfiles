@@ -11,8 +11,12 @@
 
   system = {
     defaults = {
-      NSGlobalDomain.AppleShowAllExtensions = true;
       WindowManager.EnableTiledWindowMargins = false;
+
+      NSGlobalDomain = {
+        AppleShowAllExtensions = true;
+        "com.apple.trackpad.scaling" = 3.0;
+      };
 
       dock = {
         autohide = true;
@@ -23,6 +27,10 @@
       finder = {
         AppleShowAllFiles = true;
         AppleShowAllExtensions = true;
+      };
+
+      trackpad = {
+        Clicking = true;
       };
     };
   };
