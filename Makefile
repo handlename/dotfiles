@@ -1,3 +1,6 @@
+NIX_FLAGS := --extra-experimental-features "nix-command flakes"
+NIX_CMD := nix $(NIX_FLAGS)
+
 setup:
 	$(MAKE) install/nix
 	$(MAKE) install/home-manager
@@ -11,20 +14,20 @@ install/home-manager:
 	nix-shell '<home-manager>' -A install
 
 build/home:
-	nix run nixpkgs#home-manager -- build --flake .#myhome
+	$(NIX_CMD) run nixpkgs#home-manager -- build --flake .#myhome
 
 switch:
 	$(MAKE) switch/home
 	$(MAKE) switch/darwin
 
 switch/home: update
-	nix run nixpkgs#home-manager -- switch --flake .#myhome
+	$(NIX_CMD) run nixpkgs#home-manager -- switch $(NIX_FLAGS) --flake .#myhome
 
 switch/darwin: update
-	nix run nix-darwin -- switch --flake .#macbook
+	$(NIX_CMD) run nix-darwin -- switch --flake .#macbook-intel
 
 update:
-	nix flake update
+	$(NIX_CMD) flake update
 
 gc:
-	nix store gc
+	$(NIX_CMD) store gc
