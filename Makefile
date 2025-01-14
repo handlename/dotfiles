@@ -29,7 +29,7 @@ switch/home: update
 	$(NIX_CMD) run nixpkgs#home-manager -- switch $(NIX_FLAGS) --flake .#myhome
 
 switch/darwin: update
-	$(NIX_CMD) run nix-darwin -- switch --flake .#macbook-intel
+	$(NIX_CMD) run nix-darwin -- switch --flake .#macbook
 
 update:
 	$(NIX_CMD) flake update
