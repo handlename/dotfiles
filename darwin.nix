@@ -45,6 +45,7 @@
     };
 
     casks = [
+      "1password"
       "1password-cli"
       "alacritty"
       "alfred"
@@ -56,15 +57,18 @@
       "emacs"
       "font-monaspace-nerd-font"
       "google-japanese-ime"
+      "jordanbaird-ice"
       "karabiner-elements"
       "obsidian"
       "orbstack"
       "slack"
+      "session-manager-plugin"
       "visual-studio-code"
       "zed"
     ];
 
     masApps = {
+      display-maid = 450063525;
       kindle = 302584613;
       reeder = 6475002485;
       toggl-track = 1291898086;
