@@ -17,6 +17,9 @@ in
     globalConfig = {
       settings.experimental = true;
       env = {
+        _.path = [
+          "${config.home.homeDirectory}/bin"
+        ];
         XDG_CACHE_HOME = "${config.xdg.cacheHome}";
         XDG_CONFIG_HOME = "${config.xdg.configHome}";
         XDG_DATA_HOME = "${config.xdg.dataHome}";
