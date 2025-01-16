@@ -1,6 +1,6 @@
-shell = "/Users/nagata-hiroaki/.nix-profile/bin/fish"
+terminal.shell = "/Users/handlename/.nix-profile/bin/fish"
 
-import = ["~/.config/alacritty/themes/themes/solarized_osaka.toml"]
+general.import = ["~/.config/alacritty/themes/solarized_osaka.toml"]
 
 [window]
 option_as_alt = "Both"

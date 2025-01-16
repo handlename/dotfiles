@@ -27,6 +27,7 @@ in
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   imports = [
+    ./modules/alacritty
     ./modules/emacs
     ./modules/fish
     ./modules/git
@@ -123,13 +124,6 @@ in
   };
 
   xdg.enable = true;
-
-  home.activation = {
-    symlinkConfiglations = lib.mkAfter ''
-      run mkdir -p ${config.xdg.configHome}
-      run ln -sf ${vars.homeManagerHome}/config/alacritty ${config.xdg.configHome}/
-    '';
-  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
