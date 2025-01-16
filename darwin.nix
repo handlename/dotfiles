@@ -18,6 +18,7 @@
       WindowManager.EnableTiledWindowMargins = false;
 
       NSGlobalDomain = {
+        ApplePressAndHoldEnabled = false;
         AppleShowAllExtensions = true;
         "com.apple.trackpad.scaling" = 3.0;
       };
