@@ -57,6 +57,7 @@ in
     #   echo "Hello, ${config.home.username}!"
     # '')
 
+    actionlint
     awscli2
     docker
     fzf

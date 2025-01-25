@@ -63,7 +63,9 @@
       "elecom-mouse-util"
       "font-monaspace-nerd-font"
       "font-moralerspace-nf"
+      "google-chrome"
       "google-japanese-ime"
+      "homerow"
       "jordanbaird-ice"
       "karabiner-elements"
       "obsidian"
@@ -76,8 +78,10 @@
 
     masApps = {
       display-maid = 450063525;
+      google-meet = 1096918571;
       kindle = 302584613;
       reeder = 6475002485;
+      snippety = 1530751461;
       toggl-track = 1291898086;
     };
   };
