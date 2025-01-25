@@ -78,7 +78,6 @@
 
     masApps = {
       display-maid = 450063525;
-      google-meet = 1096918571;
       kindle = 302584613;
       reeder = 6475002485;
       snippety = 1530751461;
