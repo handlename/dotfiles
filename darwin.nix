@@ -15,6 +15,8 @@
     '';
 
     defaults = {
+      # To fill gaps between windows.
+      # Use BetterTouchTool to manage window tiling instead.
       WindowManager.EnableTiledWindowMargins = false;
 
       NSGlobalDomain = {
