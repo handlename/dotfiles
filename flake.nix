@@ -41,7 +41,7 @@
       };
 
       darwinConfigurations."macbook" = darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
+        system = system;
         modules = [
           ./configuration.nix
           ./darwin.nix
