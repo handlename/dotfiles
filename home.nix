@@ -68,6 +68,7 @@ in
     gnupg
     graphviz
     imagemagick
+    inetutils
     jq
     jsonnet
     keychain
