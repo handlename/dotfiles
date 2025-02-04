@@ -83,6 +83,7 @@ in
     pngquant
     readline
     ripgrep
+    sleek
     tig
     tree
     vim
