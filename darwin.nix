@@ -22,6 +22,12 @@
       NSGlobalDomain = {
         ApplePressAndHoldEnabled = false;
         AppleShowAllExtensions = true;
+        InitialKeyRepeat = 15; # shortest
+        KeyRepeat = 2; # fastest
+        NSAutomaticCapitalizationEnabled = false;
+        NSAutomaticDashSubstitutionEnabled = false;
+        NSAutomaticPeriodSubstitutionEnabled = false;
+        NSAutomaticQuoteSubstitutionEnabled = false;
         "com.apple.trackpad.scaling" = 3.0;
       };
 
