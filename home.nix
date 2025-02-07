@@ -73,6 +73,7 @@ in
     jsonnet
     keychain
     kubectl
+    marp-cli
     miller
     netcat
     nixd
