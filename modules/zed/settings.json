@@ -31,7 +31,8 @@
     "enabled": true,
     "show_other_hints": true,
     "show_parameter_hints": true,
-    "show_type_hints": true
+    "show_type_hints": true,
+    "show_background": false
   },
   "languages": {
     "Go": {
@@ -55,7 +56,7 @@
     "show": false
   },
   "theme": {
-    "dark": "Solarized Dark",
+    "dark": "Github Dark Dimmed",
     "light": "Solarized Light",
     "mode": "dark"
   },
