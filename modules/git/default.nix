@@ -51,6 +51,10 @@
       sync = "fetch --prune origin";
     };
 
+    ignores = [
+      ".mise.local.toml"
+    ];
+
     extraConfig = {
       core = {
         editor = "vim";
