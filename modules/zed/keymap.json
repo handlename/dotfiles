@@ -12,33 +12,34 @@
       "ctrl-m": "editor::Newline",
       "ctrl-t": "workspace::ActivateNextPane",
       "ctrl-i": "editor::Tab",
-      "cmd-right": "editor::AcceptPartialInlineCompletion"
-    }
-  },
-  {
-    "context": "vim_mode == visual",
-    "bindings": {
-      "shift-s": [
-        "vim::PushOperator",
-        {
-          "AddSurrounds": {}
-        }
-      ]
-    }
-  },
-  {
-    "context": "vim_mode == normal",
-    "bindings": {
-      "f": ["vim::PushOperator", { "Sneak": {} }],
-      "F": ["vim::PushOperator", { "SneakBackward": {} }]
+      "cmd-right": "zeta::FocusCompletions",
+
+      // testing
+      "cmd-; c": "editor::SpawnNearestTask",
+      "cmd-; l": "task::Rerun"
     }
   },
   {
     "context": "Editor && (vim_mode == normal)",
     "bindings": {
+      "f": ["vim::PushSneak", {}],
+      "F": ["vim::PushSneakBackward", {}],
       "g D": "editor::OpenDocs",
       "g o": "editor::OpenExcerpts",
       "ctrl-w g o": "editor::OpenExcerptsSplit"
+    }
+  },
+  {
+    "context": "Editor && (vim_mode == visual)",
+    "bindings": {
+      "shift-s": ["vim::PushAddSurrounds", {}]
+    }
+  },
+  {
+    "context": "Editor && (vim_mode == insert)",
+    "bindings": {
+      "cmd-a s": "copilot::NextSuggestion",
+      "cmd-a S": "copilot::PreviousSuggestion"
     }
   }
 ]

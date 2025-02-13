@@ -56,7 +56,7 @@
     "show": false
   },
   "theme": {
-    "dark": "Github Dark Dimmed",
+    "dark": "Solarized Dark",
     "light": "Solarized Light",
     "mode": "dark"
   },
