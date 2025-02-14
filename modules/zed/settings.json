@@ -25,14 +25,14 @@
     "terminal.background": "#16160e"
   },
   "features": {
+    "edit_prediction_provider": "zed",
     "copilot": true
   },
   "inlay_hints": {
     "enabled": true,
     "show_other_hints": true,
     "show_parameter_hints": true,
-    "show_type_hints": true,
-    "show_background": false
+    "show_type_hints": true
   },
   "languages": {
     "Go": {
