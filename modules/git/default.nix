@@ -52,6 +52,7 @@
     };
 
     ignores = [
+      "*.local"
       ".mise.local.toml"
     ];
 
