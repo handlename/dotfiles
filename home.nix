@@ -35,6 +35,7 @@ in
     ./modules/mise
     ./modules/ssh
     ./modules/zellij
+    # ./modules/zed # Commented out because the configuration for Zed is still being adjusted
   ];
 
   # The home.packages option allows you to install Nix packages into your
