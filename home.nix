@@ -33,8 +33,8 @@ in
     ./modules/git
     ./modules/lazygit
     ./modules/mise
-    ./modules/zellij
     ./modules/ssh
+    ./modules/zellij
   ];
 
   # The home.packages option allows you to install Nix packages into your
