@@ -61,6 +61,7 @@ in
     actionlint
     awscli2
     docker
+    fastfetch
     fzf
     gh
     ghq
