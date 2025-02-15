@@ -73,7 +73,7 @@ in
     jq
     jsonnet
     keychain
-    kubectl
+    kubectl # for fish `_tide_item_kubectl`
     marp-cli
     miller
     netcat
