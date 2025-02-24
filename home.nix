@@ -77,6 +77,7 @@ in
     kubectl # for fish `_tide_item_kubectl`
     marp-cli
     miller
+    mitmproxy
     netcat
     nixd
     nixfmt-rfc-style
