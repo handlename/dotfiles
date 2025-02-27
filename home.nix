@@ -60,6 +60,7 @@ in
 
     actionlint
     awscli2
+    bat
     docker
     fastfetch
     fzf
