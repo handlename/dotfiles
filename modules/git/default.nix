@@ -18,7 +18,7 @@
       au = "add -u :/";
 
       # commit
-      amend = "commit --amend";
+      am = "commit --amend";
       cm = "commit -m";
 
       # checkout
@@ -44,6 +44,9 @@
 
       # status
       st = "status";
+
+      # switch
+      sw = "switch";
 
       # shorthand
       clear = "!sh -c 'git reset HEAD && git checkout :/ && git clean -df'";
