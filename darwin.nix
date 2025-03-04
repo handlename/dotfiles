@@ -42,6 +42,10 @@
         AppleShowAllExtensions = true;
       };
 
+      hitoolbox = {
+        AppleFnUsageType = "Show Emoji & Symbols";
+      };
+
       trackpad = {
         Clicking = true;
       };
