@@ -16,7 +16,17 @@
 
       // testing
       "cmd-; c": "editor::SpawnNearestTask",
-      "cmd-; l": "task::Rerun"
+      "cmd-; l": "task::Rerun",
+
+      // prediction
+      "alt-right": "editor::NextEditPrediction",
+      "alt-left": "editor::PreviousEditPrediction"
+    }
+  },
+  {
+    "context": "Editor && (extension == go)",
+    "bindings": {
+      "cmd-; c": ["task::Spawn", { "task_name": "Run Go Test: ${ZED_SYMBOL}" }]
     }
   },
   {

@@ -7,9 +7,10 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "icon_theme": "Material Icon Theme",
   "assistant": {
     "default_model": {
-      "model": "o3-mini",
+      "model": "claude-3-7-sonnet",
       "provider": "copilot_chat"
     },
     "version": "2"
@@ -56,10 +57,29 @@
     "show": false
   },
   "theme": {
-    "dark": "Solarized Dark",
+    "dark": "Github Dark Dimmed",
     "light": "Solarized Light",
     "mode": "dark"
   },
   "ui_font_size": 16,
-  "vim_mode": true
+  "vim_mode": true,
+  "file_scan_exclusions": [
+    "vendor/*",
+
+    // default
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/.jj",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings"
+  ],
+  "diagnostics": {
+    "inline": {
+      "enabled": true
+    }
+  }
 }
