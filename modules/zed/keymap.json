@@ -20,7 +20,11 @@
 
       // prediction
       "alt-right": "editor::NextEditPrediction",
-      "alt-left": "editor::PreviousEditPrediction"
+      "alt-left": "editor::PreviousEditPrediction",
+
+      // permalink
+      "cmd-k cmd-shift-l": "editor::CopyPermalinkToLine",
+      "cmd-k cmd-shift-o": "editor::OpenPermalinkToLine"
     }
   },
   {
@@ -42,7 +46,7 @@
   {
     "context": "Editor && (vim_mode == visual)",
     "bindings": {
-      "shift-s": ["vim::PushAddSurrounds", {}]
+      "S": ["vim::PushAddSurrounds", {}]
     }
   },
   {
