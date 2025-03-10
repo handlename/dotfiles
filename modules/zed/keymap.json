@@ -24,7 +24,11 @@
 
       // permalink
       "cmd-k cmd-shift-l": "editor::CopyPermalinkToLine",
-      "cmd-k cmd-shift-o": "editor::OpenPermalinkToLine"
+      "cmd-k cmd-shift-o": "editor::OpenPermalinkToLine",
+
+      // git
+      "cmd-k g d": "git::Diff",
+      "cmd-k g c": "git::Commit"
     }
   },
   {
