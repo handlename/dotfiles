@@ -43,7 +43,7 @@
       };
 
       hitoolbox = {
-        AppleFnUsageType = "Show Emoji & Symbols";
+        AppleFnUsageType = "Do Nothing";
       };
 
       trackpad = {
