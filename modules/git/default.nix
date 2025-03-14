@@ -18,7 +18,7 @@
       au = "add -u :/";
 
       # commit
-      am = "commit --amend";
+      ca = "commit --amend";
       cm = "commit -m";
 
       # checkout
