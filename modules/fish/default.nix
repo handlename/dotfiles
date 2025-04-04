@@ -65,6 +65,7 @@
     ./ssh.nix
     ./terraform.nix
     ./tide.nix
+    ./zed.nix
     ./zellij.nix
   ];
 }
