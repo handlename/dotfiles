@@ -22,7 +22,8 @@
       "alt-right": "editor::NextEditPrediction",
       "alt-left": "editor::PreviousEditPrediction",
 
-      // permalink
+      // path & links
+      "cmd-k cmd-shift-r": "workspace::CopyRelativePath",
       "cmd-k cmd-shift-l": "editor::CopyPermalinkToLine",
       "cmd-k cmd-shift-o": "editor::OpenPermalinkToLine",
 

@@ -34,6 +34,7 @@ in
     ./modules/lazygit
     ./modules/mise
     ./modules/ssh
+    ./modules/vim
     ./modules/zellij
     # ./modules/zed # Commented out because the configuration for Zed is still being adjusted
   ];
@@ -91,7 +92,6 @@ in
     sleek
     tig
     tree
-    vim
     watch
     wget
   ];

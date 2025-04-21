@@ -8,6 +8,7 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "assistant": {
+    "default_profile": "write",
     "default_model": {
       "model": "claude-3.7-sonnet-thought",
       "provider": "copilot_chat"
@@ -72,7 +73,11 @@
     "enabled": true,
     "show_other_hints": true,
     "show_parameter_hints": true,
-    "show_type_hints": true
+    "show_type_hints": true,
+    "toggle_on_modifiers_press": {
+      "control": true,
+      "shift": true
+    }
   },
   "languages": {
     "Go": {
@@ -89,6 +94,9 @@
     },
     "Nix": {
       "language_servers": ["nixd", "!nil"]
+    },
+    "Perl": {
+      "enable_language_server": false
     },
     "Ruby": {
       "enable_language_server": false
