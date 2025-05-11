@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   system.stateVersion = 1;
   nixpkgs.config.allowUnfree = true;

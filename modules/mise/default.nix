@@ -1,14 +1,10 @@
 {
   config,
-  lib,
-  pkgs,
   ...
 }:
 
-with lib;
-
 let
-  vars = import ../../vars.nix;
+
 in
 {
   programs.mise = {
