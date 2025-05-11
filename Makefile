@@ -1,5 +1,6 @@
 NIX_FLAGS := --extra-experimental-features "nix-command flakes"
 NIX_CMD := nix $(NIX_FLAGS)
+PROFILE := myhome
 
 setup:
 	$(MAKE) install/nix
@@ -26,7 +27,7 @@ switch:
 	$(MAKE) switch/darwin
 
 switch/home: update
-	$(NIX_CMD) run nixpkgs#home-manager -- switch $(NIX_FLAGS) --flake .#myhome
+	$(NIX_CMD) run nixpkgs#home-manager -- switch $(NIX_FLAGS) --flake .#$(PROFILE)
 
 switch/darwin: update
 	$(NIX_CMD) run nix-darwin -- switch --flake .#macbook

@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  username,
   ...
 }:
 
@@ -14,7 +15,7 @@ in
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "handlename";
+  home.username = username;
   home.homeDirectory = lib.mkForce "/Users/${config.home.username}";
 
   # This value determines the Home Manager release that your configuration is
@@ -69,6 +70,7 @@ in
     ghq
     git-secrets
     glib
+    goreleaser
     gnupg
     graphviz
     imagemagick
@@ -93,6 +95,7 @@ in
     tree
     watch
     wget
+    yazi
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -124,7 +127,7 @@ in
   #
   # or
   #
-  #  /etc/profiles/per-user/nagata-hiroaki/etc/profile.d/hm-session-vars.sh
+  #  /etc/profiles/per-user/{USERNAME}/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
     # EDITOR = "emacs";

@@ -37,6 +37,18 @@
         ];
         extraSpecialArgs = {
           inherit inputs;
+          username = "handlename";
+        };
+      };
+
+      homeConfigurations."oldhome" = home-manager.lib.homeManagerConfiguration {
+        pkgs = pkgs;
+        modules = [
+          ./home.nix
+        ];
+        extraSpecialArgs = {
+          inherit inputs;
+          username = "nagata-hiroaki";
         };
       };
 
