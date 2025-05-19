@@ -7,11 +7,12 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "assistant": {
+  "agent": {
+    "always_allow_tool_actions": false,
     "default_profile": "write",
     "default_model": {
-      "model": "claude-3.7-sonnet-thought",
-      "provider": "copilot_chat"
+      "model": "claude-3-7-sonnet-thinking-latest",
+      "provider": "zed.dev"
     },
     "version": "2"
   },
