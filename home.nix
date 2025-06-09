@@ -90,6 +90,7 @@ with lib;
     readline
     ripgrep
     sleek
+    taplo
     tig
     tree
     watch
