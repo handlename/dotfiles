@@ -80,6 +80,7 @@ with lib;
     miller
     mitmproxy
     netcat
+    nginx-language-server
     nixd
     nixfmt-rfc-style
     openssl
