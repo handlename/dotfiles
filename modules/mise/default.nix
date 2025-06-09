@@ -28,6 +28,7 @@ in
       tools = {
         usage = "latest";
         go = "latest";
+        node = "latest";
       };
     };
   };
