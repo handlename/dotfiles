@@ -57,6 +57,7 @@
 
   imports = [
     ./1password.nix
+    ./aqua.nix
     ./aws.nix # bind prefix: \cxa
     ./docker.nix # bind prefix: \cxd
     ./fzf.nix
