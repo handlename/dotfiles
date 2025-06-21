@@ -60,6 +60,7 @@ with lib;
     actionlint
     awscli2
     bat
+    colima
     docker
     fastfetch
     fzf

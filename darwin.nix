@@ -81,7 +81,6 @@
       "jordanbaird-ice"
       "karabiner-elements"
       "obsidian"
-      "orbstack"
       "slack"
       "session-manager-plugin"
       "visual-studio-code"
