@@ -1,15 +1,7 @@
 {
-  config,
-  lib,
-  pkgs,
   ...
 }:
 
-with lib;
-
-let
-  vars = import ../../vars.nix;
-in
 {
   programs.fish.functions = {
     docker_image = builtins.readFile ./functions/docker_image.fish;

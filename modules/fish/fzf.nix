@@ -1,15 +1,7 @@
 {
-  config,
-  lib,
-  pkgs,
   ...
 }:
 
-with lib;
-
-let
-  vars = import ../../vars.nix;
-in
 {
   programs.fish.shellInit = ''
     set -U FZF_LEGACY_KEYBINDINGS 0
