@@ -11,12 +11,12 @@ install/nix:
 	curl -L https://nixos.org/nix/install | sh
 
 install/home-manager:
-	nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.11.tar.gz home-manager
+	nix-channel --add https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz home-manager
 	nix-channel --update
 	nix-shell '<home-manager>' -A install
 
 install/nix-darwin:
-	nix-channel --add https://github.com/LnL7/nix-darwin/archive/refs/heads/nix-darwin-24.11.tar.gz nix-darwin
+	nix-channel --add https://github.com/LnL7/nix-darwin/archive/refs/heads/nix-darwin-25.05.tar.gz nix-darwin
 	nix-channel --update
 
 build/home:
