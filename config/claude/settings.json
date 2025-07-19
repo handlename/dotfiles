@@ -1,0 +1,36 @@
+{
+  "env": {},
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(gh issue view:*)",
+      "Bash(gh pr view:*)",
+      "Bash(git:*)",
+      "Bash(go build:*)",
+      "Bash(go fmt:*)",
+      "Bash(go run:*)",
+      "Bash(go test:*)",
+      "Bash(go vet:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Edit(*.go)",
+      "Read(**)",
+      "container-use__*",
+      "mcp__mysql__mysql_query"
+    ],
+    "deny": ["Bash(git push:*)"],
+    "hooks": {
+      "PostToolUse": [
+        {
+          "matcher": "Write|Edit|MultiEdit",
+          "hooks": [
+            {
+              "type": "command",
+              "command": "~/.claude/hooks/format-code.sh"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
