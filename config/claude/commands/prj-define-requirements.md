@@ -1,5 +1,5 @@
 ---
-description: 要件定義書を作成する。
+description: 要件定義書を作成する。ARGS: 要件定義したいものの簡単な説明
 ---
 
 $ARGUMENTS を作りたい。
