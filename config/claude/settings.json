@@ -1,5 +1,7 @@
 {
-  "env": {},
+  "env": {
+    "CLAUDE_LANGUAGE": "ja"
+  },
   "permissions": {
     "allow": [
       "Bash(find:*)",
@@ -14,11 +16,14 @@
       "Bash(grep:*)",
       "Bash(rg:*)",
       "Edit(*.go)",
+      "Edit(*.md)",
+      "Edit(*.json)",
       "Read(**)",
+      "WebFetch(**)",
       "container-use__*",
       "mcp__mysql__mysql_query"
     ],
-    "deny": ["Bash(git push:*)"],
+    "deny": ["Bash(git push:*)", "Bash(sudo:*)"],
     "hooks": {
       "PostToolUse": [
         {
