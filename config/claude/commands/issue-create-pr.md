@@ -1,9 +1,21 @@
 ---
-description: Issueをもとに実行した変更について、Pull Requestを作成する。ARGS: IssueのURL
+description: Issueをもとに実行した変更について、Pull Requestを作成する。
+argument-hint: --base-branch=[baseBranch] --language=[language] [issueURL]
 ---
 
-現在のブランチから develop ブランチをベースブランチとしたPull Requestを作成せよ。
-Pull Requestの作成に際しては、以下の注意点をよく読み、これらに従え。
+# Context
+
+- ベースブランチ名: コマンド引数の `--base-branch` で指定された値
+- PullRequest作成に使用する言語: コマンド引数の `--language` で指定された値。指定がなければ日本語
+- 作成するPullRequestが解決するIssueのURL: コマンド引数の `[issueURL]` で指定された値
+
+# Your task
+
+現在のブランチからメインブランチをベースブランチとしたPull Requestを作成せよ。
+
+# Notice
+
+以下の注意点をよく読み、これらに従え。
 
 - Issue $ARGUMENTS を解決するものであることを明確にせよ
 - 現在のブランチはすでにリモートにpush済みである

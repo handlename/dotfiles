@@ -1,29 +1,61 @@
 ---
-description: 変更をcommitする。
+description: ステージされた変更をConventional Commitsルールに従いcommitする
+argument-hint: [commit-message] (optional) - commit見出しメッセージ
+allowed-tools: Bash(git commit:*)
 ---
 
-stageされた変更をcommitせよ。
-commitメッセージには変更内容の概要を端的に表した文章を含めよ。
-commitメッセージの見出し(1行目)の内容に指定がある場合は、それをそのまま採用せよ。
-commitメッセージの見出しには、下記に示すルールに基づいてprefixを付与せよ。
-ひとつのprefixで表すことができない場合は、commitを分割せよ。
+## 前提・背景
 
-# commitメッセージの見出し
+- Gitの変更をCommitする際は、事前にテストの通過確認が必要
+- Conventional Commitsルールに従い適切なprefixを付与したcommitメッセージを作成する
+- 複数の異なる種類の変更が含まれる場合は、commitを分割する
 
-以下の `<text>` タグで示されたテキストをcommitメッセージの見出しに使用せよ。
-ただし、同タグの内容が空文字列、または空白文字のみである場合は、適切なメッセージを生成せよ。
+## タスク
 
-<text>
-$ARGUMENTS
-</text>
+実行するべきタスクを以下に示す。
+内容をよく読み、複数並行して進められると判断した場合は、並行して実行すること。
 
-# prefixルール
+- 現在の変更状況を確認し、適切なcommitメッセージを作成する
+- commitメッセージの見出しが引数で指定されている場合は、そのメッセージを使用する
+- 引数が未指定の場合は、変更内容を分析して適切なメッセージを生成する
+- Conventional Commitsルールに従い適切なprefixを付与する
+- 関連するテストが存在する場合は、commit前にテストの通過を確認する
+- ステージされた変更をcommitする
 
-- **feat**: A new feature
-- **fix**: A bug fix
-- **docs**: Documentation only changes
-- **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-- **refactor**: A code change that neither fixes a bug nor adds a feature
-- **perf**: A code change that improves performance
-- **test**: Adding missing or correcting existing tests
-- **chore**: Changes to the build process or auxiliary tools and libraries such as documentation generation
+## 完了条件
+
+タスクの完了条件は以下の通りとする。
+完了条件、または次の項目で述べる中断条件を満たすまで作業を継続すること。
+
+- 適切なcommitメッセージでcommitが正常に完了した
+- 関連テストが全て通過した（テストが存在する場合）
+
+## 実行規約
+
+タスクの実行中は常に以下の規約に従え。
+
+- commitメッセージは以下のConventional Commitsルールに従う：
+  - `feat:` 新機能追加
+  - `fix:` バグ修正
+  - `docs:` ドキュメント変更のみ
+  - `style:` コード動作に影響しない変更（空白、フォーマット等）
+  - `refactor:` バグ修正でも機能追加でもないコード変更
+  - `perf:` パフォーマンス向上のためのコード変更
+  - `test:` テストの追加または修正
+  - `chore:` ビルドプロセスや補助ツールの変更
+- 複数種類の変更が含まれる場合はcommitを分割する
+- 引数でcommitメッセージが指定された場合は、そのメッセージにprefixを付与して使用する
+- 引数が空または未指定の場合は、変更内容を分析して適切なメッセージを生成する
+
+## 禁止事項
+
+- テストが失敗している状態でのcommitを禁じる
+- Conventional Commitsルールに従わないcommitメッセージの使用を禁じる
+
+## 補足事項
+
+タスクに関する補足事項を以下に示す。
+
+- タスクを実行するにあたり、その円滑な進行を妨げる点（不明瞭な指示、必要不可欠な情報の欠損など）がある場合は、その旨をユーザーに報告し、追加の情報を求めよ
+- commitメッセージの見出しは50文字以内に収める
+- commitメッセージの本文が必要な場合は、72文字で改行する
