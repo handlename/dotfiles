@@ -56,6 +56,7 @@
 
     ignores = [
       "*.local"
+      "*.local.md"
       ".mise.local.toml"
     ];
 
