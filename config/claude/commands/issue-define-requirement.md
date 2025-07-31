@@ -20,6 +20,7 @@ allowed-tools: Bash(gh issue view:*), Bash(gh issue comment:*)
 - 技術的制約と実現可能性を検証せよ
 - 不明点を質問リストとして整理せよ
 - 要件定義を作成し`gh issue comment $ARGUMENTS -b "$(要件定義内容)"`で投稿せよ
+- 要件定義の末尾には "🤖 Generated with [Claude Code](https://claude.ai/code)" という文言を追加せよ
 
 ## 完了条件
 
@@ -27,7 +28,7 @@ allowed-tools: Bash(gh issue view:*), Bash(gh issue comment:*)
 完了条件、または次の項目で述べる中断条件を満たすまで作業を継続すること。
 
 - 要件定義がIssueコメントとして正常に投稿されたこと
-- 実装可能な具体的内容が詳細に記載されていること  
+- 実装可能な具体的内容が詳細に記載されていること
 - 不明点がある場合は`## 確認事項`として明確に列挙されていること
 - 投稿後のIssue URLをユーザーに提示したこと
 

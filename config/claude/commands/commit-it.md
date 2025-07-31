@@ -1,5 +1,5 @@
 ---
-description: ステージされた変更をConventional Commitsルールに従いcommitする
+description: 変更をConventional Commitsルールに従いcommitする
 argument-hint: [commit-message] (optional) - commit見出しメッセージ
 allowed-tools: Bash(git commit:*)
 ---
@@ -20,7 +20,6 @@ allowed-tools: Bash(git commit:*)
 - 引数が未指定の場合は、変更内容を分析して適切なメッセージを生成する
 - Conventional Commitsルールに従い適切なprefixを付与する
 - 関連するテストが存在する場合は、commit前にテストの通過を確認する
-- ステージされた変更をcommitする
 
 ## 完了条件
 
