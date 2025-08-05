@@ -4,24 +4,28 @@
   },
   "permissions": {
     "allow": [
+      "Bash(awk:*)",
       "Bash(find:*)",
       "Bash(gh issue view:*)",
       "Bash(gh pr view:*)",
+      "Bash(git commit:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
       "Bash(git:*)",
-      "Bash(go build:*)",
-      "Bash(go fmt:*)",
-      "Bash(go run:*)",
-      "Bash(go test:*)",
-      "Bash(go vet:*)",
+      "Bash(go:*)",
       "Bash(grep:*)",
+      "Bash(ls:*)",
+      "Bash(make:*)",
       "Bash(rg:*)",
+      "Bash(rm ./tmp/*)",
       "Edit(*.go)",
-      "Edit(*.md)",
       "Edit(*.json)",
+      "Edit(*.md)",
       "Read(**)",
       "WebFetch(**)",
       "container-use__*",
-      "mcp__mysql__mysql_query"
+      "mcp__ide__*",
+      "mcp__serena__*"
     ],
     "deny": ["Bash(git push:*)", "Bash(sudo:*)"],
     "hooks": {
@@ -37,5 +41,8 @@
         }
       ]
     }
+  },
+  "feedbackSurveyState": {
+    "lastShownTime": 1753952965497
   }
 }
