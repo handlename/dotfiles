@@ -4,6 +4,6 @@
 
 {
   programs.fish.shellAbbrs = {
-    z = "zed-preview";
+    z = "zed";
   };
 }

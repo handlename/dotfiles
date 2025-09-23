@@ -4,7 +4,7 @@
 
     settings = {
       os = {
-        open = "zed-preview {{filename}}";
+        open = "zed {{filename}}";
       };
     };
   };
