@@ -22,3 +22,4 @@ argument-hint: --base-branch=[baseBranch] --language=[language] [issueURL]
 - Pull Requestはタイトル・本文ともに日本語で作成せよ
 - CLAUDE.md にPull Requestに関する指示がある場合は、それらの指示を優先せよ
 - GitHub上のリソース操作には `gh` コマンドを用いよ
+- descriptionの末尾には "🤖 Generated with [Claude Code](https://claude.ai/code)" という文言を追加せよ
