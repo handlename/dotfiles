@@ -22,6 +22,7 @@
       NSGlobalDomain = {
         ApplePressAndHoldEnabled = false;
         AppleShowAllExtensions = true;
+        AppleShowAllFiles = true;
         InitialKeyRepeat = 15; # shortest
         KeyRepeat = 2; # fastest
         NSAutomaticCapitalizationEnabled = false;
