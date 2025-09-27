@@ -7,9 +7,8 @@
     };
   };
 
-  services.nix-daemon.enable = true;
-
   system = {
+    primaryUser = "handlename";
     activationScripts.extraActivation.text = ''
       softwareupdate --install-rosetta --agree-to-license
     '';
