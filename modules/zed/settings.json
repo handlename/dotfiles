@@ -7,14 +7,35 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent_servers": {
+    "claude": {
+      "default_mode": "bypassPermissions"
+    }
+  },
+  "use_system_window_tabs": true,
+  "context_servers": {
+    "serena": {
+      "source": "custom",
+      "enabled": true,
+      "command": "/opt/homebrew/bin/uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/oraios/serena",
+        "serena",
+        "start-mcp-server",
+        "--context",
+        "ide-assistant"
+      ],
+      "env": {}
+    }
+  },
   "agent": {
-    "always_allow_tool_actions": false,
+    "always_allow_tool_actions": true,
     "default_profile": "write",
     "default_model": {
-      "model": "claude-3-7-sonnet-thinking-latest",
-      "provider": "zed.dev"
-    },
-    "version": "2"
+      "model": "claude-sonnet-4",
+      "provider": "copilot_chat"
+    }
   },
   "auto_install_extensions": {
     // languages
@@ -46,13 +67,12 @@
     }
   },
   "edit_predictions": {
-    "mode": "subtle"
+    "mode": "eager"
   },
   "experimental.theme_overrides": {
     "terminal.background": "#16160e"
   },
   "features": {
-    "copilot": true,
     "edit_prediction_provider": "zed"
   },
   "file_scan_exclusions": [
