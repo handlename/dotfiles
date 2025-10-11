@@ -33,6 +33,12 @@
     }
   },
   {
+    "context": "Terminal",
+    "bindings": {
+      "cmd-k e": "editor::ToggleFocus"
+    }
+  },
+  {
     "context": "Editor && (extension == go)",
     "bindings": {
       "cmd-; c": ["task::Spawn", { "task_name": "Run Go Test: ${ZED_SYMBOL}" }]
@@ -59,6 +65,16 @@
     "bindings": {
       "cmd-a s": "copilot::NextSuggestion",
       "cmd-a S": "copilot::PreviousSuggestion"
+    }
+  },
+  {
+    "bindings": {
+      "ctrl->": "window::ShowNextWindowTab"
+    }
+  },
+  {
+    "bindings": {
+      "ctrl-<": "window::ShowPreviousWindowTab"
     }
   }
 ]
