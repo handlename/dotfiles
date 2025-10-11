@@ -11,11 +11,6 @@ layout {
 
     tab name="workspace" focus=true {
     }
-    tab name="claude" {
-        pane {
-            command "claude"
-        }
-    }
     tab name="git" {
         pane {
             command "lazygit"
