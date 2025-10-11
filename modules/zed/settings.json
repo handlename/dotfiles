@@ -7,56 +7,36 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent": {
+    "always_allow_tool_actions": true,
+    "default_model": {
+      "model": "claude-sonnet-4.5",
+      "provider": "copilot_chat"
+    },
+    "default_profile": "ask",
+    "inline_assistant_model": {
+      "model": "claude-sonnet-4.5",
+      "provider": "copilot_chat"
+    }
+  },
   "agent_servers": {
     "claude": {
       "default_mode": "bypassPermissions"
     }
   },
-  "use_system_window_tabs": true,
-  "context_servers": {
-    "serena": {
-      "source": "custom",
-      "enabled": true,
-      "command": "/opt/homebrew/bin/uvx",
-      "args": [
-        "--from",
-        "git+https://github.com/oraios/serena",
-        "serena",
-        "start-mcp-server",
-        "--context",
-        "ide-assistant"
-      ],
-      "env": {}
-    }
-  },
-  "agent": {
-    "inline_assistant_model": {
-      "model": "claude-sonnet-4.5",
-      "provider": "copilot_chat"
-    },
-    "always_allow_tool_actions": true,
-    "default_profile": "ask",
-    "default_model": {
-      "model": "claude-sonnet-4.5",
-      "provider": "copilot_chat"
-    }
-  },
   "auto_install_extensions": {
-    // languages
     "dockerfile": true,
     "fish": true,
+    "github-theme": true,
     "html": true,
     "jsonnet": true,
     "kdl": true,
     "make": true,
+    "material-icon-theme": true,
     "nix": true,
     "sql": true,
     "terraform": true,
-    "toml": true,
-
-    // themes
-    "github-theme": true,
-    "material-icon-theme": true
+    "toml": true
   },
   "autosave": {
     "after_delay": {
@@ -65,6 +45,22 @@
   },
   "buffer_font_family": "MonaspiceAr Nerd Font Mono",
   "buffer_font_size": 12,
+  "context_servers": {
+    "serena": {
+      "args": [
+        "--from",
+        "git+https://github.com/oraios/serena",
+        "serena",
+        "start-mcp-server",
+        "--context",
+        "ide-assistant"
+      ],
+      "command": "/opt/homebrew/bin/uvx",
+      "enabled": true,
+      "env": {},
+      "source": "custom"
+    }
+  },
   "diagnostics": {
     "inline": {
       "enabled": true
@@ -81,8 +77,6 @@
   },
   "file_scan_exclusions": [
     "vendor/*",
-
-    // default
     "**/.git",
     "**/.svn",
     "**/.hg",
@@ -93,6 +87,9 @@
     "**/.classpath",
     "**/.settings"
   ],
+  "file_types": {
+    "Ruby": ["iam"]
+  },
   "icon_theme": "Material Icon Theme",
   "inlay_hints": {
     "enabled": true,
@@ -127,9 +124,6 @@
       "enable_language_server": false
     }
   },
-  "file_types": {
-    "Ruby": ["iam"]
-  },
   "relative_line_numbers": true,
   "tab_bar": {
     "show": false
@@ -144,5 +138,6 @@
     "mode": "dark"
   },
   "ui_font_size": 16,
+  "use_system_window_tabs": true,
   "vim_mode": true
 }

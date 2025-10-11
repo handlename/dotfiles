@@ -7,65 +7,62 @@
 // from the command palette.
 [
   {
-    "context": "Editor",
     "bindings": {
-      "ctrl-m": "editor::Newline",
-      "ctrl-t": "workspace::ActivateNextPane",
-      "ctrl-i": "editor::Tab",
-      "cmd-right": "zeta::FocusCompletions",
-
-      // testing
+      "alt-left": "editor::PreviousEditPrediction",
+      "alt-right": "editor::NextEditPrediction",
       "cmd-; c": "editor::SpawnNearestTask",
       "cmd-; l": "task::Rerun",
-
-      // prediction
-      "alt-right": "editor::NextEditPrediction",
-      "alt-left": "editor::PreviousEditPrediction",
-
-      // path & links
-      "cmd-k cmd-shift-r": "workspace::CopyRelativePath",
       "cmd-k cmd-shift-l": "editor::CopyPermalinkToLine",
       "cmd-k cmd-shift-o": "editor::OpenPermalinkToLine",
-
-      // git
+      "cmd-k cmd-shift-r": "workspace::CopyRelativePath",
+      "cmd-k g c": "git::Commit",
       "cmd-k g d": "git::Diff",
-      "cmd-k g c": "git::Commit"
-    }
+      "cmd-right": "zeta::FocusCompletions",
+      "ctrl-i": "editor::Tab",
+      "ctrl-m": "editor::Newline",
+      "ctrl-t": "workspace::ActivateNextPane"
+    },
+    "context": "Editor"
   },
   {
-    "context": "Terminal",
     "bindings": {
       "cmd-k e": "editor::ToggleFocus"
-    }
+    },
+    "context": "Terminal"
   },
   {
-    "context": "Editor && (extension == go)",
     "bindings": {
-      "cmd-; c": ["task::Spawn", { "task_name": "Run Go Test: ${ZED_SYMBOL}" }]
-    }
+      "cmd-; c": [
+        "task::Spawn",
+        {
+          "task_name": "Run Go Test: ${ZED_SYMBOL}"
+        }
+      ]
+    },
+    "context": "Editor && (extension == go)"
   },
   {
-    "context": "Editor && (vim_mode == normal)",
     "bindings": {
-      "f": ["vim::PushSneak", {}],
       "F": ["vim::PushSneakBackward", {}],
+      "ctrl-w g o": "editor::OpenExcerptsSplit",
+      "f": ["vim::PushSneak", {}],
       "g D": "editor::OpenDocs",
-      "g o": "editor::OpenExcerpts",
-      "ctrl-w g o": "editor::OpenExcerptsSplit"
-    }
+      "g o": "editor::OpenExcerpts"
+    },
+    "context": "Editor && (vim_mode == normal)"
   },
   {
-    "context": "Editor && (vim_mode == visual)",
     "bindings": {
-      "S": ["vim::PushAddSurrounds", {}]
-    }
+      "S": "vim::PushAddSurrounds"
+    },
+    "context": "Editor && (vim_mode == visual)"
   },
   {
-    "context": "Editor && (vim_mode == insert)",
     "bindings": {
-      "cmd-a s": "copilot::NextSuggestion",
-      "cmd-a S": "copilot::PreviousSuggestion"
-    }
+      "cmd-a S": "copilot::PreviousSuggestion",
+      "cmd-a s": "copilot::NextSuggestion"
+    },
+    "context": "Editor && (vim_mode == insert)"
   },
   {
     "bindings": {
