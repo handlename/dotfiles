@@ -22,6 +22,7 @@
         ApplePressAndHoldEnabled = false;
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;
+        AppleWindowTabbingMode = "always"; # for Zed "use_system_window_tabs"
         InitialKeyRepeat = 15; # shortest
         KeyRepeat = 2; # fastest
         NSAutomaticCapitalizationEnabled = false;
