@@ -90,6 +90,7 @@
 
     masApps = {
       display-maid = 450063525;
+      flow = 1423210932;
       kindle = 302584613;
       reeder = 6475002485;
       snippety = 1530751461;
