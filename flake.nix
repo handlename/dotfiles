@@ -30,7 +30,7 @@
       };
     in
     {
-      homeConfigurations."myhome" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."current" = home-manager.lib.homeManagerConfiguration {
         pkgs = pkgs;
         modules = [
           ./home.nix
@@ -41,7 +41,7 @@
         };
       };
 
-      homeConfigurations."oldhome" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."old" = home-manager.lib.homeManagerConfiguration {
         pkgs = pkgs;
         modules = [
           ./home.nix
@@ -52,12 +52,28 @@
         };
       };
 
-      darwinConfigurations."macbook" = darwin.lib.darwinSystem {
+      darwinConfigurations."current" = darwin.lib.darwinSystem {
         system = system;
         modules = [
           ./configuration.nix
           ./darwin.nix
         ];
+        specialArgs = {
+          inherit inputs;
+          username = "handlename";
+        };
+      };
+
+      darwinConfigurations."old" = darwin.lib.darwinSystem {
+        system = system;
+        modules = [
+          ./configuration.nix
+          ./darwin.nix
+        ];
+        specialArgs = {
+          inherit inputs;
+          username = "nagata-hiroaki";
+        };
       };
     };
 }

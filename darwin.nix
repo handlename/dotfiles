@@ -1,4 +1,7 @@
-{ ... }:
+{
+  username,
+  ...
+}:
 {
   nix = {
     optimise.automatic = true;
@@ -8,7 +11,7 @@
   };
 
   system = {
-    primaryUser = "handlename";
+    primaryUser = username;
     activationScripts.extraActivation.text = ''
       softwareupdate --install-rosetta --agree-to-license
     '';
