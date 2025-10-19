@@ -31,6 +31,7 @@ with lib;
     ./modules/git
     ./modules/lazygit
     ./modules/mise
+    ./modules/oh-my-posh
     ./modules/ssh
     ./modules/vim
     ./modules/yazi
