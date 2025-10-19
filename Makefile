@@ -1,5 +1,5 @@
-NIX_FLAGS := --extra-experimental-features "nix-command flakes"
-NIX_CMD := nix $(NIX_FLAGS)
+NIX_FLAGS :=
+NIX_CMD := nix --extra-experimental-features "nix-command flakes" $(NIX_FLAGS)
 PROFILE := current
 
 setup:
@@ -27,7 +27,7 @@ switch:
 	$(MAKE) switch/darwin
 
 switch/home: update
-	$(NIX_CMD) run nixpkgs#home-manager -- switch $(NIX_FLAGS) --flake .#$(PROFILE)
+	$(NIX_CMD) run nixpkgs#home-manager -- switch --flake .#$(PROFILE)
 
 switch/darwin: update
 	sudo $(NIX_CMD) run nix-darwin -- switch --flake .#$(PROFILE)
