@@ -90,6 +90,7 @@ with lib;
     pcre
     pkg-config
     pngquant
+    pstree
     readline
     ripgrep
     sleek
