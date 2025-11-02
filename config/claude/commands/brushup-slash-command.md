@@ -15,6 +15,10 @@ allowed-tools: WebFetch(**)
 
 ## 実行規約
 
+### 全般
+
+- ~/.claude/CLAUDE.md と重複する内容は記述しない
+
 ### 構造
 
 定義ファイルの構造を以下に示す。

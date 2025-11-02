@@ -35,3 +35,13 @@ git commit する前には、関連するテストが通過することを確認
 
 GitHub 上のリソース取得には GitHub CLI (`gh`) を用いよ。
 ただし、GitHub 上のリソース変更(Issueの作成/更新、Pull Requestの作成など)は、指示があるまで行ってはならない。
+
+# (MUST) git commit時のGPGサイン
+
+すべてのcommitについて、GPGサインを必須とする。
+`--no-gpg-sign` フラグを用いてGPGサインを無効化してはならない。
+
+# (SHOULD) git コマンドを実行する際は --no-pager フラグを付与する
+
+pager の使用によりコマンドの実行が終了せず、その後の処理に進めなくなってしまう。
+git コマンドには --no-pager フラグを付与し、pager を使わずその出力を確認すること。
