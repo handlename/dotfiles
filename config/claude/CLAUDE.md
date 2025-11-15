@@ -41,6 +41,20 @@ GitHub 上のリソース取得には GitHub CLI (`gh`) を用いよ。
 すべてのcommitについて、GPGサインを必須とする。
 `--no-gpg-sign` フラグを用いてGPGサインを無効化してはならない。
 
+# (MUST) git commit時のco-author設定
+
+すべてのcommitについて、co-autherとしてClaude Codeを追加せよ。
+commitメッセージの末尾に以下のメッセージを追加すればよい。
+
+```
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>
+```
+
+co-autherについては以下のドキュメントを参照せよ。
+https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors
+
 # (SHOULD) git コマンドを実行する際は --no-pager フラグを付与する
 
 pager の使用によりコマンドの実行が終了せず、その後の処理に進めなくなってしまう。
