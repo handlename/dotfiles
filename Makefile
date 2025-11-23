@@ -20,7 +20,7 @@ install/nix-darwin:
 	nix-channel --update
 
 build/home:
-	$(NIX_CMD) run nixpkgs#home-manager -- build --flake .#myhome
+	$(NIX_CMD) run nixpkgs#home-manager -- build --flake .#$(PROFILE)
 
 switch:
 	$(MAKE) switch/home
