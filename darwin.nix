@@ -79,6 +79,7 @@
       "elecom-mouse-util"
       "font-monaspace-nerd-font"
       "font-moralerspace-nf"
+      "golangci-lint"
       "google-chrome"
       "google-japanese-ime"
       "homerow"
