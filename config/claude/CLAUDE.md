@@ -40,6 +40,7 @@ GitHub 上のリソース取得には GitHub CLI (`gh`) を用いよ。
 
 すべてのcommitについて、GPGサインを必須とする。
 `--no-gpg-sign` フラグを用いてGPGサインを無効化してはならない。
+GPGサインが行えない場合は、ユーザーの指示があるまで待機せよ。
 
 # (MUST) git commit時のco-author設定
 
