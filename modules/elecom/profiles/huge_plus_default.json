@@ -1,0 +1,567 @@
+{
+  "application": [],
+  "mouse": {
+    "information": {
+      "pid": 427,
+      "rev": 0,
+      "vid": 1390
+    },
+    "ma_enable": true,
+    "name": "M-HT1MR",
+    "sync": true
+  },
+  "profile": {
+    "item": [
+      {
+        "assign_app": true,
+        "button": {
+          "item": [
+            {
+              "function": {
+                "launch_key_id": "",
+                "macro_key_id": "",
+                "meta": "",
+                "multi_key_id": "",
+                "number": 257,
+                "pointer": {
+                  "hold": 0.5,
+                  "switch": 5
+                },
+                "text_key_id": ""
+              },
+              "name": "Button1"
+            },
+            {
+              "function": {
+                "launch_key_id": "",
+                "macro_key_id": "",
+                "meta": "",
+                "multi_key_id": "",
+                "number": 258,
+                "pointer": {
+                  "hold": 0.5,
+                  "switch": 5
+                },
+                "text_key_id": ""
+              },
+              "name": "Button2"
+            },
+            {
+              "function": {
+                "launch_key_id": "",
+                "macro_key_id": "",
+                "meta": "",
+                "multi_key_id": "",
+                "number": 259,
+                "pointer": {
+                  "hold": 0.5,
+                  "switch": 5
+                },
+                "text_key_id": ""
+              },
+              "name": "Button3"
+            },
+            {
+              "function": {
+                "launch_key_id": "",
+                "macro_key_id": "",
+                "meta": "",
+                "multi_key_id": "",
+                "number": 261,
+                "pointer": {
+                  "hold": 0.5,
+                  "switch": 5
+                },
+                "text_key_id": ""
+              },
+              "name": "Button4"
+            },
+            {
+              "function": {
+                "launch_key_id": "",
+                "macro_key_id": "",
+                "meta": "",
+                "multi_key_id": "",
+                "number": 262,
+                "pointer": {
+                  "hold": 0.5,
+                  "switch": 5
+                },
+                "text_key_id": ""
+              },
+              "name": "Button5"
+            },
+            {
+              "function": {
+                "launch_key_id": "",
+                "macro_key_id": "",
+                "meta": "Press simultaneously",
+                "multi_key_id": "79f818db-5578-43a2-8b9a-971772be23db",
+                "number": 514,
+                "pointer": {
+                  "hold": 0.5,
+                  "switch": 5
+                },
+                "text_key_id": ""
+              },
+              "name": "Button6"
+            },
+            {
+              "function": {
+                "launch_key_id": "",
+                "macro_key_id": "",
+                "meta": "Press simultaneously",
+                "multi_key_id": "41c0c298-561f-40ca-a63f-d99efe9be11a",
+                "number": 514,
+                "pointer": {
+                  "hold": 0.5,
+                  "switch": 5
+                },
+                "text_key_id": ""
+              },
+              "name": "Button7"
+            },
+            {
+              "function": {
+                "launch_key_id": "",
+                "macro_key_id": "",
+                "meta": "Gesture execution",
+                "multi_key_id": "6e5dea7b-7922-4dc9-a650-62dfa967ebf7",
+                "number": 513,
+                "pointer": {
+                  "hold": 0.5,
+                  "switch": 5
+                },
+                "text_key_id": ""
+              },
+              "name": "Button8"
+            },
+            {
+              "function": {
+                "launch_key_id": "",
+                "macro_key_id": "",
+                "meta": "",
+                "multi_key_id": "",
+                "number": 263,
+                "pointer": {
+                  "hold": 0.5,
+                  "switch": 5
+                },
+                "text_key_id": ""
+              },
+              "name": "TiltLeft"
+            },
+            {
+              "function": {
+                "launch_key_id": "",
+                "macro_key_id": "",
+                "meta": "",
+                "multi_key_id": "",
+                "number": 264,
+                "pointer": {
+                  "hold": 0.5,
+                  "switch": 5
+                },
+                "text_key_id": ""
+              },
+              "name": "TiltRight"
+            },
+            {
+              "function": {
+                "launch_key_id": "",
+                "macro_key_id": "",
+                "meta": "Scroll down",
+                "multi_key_id": "",
+                "number": 266,
+                "pointer": {
+                  "hold": 0.5,
+                  "switch": 5
+                },
+                "text_key_id": ""
+              },
+              "name": "WheelUp"
+            },
+            {
+              "function": {
+                "launch_key_id": "",
+                "macro_key_id": "",
+                "meta": "Scroll up",
+                "multi_key_id": "",
+                "number": 265,
+                "pointer": {
+                  "hold": 0.5,
+                  "switch": 5
+                },
+                "text_key_id": ""
+              },
+              "name": "WheelDown"
+            }
+          ]
+        },
+        "gesture": {
+          "item": [
+            {
+              "direction": [
+                "Up",
+                "Down"
+              ],
+              "explain": "⌘+W",
+              "function": {
+                "launch_key_id": "",
+                "macro_key_id": "",
+                "meta": "Press simultaneously",
+                "multi_key_id": "93ee001f-ddc2-4c31-9071-d55e85193af4",
+                "number": 514,
+                "pointer": {
+                  "hold": 0.5,
+                  "switch": 5
+                },
+                "text_key_id": ""
+              },
+              "is_enable": true
+            },
+            {
+              "direction": [
+                "Down"
+              ],
+              "explain": "⌘+R",
+              "function": {
+                "launch_key_id": "",
+                "macro_key_id": "",
+                "meta": "Press simultaneously",
+                "multi_key_id": "3d484c0f-47b9-450b-8583-4c2247edf5c3",
+                "number": 514,
+                "pointer": {
+                  "hold": 0.5,
+                  "switch": 5
+                },
+                "text_key_id": ""
+              },
+              "is_enable": true
+            },
+            {
+              "direction": [
+                "Right"
+              ],
+              "explain": "⌃+.",
+              "function": {
+                "launch_key_id": "",
+                "macro_key_id": "",
+                "meta": "Press simultaneously",
+                "multi_key_id": "0cacf65c-603c-4339-9a8a-15266593c2b5",
+                "number": 514,
+                "pointer": {
+                  "hold": 0.5,
+                  "switch": 5
+                },
+                "text_key_id": ""
+              },
+              "is_enable": true
+            },
+            {
+              "direction": [
+                "Left"
+              ],
+              "explain": "⌃+,",
+              "function": {
+                "launch_key_id": "",
+                "macro_key_id": "",
+                "meta": "Press simultaneously",
+                "multi_key_id": "792242ca-b179-4099-ac76-82941459add2",
+                "number": 514,
+                "pointer": {
+                  "hold": 0.5,
+                  "switch": 5
+                },
+                "text_key_id": ""
+              },
+              "is_enable": true
+            }
+          ],
+          "show_stroke": true
+        },
+        "id": "4d1bc97c-1033-45f0-b252-bd683503a6a5",
+        "macro": {
+          "item": [
+            {
+              "id": "6e5dea7b-7922-4dc9-a650-62dfa967ebf7",
+              "key": [
+                "Down KB_Escape",
+                "Up KB_Escape"
+              ],
+              "type": "Multi"
+            },
+            {
+              "id": "79f818db-5578-43a2-8b9a-971772be23db",
+              "key": [
+                "Down KB_LShift",
+                "Up KB_LShift"
+              ],
+              "type": "Multi"
+            },
+            {
+              "id": "41c0c298-561f-40ca-a63f-d99efe9be11a",
+              "key": [
+                "Down KB_LGUI",
+                "Up KB_LGUI"
+              ],
+              "type": "Multi"
+            },
+            {
+              "id": "93ee001f-ddc2-4c31-9071-d55e85193af4",
+              "key": [
+                "Down KB_LGUI",
+                "Down KB_W",
+                "Up KB_LGUI",
+                "Up KB_W"
+              ],
+              "type": "Multi"
+            },
+            {
+              "id": "3d484c0f-47b9-450b-8583-4c2247edf5c3",
+              "key": [
+                "Down KB_LGUI",
+                "Down KB_R",
+                "Up KB_LGUI",
+                "Up KB_R"
+              ],
+              "type": "Multi"
+            },
+            {
+              "id": "0cacf65c-603c-4339-9a8a-15266593c2b5",
+              "key": [
+                "Down KB_LCtrl",
+                "Down KB_.",
+                "Up KB_LCtrl",
+                "Up KB_."
+              ],
+              "type": "Multi"
+            },
+            {
+              "id": "792242ca-b179-4099-ac76-82941459add2",
+              "key": [
+                "Down KB_LCtrl",
+                "Down KB_,",
+                "Up KB_LCtrl",
+                "Up KB_,"
+              ],
+              "type": "Multi"
+            }
+          ]
+        },
+        "mode": {
+          "hw_device": {
+            "cpi": [
+              500,
+              1000,
+              1500
+            ],
+            "cpi_temp": {
+              "type": "hold",
+              "val": 500
+            }
+          },
+          "sub": {
+            "button": {
+              "item": [
+                {
+                  "function": {
+                    "launch_key_id": "",
+                    "macro_key_id": "",
+                    "meta": "",
+                    "multi_key_id": "",
+                    "number": 257,
+                    "pointer": {
+                      "hold": 0.5,
+                      "switch": 5
+                    },
+                    "text_key_id": ""
+                  },
+                  "name": "Button1"
+                },
+                {
+                  "function": {
+                    "launch_key_id": "",
+                    "macro_key_id": "",
+                    "meta": "",
+                    "multi_key_id": "",
+                    "number": 258,
+                    "pointer": {
+                      "hold": 0.5,
+                      "switch": 5
+                    },
+                    "text_key_id": ""
+                  },
+                  "name": "Button2"
+                },
+                {
+                  "function": {
+                    "launch_key_id": "",
+                    "macro_key_id": "",
+                    "meta": "",
+                    "multi_key_id": "",
+                    "number": 259,
+                    "pointer": {
+                      "hold": 0.5,
+                      "switch": 5
+                    },
+                    "text_key_id": ""
+                  },
+                  "name": "Button3"
+                },
+                {
+                  "function": {
+                    "launch_key_id": "",
+                    "macro_key_id": "",
+                    "meta": "",
+                    "multi_key_id": "",
+                    "number": 261,
+                    "pointer": {
+                      "hold": 0.5,
+                      "switch": 5
+                    },
+                    "text_key_id": ""
+                  },
+                  "name": "Button4"
+                },
+                {
+                  "function": {
+                    "launch_key_id": "",
+                    "macro_key_id": "",
+                    "meta": "",
+                    "multi_key_id": "",
+                    "number": 262,
+                    "pointer": {
+                      "hold": 0.5,
+                      "switch": 5
+                    },
+                    "text_key_id": ""
+                  },
+                  "name": "Button5"
+                },
+                {
+                  "function": {
+                    "launch_key_id": "",
+                    "macro_key_id": "",
+                    "meta": "",
+                    "multi_key_id": "",
+                    "number": 517,
+                    "pointer": {
+                      "hold": 0.5,
+                      "switch": 5
+                    },
+                    "text_key_id": ""
+                  },
+                  "name": "Button6"
+                },
+                {
+                  "function": {
+                    "launch_key_id": "",
+                    "macro_key_id": "",
+                    "meta": "",
+                    "multi_key_id": "",
+                    "number": 517,
+                    "pointer": {
+                      "hold": 0.5,
+                      "switch": 5
+                    },
+                    "text_key_id": ""
+                  },
+                  "name": "Button7"
+                },
+                {
+                  "function": {
+                    "launch_key_id": "",
+                    "macro_key_id": "",
+                    "meta": "",
+                    "multi_key_id": "",
+                    "number": 517,
+                    "pointer": {
+                      "hold": 0.5,
+                      "switch": 5
+                    },
+                    "text_key_id": ""
+                  },
+                  "name": "Button8"
+                },
+                {
+                  "function": {
+                    "launch_key_id": "",
+                    "macro_key_id": "",
+                    "meta": "",
+                    "multi_key_id": "",
+                    "number": 263,
+                    "pointer": {
+                      "hold": 0.5,
+                      "switch": 5
+                    },
+                    "text_key_id": ""
+                  },
+                  "name": "TiltLeft"
+                },
+                {
+                  "function": {
+                    "launch_key_id": "",
+                    "macro_key_id": "",
+                    "meta": "",
+                    "multi_key_id": "",
+                    "number": 264,
+                    "pointer": {
+                      "hold": 0.5,
+                      "switch": 5
+                    },
+                    "text_key_id": ""
+                  },
+                  "name": "TiltRight"
+                },
+                {
+                  "function": {
+                    "launch_key_id": "",
+                    "macro_key_id": "",
+                    "meta": "",
+                    "multi_key_id": "",
+                    "number": 265,
+                    "pointer": {
+                      "hold": 0.5,
+                      "switch": 5
+                    },
+                    "text_key_id": ""
+                  },
+                  "name": "WheelUp"
+                },
+                {
+                  "function": {
+                    "launch_key_id": "",
+                    "macro_key_id": "",
+                    "meta": "",
+                    "multi_key_id": "",
+                    "number": 266,
+                    "pointer": {
+                      "hold": 0.5,
+                      "switch": 5
+                    },
+                    "text_key_id": ""
+                  },
+                  "name": "WheelDown"
+                }
+              ]
+            }
+          }
+        },
+        "name": "Profile",
+        "pointer_speed": 5,
+        "scroll": {
+          "horizontal": 5,
+          "vertical": 8
+        },
+        "type": "default"
+      }
+    ],
+    "select_id": "4d1bc97c-1033-45f0-b252-bd683503a6a5"
+  },
+  "version": {
+    "json": "1.0.0",
+    "ma": "6.1.4",
+    "os": "mac-26.1"
+  }
+}
