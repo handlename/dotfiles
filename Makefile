@@ -26,10 +26,10 @@ switch:
 	$(MAKE) switch/home
 	$(MAKE) switch/darwin
 
-switch/home: update
+switch/home:
 	$(NIX_CMD) run nixpkgs#home-manager -- switch --flake .#$(PROFILE)
 
-switch/darwin: update
+switch/darwin:
 	sudo $(NIX_CMD) run nix-darwin -- switch --flake .#$(PROFILE)
 
 update:
