@@ -71,6 +71,7 @@ with lib;
     ghq
     git-secrets
     glib
+    glow
     goreleaser
     gnupg
     graphviz
