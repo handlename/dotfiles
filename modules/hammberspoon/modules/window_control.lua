@@ -8,7 +8,7 @@ local WIN_SEQUENCE = {
     { from = WIN_SMALL, to = WIN_HALF }
 }
 
-local log = hs.logger.new("init.lua", "debug")
+local log = hs.logger.new("init.lua", "info")
 
 local windowConfigs = {
     {
