@@ -10,6 +10,20 @@ local WIN_SEQUENCE = {
 
 local log = hs.logger.new("init.lua", "info")
 
+-- simple key remap
+
+local keymap = {
+    { from = { mod = "ctrl", key = "'" }, to = { mod = "cmd", key = "`" } },              -- Move focus to next window
+    { from = { mod = "ctrl", key = "," }, to = { mod = { "cmd", "shift" }, key = "[" } }, -- Next tab
+    { from = { mod = "ctrl", key = "." }, to = { mod = { "cmd", "shift" }, key = "]" } }, -- Previous tab
+}
+
+for _, map in ipairs(keymap) do
+    hs.hotkey.bind(map.from.mod, map.from.key, function()
+        hs.eventtap.keyStroke(map.to.mod, map.to.key)
+    end)
+end
+
 local windowConfigs = {
     {
         key = "Right",
