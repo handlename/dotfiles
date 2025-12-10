@@ -24,6 +24,8 @@ for _, map in ipairs(keymap) do
     end)
 end
 
+-- window resize (Right/Left)
+
 local windowConfigs = {
     {
         key = "Right",
