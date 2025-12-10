@@ -36,7 +36,7 @@ local windowConfigs = {
                 x = max.x + (max.w * (1 - state.to)),
                 y = max.y,
                 w = max.w * state.to,
-                h = max.h
+                h = max.h,
             }
         end,
     },
@@ -48,7 +48,7 @@ local windowConfigs = {
         },
         result = function(state, max)
             return {
-                x = 0,
+                x = max.x,
                 y = max.y,
                 w = max.w * state.to,
                 h = max.h,
@@ -66,8 +66,10 @@ local function windowRatio(win)
     local max = windowMaxFrame(win)
     local f = win:frame()
     return {
-        w = f.w / max.w,
         x = (f.x - max.x) / max.w,
+        y = (f.y - max.y) / max.h,
+        w = f.w / max.w,
+        h = f.h / max.h
     }
 end
 
