@@ -10,18 +10,56 @@ local WIN_SEQUENCE = {
 
 local log = hs.logger.new("init.lua", "info")
 
+-- disable animation
+hs.window.animationDuration = 0
+
 -- simple key remap
 
-local keymap = {
+local keyRemaps = {
     { from = { mod = "ctrl", key = "'" }, to = { mod = "cmd", key = "`" } },              -- Move focus to next window
     { from = { mod = "ctrl", key = "," }, to = { mod = { "cmd", "shift" }, key = "[" } }, -- Next tab
     { from = { mod = "ctrl", key = "." }, to = { mod = { "cmd", "shift" }, key = "]" } }, -- Previous tab
 }
 
-for _, map in ipairs(keymap) do
+for _, map in ipairs(keyRemaps) do
     hs.hotkey.bind(map.from.mod, map.from.key, function()
         hs.eventtap.keyStroke(map.to.mod, map.to.key)
     end)
+end
+
+local keyConfigs = {
+    {
+        bind = { mod = { "cmd", "shift", "ctrl" }, key = "Up" },
+        action = function()
+            local win = hs.window.focusedWindow()
+            win:maximize()
+        end
+    },
+    {
+        bind = { mod = { "cmd", "shift", "ctrl" }, key = "Down" },
+        action = function()
+            local win = hs.window.focusedWindow()
+            win:centerOnScreen()
+        end
+    },
+    {
+        bind = { mod = { "shift", "ctrl" }, key = "Right" },
+        action = function()
+            local win = hs.window.focusedWindow()
+            win:moveToScreen(win:screen():next())
+        end
+    },
+    {
+        bind = { mod = { "shift", "ctrl" }, key = "Left" },
+        action = function()
+            local win = hs.window.focusedWindow()
+            win:moveToScreen(win:screen():previous())
+        end
+    },
+}
+
+for _, config in pairs(keyConfigs) do
+    hs.hotkey.bind(config.bind.mod, config.bind.key, config.action)
 end
 
 -- window resize (Right/Left)
@@ -82,10 +120,7 @@ local function updateFrame(win, frame)
     f.y = frame.y
     f.h = frame.h
 
-    local origDuration = hs.window.animationDuration
-    hs.window.animationDuration = 0
     win:setFrame(f)
-    hs.window.animationDuration = origDuration
 end
 
 local function satisfiesAll(state, max, conditions)
