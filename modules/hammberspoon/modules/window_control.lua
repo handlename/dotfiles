@@ -13,6 +13,34 @@ local log = hs.logger.new("init.lua", "info")
 -- disable animation
 hs.window.animationDuration = 0
 
+-- utils
+
+local function windowMaxFrame(win)
+    local screen = win:screen()
+    return screen:frame()
+end
+
+local function windowRatio(win)
+    local max = windowMaxFrame(win)
+    local f = win:frame()
+    return {
+        x = (f.x - max.x) / max.w,
+        y = (f.y - max.y) / max.h,
+        w = f.w / max.w,
+        h = f.h / max.h
+    }
+end
+
+local function updateFrame(win, frame)
+    local f = win:frame()
+    f.x = frame.x
+    f.w = frame.w
+    f.y = frame.y
+    f.h = frame.h
+
+    win:setFrame(f)
+end
+
 -- simple key remap
 
 local keyRemaps = {
@@ -96,32 +124,6 @@ local windowConfigs = {
         end,
     },
 }
-
-local function windowMaxFrame(win)
-    local screen = win:screen()
-    return screen:frame()
-end
-
-local function windowRatio(win)
-    local max = windowMaxFrame(win)
-    local f = win:frame()
-    return {
-        x = (f.x - max.x) / max.w,
-        y = (f.y - max.y) / max.h,
-        w = f.w / max.w,
-        h = f.h / max.h
-    }
-end
-
-local function updateFrame(win, frame)
-    local f = win:frame()
-    f.x = frame.x
-    f.w = frame.w
-    f.y = frame.y
-    f.h = frame.h
-
-    win:setFrame(f)
-end
 
 local function satisfiesAll(state, max, conditions)
     for _, cond in ipairs(conditions) do
