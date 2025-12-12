@@ -84,6 +84,21 @@ local keyConfigs = {
             win:moveToScreen(win:screen():previous())
         end
     },
+    {
+        bind = { mod = { "cmd", "shift", "ctrl" }, key = "f12" },
+        action = function()
+            local win = hs.window.focusedWindow()
+            local max = windowMaxFrame(win)
+            local newW = max.w * 0.8
+            local newH = max.h * 0.8
+            updateFrame(win, {
+                x = max.x + (max.w - newW) / 2,
+                y = max.y + (max.h - newH) / 2,
+                w = newW,
+                h = newH,
+            })
+        end
+    }
 }
 
 for _, config in pairs(keyConfigs) do
