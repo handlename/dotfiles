@@ -93,7 +93,24 @@ git diff --name-status "$BASE_BRANCH...HEAD"
 - 影響範囲を把握
 - Conventional Commits typeを判断
 
-### 3. PRテンプレートの確認と説明文生成
+### 3. 使用言語の決定
+
+PRのタイトルと説明文で使用する言語は、リポジトリの `README.md` で使われている言語に合わせよ。
+
+```bash
+# README.mdの存在確認と内容取得
+README_PATH="README.md"
+test -f "$README_PATH" && echo "exists" || echo "not_found"
+```
+
+**README.md存在時:**
+- `mcp__acp__Read` で内容を読み込み、使用言語を判定
+- 判定した言語をPRタイトル・説明文の記述に適用
+
+**README.md非存在時:**
+- 日本語をデフォルトとして使用
+
+### 4. PRテンプレートの確認と説明文生成
 
 ```bash
 TEMPLATE_PATH=".github/PULL_REQUEST_TEMPLATE.md"
@@ -129,7 +146,7 @@ test -f "$TEMPLATE_PATH" && echo "exists" || echo "not_found"
 [追加の注意事項や依存関係があれば記述]
 ```
 
-### 4. PRタイトルの生成
+### 5. PRタイトルの生成
 
 以下のロジックでタイトルを生成せよ。
 
@@ -146,7 +163,7 @@ test -f "$TEMPLATE_PATH" && echo "exists" || echo "not_found"
 - 50文字以内に収める
 - 末尾にピリオドを付けない
 
-### 5. 作成内容の確認
+### 6. 作成内容の確認
 
 PR作成前に、以下をユーザーに提示し承認を得よ。
 
@@ -170,7 +187,7 @@ Draft PR: [Yes/No]
 
 承認時のみ次ステップへ進め。
 
-### 6. PR作成の実行
+### 7. PR作成の実行
 
 ```bash
 TITLE="[生成したタイトル]"
@@ -188,7 +205,7 @@ gh pr create \
 
 実行結果のURLを変数に保存せよ。
 
-### 7. 作成結果の報告
+### 8. 作成結果の報告
 
 以下の形式で報告せよ。
 
