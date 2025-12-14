@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "colorize_brackets": true,
   "agent": {
     "always_allow_tool_actions": true,
     "default_model": {
@@ -45,22 +46,6 @@
   },
   "buffer_font_family": "MonaspiceAr Nerd Font Mono",
   "buffer_font_size": 12,
-  "context_servers": {
-    "serena": {
-      "args": [
-        "--from",
-        "git+https://github.com/oraios/serena",
-        "serena",
-        "start-mcp-server",
-        "--context",
-        "ide-assistant"
-      ],
-      "command": "/opt/homebrew/bin/uvx",
-      "enabled": true,
-      "env": {},
-      "source": "custom"
-    }
-  },
   "diagnostics": {
     "inline": {
       "enabled": true
@@ -102,6 +87,9 @@
     }
   },
   "languages": {
+    "YAML": {
+      "tab_size": 2
+    },
     "Go": {
       "format_on_save": "on",
       "formatter": {
@@ -124,7 +112,7 @@
       "enable_language_server": false
     }
   },
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "tab_bar": {
     "show": false
   },
@@ -139,5 +127,8 @@
   },
   "ui_font_size": 16,
   "use_system_window_tabs": true,
-  "vim_mode": true
+  "vim_mode": true,
+  "vim": {
+    "use_smartcase_find": true
+  }
 }

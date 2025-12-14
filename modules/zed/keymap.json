@@ -17,7 +17,6 @@
       "cmd-k cmd-shift-r": "workspace::CopyRelativePath",
       "cmd-k g c": "git::Commit",
       "cmd-k g d": "git::Diff",
-      "cmd-right": "zeta::FocusCompletions",
       "ctrl-i": "editor::Tab",
       "ctrl-m": "editor::Newline",
       "ctrl-t": "workspace::ActivateNextPane"
@@ -43,9 +42,7 @@
   },
   {
     "bindings": {
-      "F": ["vim::PushSneakBackward", {}],
       "ctrl-w g o": "editor::OpenExcerptsSplit",
-      "f": ["vim::PushSneak", {}],
       "g D": "editor::OpenDocs",
       "g o": "editor::OpenExcerpts"
     },
@@ -72,6 +69,18 @@
   {
     "bindings": {
       "ctrl-<": "window::ShowPreviousWindowTab"
+    }
+  },
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
+      "s": "vim::PushSneak"
+    }
+  },
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
+      "shift-s": "vim::PushSneakBackward"
     }
   }
 ]
