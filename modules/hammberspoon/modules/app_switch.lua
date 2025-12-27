@@ -1,7 +1,7 @@
 local apps = {
     { key = "G", id = "md.obsidian" },
     { key = "K", id = "com.toggl.daneel" },
-    { key = "L", id = "com.kapeli.dashdoc" },
+    { key = "R", id = "com.kapeli.dashdoc" },
 
     { key = "H", id = "dev.zed.Zed" },
     { key = "T", id = "org.alacritty" },
