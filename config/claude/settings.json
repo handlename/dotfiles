@@ -70,9 +70,7 @@
     "type": "command",
     "command": "npx ccusage@latest statusline"
   },
-  "enabledPlugins": {
-    "example-skills@anthropic-agent-skills": true
-  },
+  "enabledPlugins": {},
   "feedbackSurveyState": {
     "lastShownTime": 1753952965497
   }
