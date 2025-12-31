@@ -2,7 +2,7 @@
   "application": [],
   "mouse": {
     "information": {
-      "pid": 427,
+      "pid": 426,
       "rev": 0,
       "vid": 1390
     },
@@ -65,9 +65,9 @@
               "function": {
                 "launch_key_id": "",
                 "macro_key_id": "",
-                "meta": "",
-                "multi_key_id": "",
-                "number": 261,
+                "meta": "Press simultaneously",
+                "multi_key_id": "9092c33b-1b1e-4491-94e6-5e6914bea266",
+                "number": 514,
                 "pointer": {
                   "hold": 0.5,
                   "switch": 5
@@ -80,9 +80,9 @@
               "function": {
                 "launch_key_id": "",
                 "macro_key_id": "",
-                "meta": "",
-                "multi_key_id": "",
-                "number": 262,
+                "meta": "Press simultaneously",
+                "multi_key_id": "ec969049-cdbe-4e6d-abbd-02cd3cadd87f",
+                "number": 514,
                 "pointer": {
                   "hold": 0.5,
                   "switch": 5
@@ -170,9 +170,9 @@
               "function": {
                 "launch_key_id": "",
                 "macro_key_id": "",
-                "meta": "Scroll down",
+                "meta": "Scroll up",
                 "multi_key_id": "",
-                "number": 266,
+                "number": 265,
                 "pointer": {
                   "hold": 0.5,
                   "switch": 5
@@ -185,9 +185,9 @@
               "function": {
                 "launch_key_id": "",
                 "macro_key_id": "",
-                "meta": "Scroll up",
+                "meta": "Scroll down",
                 "multi_key_id": "",
-                "number": 265,
+                "number": 266,
                 "pointer": {
                   "hold": 0.5,
                   "switch": 5
@@ -201,10 +201,7 @@
         "gesture": {
           "item": [
             {
-              "direction": [
-                "Up",
-                "Down"
-              ],
+              "direction": ["Up", "Down"],
               "explain": "⌘+W",
               "function": {
                 "launch_key_id": "",
@@ -221,9 +218,7 @@
               "is_enable": true
             },
             {
-              "direction": [
-                "Down"
-              ],
+              "direction": ["Down"],
               "explain": "⌘+R",
               "function": {
                 "launch_key_id": "",
@@ -240,9 +235,7 @@
               "is_enable": true
             },
             {
-              "direction": [
-                "Right"
-              ],
+              "direction": ["Right"],
               "explain": "⌃+.",
               "function": {
                 "launch_key_id": "",
@@ -259,9 +252,7 @@
               "is_enable": true
             },
             {
-              "direction": [
-                "Left"
-              ],
+              "direction": ["Left"],
               "explain": "⌃+,",
               "function": {
                 "launch_key_id": "",
@@ -285,65 +276,56 @@
           "item": [
             {
               "id": "6e5dea7b-7922-4dc9-a650-62dfa967ebf7",
-              "key": [
-                "Down KB_Escape",
-                "Up KB_Escape"
-              ],
+              "key": ["Down KB_Escape", "Up KB_Escape"],
               "type": "Multi"
             },
             {
               "id": "79f818db-5578-43a2-8b9a-971772be23db",
-              "key": [
-                "Down KB_LShift",
-                "Up KB_LShift"
-              ],
+              "key": ["Down KB_LShift", "Up KB_LShift"],
               "type": "Multi"
             },
             {
               "id": "41c0c298-561f-40ca-a63f-d99efe9be11a",
-              "key": [
-                "Down KB_LGUI",
-                "Up KB_LGUI"
-              ],
+              "key": ["Down KB_LGUI", "Up KB_LGUI"],
               "type": "Multi"
             },
             {
               "id": "93ee001f-ddc2-4c31-9071-d55e85193af4",
-              "key": [
-                "Down KB_LGUI",
-                "Down KB_W",
-                "Up KB_LGUI",
-                "Up KB_W"
-              ],
+              "key": ["Down KB_LGUI", "Down KB_W", "Up KB_LGUI", "Up KB_W"],
               "type": "Multi"
             },
             {
               "id": "3d484c0f-47b9-450b-8583-4c2247edf5c3",
-              "key": [
-                "Down KB_LGUI",
-                "Down KB_R",
-                "Up KB_LGUI",
-                "Up KB_R"
-              ],
+              "key": ["Down KB_LGUI", "Down KB_R", "Up KB_LGUI", "Up KB_R"],
               "type": "Multi"
             },
             {
               "id": "0cacf65c-603c-4339-9a8a-15266593c2b5",
-              "key": [
-                "Down KB_LCtrl",
-                "Down KB_.",
-                "Up KB_LCtrl",
-                "Up KB_."
-              ],
+              "key": ["Down KB_LCtrl", "Down KB_.", "Up KB_LCtrl", "Up KB_."],
               "type": "Multi"
             },
             {
               "id": "792242ca-b179-4099-ac76-82941459add2",
+              "key": ["Down KB_LCtrl", "Down KB_,", "Up KB_LCtrl", "Up KB_,"],
+              "type": "Multi"
+            },
+            {
+              "id": "ec969049-cdbe-4e6d-abbd-02cd3cadd87f",
               "key": [
-                "Down KB_LCtrl",
-                "Down KB_,",
-                "Up KB_LCtrl",
-                "Up KB_,"
+                "Down KB_LGUI",
+                "Down KB_Right",
+                "Up KB_LGUI",
+                "Up KB_Right"
+              ],
+              "type": "Multi"
+            },
+            {
+              "id": "9092c33b-1b1e-4491-94e6-5e6914bea266",
+              "key": [
+                "Down KB_LGUI",
+                "Down KB_Left",
+                "Up KB_LGUI",
+                "Up KB_Left"
               ],
               "type": "Multi"
             }
@@ -351,11 +333,7 @@
         },
         "mode": {
           "hw_device": {
-            "cpi": [
-              500,
-              1000,
-              1500
-            ],
+            "cpi": [500, 1000, 1500],
             "cpi_temp": {
               "type": "hold",
               "val": 500
