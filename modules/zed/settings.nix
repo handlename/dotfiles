@@ -1,0 +1,126 @@
+{
+  colorize_brackets = true;
+  agent = {
+    always_allow_tool_actions = true;
+    default_model = {
+      model = "claude-sonnet-4.5";
+      provider = "copilot_chat";
+    };
+    default_profile = "ask";
+    inline_assistant_model = {
+      model = "claude-sonnet-4.5";
+      provider = "copilot_chat";
+    };
+  };
+  agent_servers = {
+    claude = {
+      default_mode = "bypassPermissions";
+    };
+  };
+  auto_install_extensions = {
+    dockerfile = true;
+    fish = true;
+    github-theme = true;
+    html = true;
+    jsonnet = true;
+    kdl = true;
+    make = true;
+    material-icon-theme = true;
+    nix = true;
+    sql = true;
+    terraform = true;
+    toml = true;
+  };
+  autosave = {
+    after_delay = {
+      milliseconds = 1000;
+    };
+  };
+  buffer_font_family = "MonaspiceAr Nerd Font Mono";
+  buffer_font_size = 12;
+  diagnostics = {
+    inline = {
+      enabled = true;
+    };
+  };
+  edit_predictions = {
+    mode = "eager";
+  };
+  "experimental.theme_overrides" = {
+    "terminal.background" = "#16160e";
+  };
+  features = {
+    edit_prediction_provider = "zed";
+  };
+  file_scan_exclusions = [
+    "vendor/*"
+    "**/.git"
+    "**/.svn"
+    "**/.hg"
+    "**/.jj"
+    "**/CVS"
+    "**/.DS_Store"
+    "**/Thumbs.db"
+    "**/.classpath"
+    "**/.settings"
+  ];
+  file_types = {
+    Ruby = ["iam"];
+  };
+  icon_theme = "Material Icon Theme";
+  inlay_hints = {
+    enabled = true;
+    show_other_hints = true;
+    show_parameter_hints = true;
+    show_type_hints = true;
+    toggle_on_modifiers_press = {
+      control = true;
+      shift = true;
+    };
+  };
+  languages = {
+    YAML = {
+      tab_size = 2;
+    };
+    Go = {
+      format_on_save = "on";
+      formatter = {
+        external = {
+          arguments = [];
+          command = "goimports";
+        };
+      };
+    };
+    HTML = {
+      format_on_save = "off";
+    };
+    Nix = {
+      language_servers = ["nixd" "!nil"];
+    };
+    Perl = {
+      enable_language_server = false;
+    };
+    Ruby = {
+      enable_language_server = false;
+    };
+  };
+  relative_line_numbers = "enabled";
+  tab_bar = {
+    show = false;
+  };
+  telemetry = {
+    diagnostics = false;
+    metrics = false;
+  };
+  theme = {
+    dark = "Github Dark Dimmed";
+    light = "Github Light";
+    mode = "dark";
+  };
+  ui_font_size = 16;
+  use_system_window_tabs = true;
+  vim_mode = true;
+  vim = {
+    use_smartcase_find = true;
+  };
+}

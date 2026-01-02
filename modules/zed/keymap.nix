@@ -1,0 +1,79 @@
+[
+  {
+    bindings = {
+      "alt-left" = "editor::PreviousEditPrediction";
+      "alt-right" = "editor::NextEditPrediction";
+      "cmd-; c" = "editor::SpawnNearestTask";
+      "cmd-; l" = "task::Rerun";
+      "cmd-k cmd-shift-l" = "editor::CopyPermalinkToLine";
+      "cmd-k cmd-shift-o" = "editor::OpenPermalinkToLine";
+      "cmd-k cmd-shift-r" = "workspace::CopyRelativePath";
+      "cmd-k g c" = "git::Commit";
+      "cmd-k g d" = "git::Diff";
+      "ctrl-i" = "editor::Tab";
+      "ctrl-m" = "editor::Newline";
+      "ctrl-t" = "workspace::ActivateNextPane";
+    };
+    context = "Editor";
+  }
+  {
+    bindings = {
+      "cmd-k e" = "editor::ToggleFocus";
+    };
+    context = "Terminal";
+  }
+  {
+    bindings = {
+      "cmd-; c" = [
+        "task::Spawn"
+        {
+          task_name = "Run Go Test: \${ZED_SYMBOL}";
+        }
+      ];
+    };
+    context = "Editor && (extension == go)";
+  }
+  {
+    bindings = {
+      "ctrl-w g o" = "editor::OpenExcerptsSplit";
+      "g D" = "editor::OpenDocs";
+      "g o" = "editor::OpenExcerpts";
+    };
+    context = "Editor && (vim_mode == normal)";
+  }
+  {
+    bindings = {
+      "S" = "vim::PushAddSurrounds";
+    };
+    context = "Editor && (vim_mode == visual)";
+  }
+  {
+    bindings = {
+      "cmd-a S" = "copilot::PreviousSuggestion";
+      "cmd-a s" = "copilot::NextSuggestion";
+    };
+    context = "Editor && (vim_mode == insert)";
+  }
+  {
+    bindings = {
+      "ctrl->" = "window::ShowNextWindowTab";
+    };
+  }
+  {
+    bindings = {
+      "ctrl-<" = "window::ShowPreviousWindowTab";
+    };
+  }
+  {
+    context = "vim_mode == normal";
+    bindings = {
+      "s" = "vim::PushSneak";
+    };
+  }
+  {
+    context = "vim_mode == normal";
+    bindings = {
+      "shift-s" = "vim::PushSneakBackward";
+    };
+  }
+]
