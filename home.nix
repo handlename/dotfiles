@@ -37,7 +37,7 @@ with lib;
     ./modules/vim
     ./modules/yazi
     ./modules/zellij
-    # ./modules/zed # Commented out because the configuration for Zed is still being adjusted
+    ./modules/zed
   ];
 
   # The home.packages option allows you to install Nix packages into your
