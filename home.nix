@@ -74,9 +74,9 @@ with lib;
     git-secrets
     glib
     glow
+    gnupg
     golangci-lint
     goreleaser
-    gnupg
     graphviz
     imagemagick
     inetutils
