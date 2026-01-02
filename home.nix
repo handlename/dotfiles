@@ -66,12 +66,15 @@ with lib;
     colima
     docker
     fastfetch
+    ffmpeg
     fzf
     gh
     ghq
+    gibo
     git-secrets
     glib
     glow
+    golangci-lint
     goreleaser
     gnupg
     graphviz
@@ -89,6 +92,7 @@ with lib;
     nixfmt-rfc-style
     openssl
     pcre
+    pinact
     pkg-config
     pngquant
     pstree
