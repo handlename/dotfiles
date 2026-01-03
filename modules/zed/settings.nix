@@ -1,5 +1,69 @@
 {
+  # appearance
+
+  buffer_font_family = "MonaspiceAr Nerd Font Mono";
+  buffer_font_size = 12;
   colorize_brackets = true;
+  "experimental.theme_overrides" = {
+    "terminal.background" = "#16160e";
+  };
+  icon_theme = "Material Icon Theme";
+  tab_bar = {
+    show = false;
+  };
+  theme = {
+    dark = "Github Dark Dimmed";
+    light = "Github Light";
+    mode = "dark";
+  };
+  ui_font_size = 16;
+  use_system_window_tabs = true; # for open projects in single window
+
+  # editor
+
+  autosave = {
+    after_delay = {
+      milliseconds = 1000;
+    };
+  };
+  diagnostics = {
+    inline = {
+      enabled = true;
+    };
+  };
+  file_scan_exclusions = [
+    "vendor/*"
+    "**/.git"
+    "**/.svn"
+    "**/.hg"
+    "**/.jj"
+    "**/CVS"
+    "**/.DS_Store"
+    "**/Thumbs.db"
+    "**/.classpath"
+    "**/.settings"
+  ];
+  file_types = {
+    Ruby = ["iam"];
+  };
+  inlay_hints = {
+    enabled = true;
+    show_other_hints = true;
+    show_parameter_hints = true;
+    show_type_hints = true;
+    toggle_on_modifiers_press = {
+      control = true;
+      shift = true;
+    };
+  };
+  relative_line_numbers = "enabled";
+  vim_mode = true;
+  vim = {
+    use_smartcase_find = true;
+  };
+
+  # ai
+
   agent = {
     always_allow_tool_actions = true;
     default_model = {
@@ -17,71 +81,16 @@
       default_mode = "bypassPermissions";
     };
   };
-  auto_install_extensions = {
-    dockerfile = true;
-    fish = true;
-    github-theme = true;
-    html = true;
-    jsonnet = true;
-    kdl = true;
-    make = true;
-    material-icon-theme = true;
-    nix = true;
-    sql = true;
-    terraform = true;
-    toml = true;
-  };
-  autosave = {
-    after_delay = {
-      milliseconds = 1000;
-    };
-  };
-  buffer_font_family = "MonaspiceAr Nerd Font Mono";
-  buffer_font_size = 12;
-  diagnostics = {
-    inline = {
-      enabled = true;
-    };
-  };
   edit_predictions = {
     mode = "eager";
-  };
-  "experimental.theme_overrides" = {
-    "terminal.background" = "#16160e";
   };
   features = {
     edit_prediction_provider = "zed";
   };
-  file_scan_exclusions = [
-    "vendor/*"
-    "**/.git"
-    "**/.svn"
-    "**/.hg"
-    "**/.jj"
-    "**/CVS"
-    "**/.DS_Store"
-    "**/Thumbs.db"
-    "**/.classpath"
-    "**/.settings"
-  ];
-  file_types = {
-    Ruby = ["iam"];
-  };
-  icon_theme = "Material Icon Theme";
-  inlay_hints = {
-    enabled = true;
-    show_other_hints = true;
-    show_parameter_hints = true;
-    show_type_hints = true;
-    toggle_on_modifiers_press = {
-      control = true;
-      shift = true;
-    };
-  };
+
+  # languages
+
   languages = {
-    YAML = {
-      tab_size = 2;
-    };
     Go = {
       format_on_save = "on";
       formatter = {
@@ -103,24 +112,32 @@
     Ruby = {
       enable_language_server = false;
     };
+    YAML = {
+      tab_size = 2;
+    };
   };
-  relative_line_numbers = "enabled";
-  tab_bar = {
-    show = false;
+
+  # extensions
+
+  auto_install_extensions = {
+    dockerfile = true;
+    fish = true;
+    github-theme = true;
+    html = true;
+    jsonnet = true;
+    kdl = true;
+    make = true;
+    material-icon-theme = true;
+    nix = true;
+    sql = true;
+    terraform = true;
+    toml = true;
   };
+
+  # others
+
   telemetry = {
     diagnostics = false;
     metrics = false;
-  };
-  theme = {
-    dark = "Github Dark Dimmed";
-    light = "Github Light";
-    mode = "dark";
-  };
-  ui_font_size = 16;
-  use_system_window_tabs = true;
-  vim_mode = true;
-  vim = {
-    use_smartcase_find = true;
   };
 }
