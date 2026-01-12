@@ -72,6 +72,12 @@
           task_name = "Run Go Test: \${ZED_SYMBOL}";
         }
       ];
+      "cmd-; f" = [
+        "task::Spawn"
+        {
+          task_name = "Run Go Tests in file: \${ZED_RELATIVE_FILENAME}";
+        }
+      ];
     };
   }
 ]

@@ -4,6 +4,10 @@
     "command": "gotestsum --format testname -- ${ZED_DIRNAME} -run ${ZED_SYMBOL}",
   },
   {
+    "label": "Run Go Tests in file: ${ZED_RELATIVE_FILENAME}",
+    "command": "gotestsum --format testname -- ${ZED_DIRNAME} -run (cat ${ZED_FILENAME} | rg '^func Test' | perl -nlE 'push @a, $1 while /(Test[^(]+)/g; END { say join \"|\", @a }')",
+  },
+  {
     "label": "Run Cargo test (--nocapture): ${ZED_SYMBOL}",
     "command": "cargo test ${ZED_SYMBOL} -- --nocapture",
   },
