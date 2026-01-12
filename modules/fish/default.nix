@@ -51,7 +51,7 @@
 
   programs.fish.shellInit = ''
     if test -d /opt/homebrew
-      eval "$(/opt/homebrew/bin/brew shellenv)"
+      eval "$(/opt/homebrew/bin/brew shellenv fish)"
     end
   '';
 
