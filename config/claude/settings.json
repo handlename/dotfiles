@@ -53,6 +53,18 @@
       "Bash(rm -rf:*)"
     ],
     "hooks": {
+      "PreToolUse": [
+        {
+          "matcher": "Bash",
+          "hooks": [
+            {
+              "type": "confirm",
+              "message": "git push を実行しようとしています。続行しますか？",
+              "condition": "command.includes('git push') || command.includes('git') && command.includes('push')"
+            }
+          ]
+        }
+      ],
       "PostToolUse": [
         {
           "matcher": "Write|Edit|MultiEdit",
