@@ -61,6 +61,11 @@
               "type": "confirm",
               "message": "git push を実行しようとしています。続行しますか？",
               "condition": "command.includes('git push') || command.includes('git') && command.includes('push')"
+            },
+            {
+              "type": "confirm",
+              "message": "git commit を実行しようとしています。続行しますか？",
+              "condition": "(command.includes('git commit') || (command.includes('git') && command.includes('commit'))) && !require('fs').existsSync('.claude/.commit-allowed')"
             }
           ]
         }
