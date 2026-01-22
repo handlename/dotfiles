@@ -51,10 +51,9 @@ git commit にはユーザーの許可を必須とする。
 git commit する前には、関連するテストが通過することを確認しなければならない。
 関連するテストはタスクと同時に与えられる場合もあるが、関連すると判断したテストは追加で通過の確認を行うこと。
 
-# (MAY) GitHub CLI を用いた GitHub 上リソースの取得
+# (MAY) GitHub CLI を用いた GitHub 上リソースへのアクセス
 
-GitHub 上のリソース取得には GitHub CLI (`gh`) を用いよ。
-ただし、GitHub 上のリソース変更(Issueの作成/更新、Pull Requestの作成など)は、指示があるまで行ってはならない。
+`github-resource-access` skill に従え。
 
 # (MUST) git commit時のGPGサイン
 

@@ -71,6 +71,6 @@ argument-hint: <GitHub Issue URL>
 - Issue内で言及されたファイルパスは必ず実在を確認せよ
 - 必要なlint/typecheckコマンドが不明な場合はMakefile、package.jsonなどから探索せよ
 - 大規模な変更はMultiEditツールで一括実行せよ
-- GitHubリソースの変更(コメント追加、ステータス更新等)は指示があるまで行うな
+- GitHubリソースへのアクセスは `github-resource-access` skill に従え
 - タスクを実行するにあたり、その円滑な進行を妨げる点がある場合は、その旨をユーザーに報告し、追加の情報を求めよ
 - 不具合解決を旨とするIssueの場合、状況を確認するための一時的なログ出力処理の追加を積極的に利用せよ
