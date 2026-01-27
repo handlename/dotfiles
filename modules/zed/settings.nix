@@ -12,8 +12,8 @@
     show = false;
   };
   theme = {
-    dark = "Github Dark Dimmed";
-    light = "Github Light";
+    dark = "GitHub Dark Dimmed";
+    light = "GitHub Light";
     mode = "dark";
   };
   ui_font_size = 16;
