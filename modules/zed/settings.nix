@@ -44,7 +44,7 @@
     "**/.settings"
   ];
   file_types = {
-    Ruby = ["iam"];
+    Ruby = [ "iam" ];
   };
   inlay_hints = {
     enabled = true;
@@ -98,7 +98,7 @@
       format_on_save = "on";
       formatter = {
         external = {
-          arguments = [];
+          arguments = [ ];
           command = "goimports";
         };
       };
@@ -107,7 +107,10 @@
       format_on_save = "off";
     };
     Nix = {
-      language_servers = ["nixd" "!nil"];
+      language_servers = [
+        "nixd"
+        "!nil"
+      ];
     };
     Perl = {
       enable_language_server = false;
