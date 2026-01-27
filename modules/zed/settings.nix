@@ -61,6 +61,9 @@
   vim = {
     use_smartcase_find = true;
   };
+  which_key = {
+    enabled = true;
+  };
 
   # ai
 
