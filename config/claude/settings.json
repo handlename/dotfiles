@@ -47,11 +47,7 @@
       "mcp__context7__get-library-docs",
       "mcp__context7__resolve-library-id"
     ],
-    "deny": [
-      "Bash(git push:*)",
-      "Bash(sudo:*)",
-      "Bash(rm -rf:*)"
-    ],
+    "deny": ["Bash(git push:*)", "Bash(sudo:*)", "Bash(rm -rf:*)"],
     "hooks": {
       "PreToolUse": [
         {
