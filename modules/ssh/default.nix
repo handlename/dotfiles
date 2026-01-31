@@ -14,10 +14,11 @@ in
 {
   programs.ssh = {
     enable = true;
-    forwardAgent = true;
+    enableDefaultConfig = false;
 
     matchBlocks = {
       "*" = {
+        forwardAgent = true;
         extraOptions = {
           IdentityAgent = ''"~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"'';
         };

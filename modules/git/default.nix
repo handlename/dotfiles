@@ -8,59 +8,54 @@
   programs.git = {
     enable = true;
 
-    userName = "NAGATA Hiroaki";
-    userEmail = "nagata@handlena.me";
+    settings = {
+      user = {
+        name = "NAGATA Hiroaki";
+        email = "nagata@handlena.me";
+      };
 
-    aliases = {
-      # add
-      a = "add";
-      aa = "add -A :/";
-      au = "add -u :/";
+      alias = {
+        # add
+        a = "add";
+        aa = "add -A :/";
+        au = "add -u :/";
 
-      # commit
-      ca = "commit --amend";
-      cm = "commit -m";
+        # commit
+        ca = "commit --amend";
+        cm = "commit -m";
 
-      # checkout
-      co = "checkout";
+        # checkout
+        co = "checkout";
 
-      # diff
-      d = "diff";
-      dc = "diff --cached";
+        # diff
+        d = "diff";
+        dc = "diff --cached";
 
-      # log
-      l = "log";
-      lo = "log --oneline";
-      ls = "log --stat";
+        # log
+        l = "log";
+        lo = "log --oneline";
+        ls = "log --stat";
 
-      patch = "diff --no-prefix";
-      pl = "pull";
-      pr = "pull-request";
+        patch = "diff --no-prefix";
+        pl = "pull";
+        pr = "pull-request";
 
-      # stash
-      sl = "stash list";
-      sp = "stash pop";
-      ss = "stash save";
+        # stash
+        sl = "stash list";
+        sp = "stash pop";
+        ss = "stash save";
 
-      # status
-      st = "status";
+        # status
+        st = "status";
 
-      # switch
-      sw = "switch";
+        # switch
+        sw = "switch";
 
-      # shorthand
-      clear = "!sh -c 'git reset HEAD && git checkout :/ && git clean -df'";
-      find = "!git ls-files | grep -i";
-      sync = "fetch --prune origin";
-    };
-
-    ignores = [
-      "*.local"
-      "*.local.md"
-      ".mise.local.toml"
-    ];
-
-    extraConfig = {
+        # shorthand
+        clear = "!sh -c 'git reset HEAD && git checkout :/ && git clean -df'";
+        find = "!git ls-files | grep -i";
+        sync = "fetch --prune origin";
+      };
       core = {
         editor = "vim";
         ignorecase = "false";
@@ -115,6 +110,12 @@
       };
     };
 
+    ignores = [
+      "*.local"
+      "*.local.md"
+      ".mise.local.toml"
+    ];
+
     includes =
       if pkgs.stdenv.isDarwin then
         [
@@ -138,6 +139,10 @@
       else
         [ ];
 
-    diff-highlight.enable = true;
+  };
+
+  programs.diff-highlight = {
+    enable = true;
+    enableGitIntegration = true;
   };
 }
