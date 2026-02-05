@@ -15,6 +15,7 @@ in
       env = {
         _.path = [
           "${config.home.homeDirectory}/bin"
+          "${config.home.homeDirectory}/.local/bin"
         ];
         SHELL = "${config.home.homeDirectory}/.nix-profile/bin/fish";
         EDITOR = "vim";
