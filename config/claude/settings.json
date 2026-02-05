@@ -47,7 +47,11 @@
       "mcp__context7__get-library-docs",
       "mcp__context7__resolve-library-id"
     ],
-    "deny": ["Bash(git push:*)", "Bash(sudo:*)", "Bash(rm -rf:*)"],
+    "deny": [
+      "Bash(git push:*)",
+      "Bash(sudo:*)",
+      "Bash(rm -rf:*)"
+    ],
     "hooks": {
       "PreToolUse": [
         {
@@ -83,7 +87,11 @@
     "type": "command",
     "command": "npx ccusage@latest statusline"
   },
-  "enabledPlugins": {},
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true,
+    "serena@claude-plugins-official": true,
+    "context7@claude-plugins-official": true
+  },
   "feedbackSurveyState": {
     "lastShownTime": 1753952965497
   }
