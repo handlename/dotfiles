@@ -114,6 +114,7 @@
       "*.local"
       "*.local.md"
       ".mise.local.toml"
+      ".DS_Store"
     ];
 
     includes =
