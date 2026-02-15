@@ -65,6 +65,18 @@
     enabled = true;
   };
 
+  # terminal
+
+  terminal = {
+    shell = {
+      program = "/Users/handlename/.nix-profile/bin/fish";
+    };
+    font_family = "Moralerspace Argon NF";
+    font_size = 12;
+    dock = "left";
+    default_width = 1100;
+  };
+
   # ai
 
   agent = {

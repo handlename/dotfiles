@@ -3,6 +3,8 @@
     bindings = {
       "ctrl->" = "window::ShowNextWindowTab";
       "ctrl-<" = "window::ShowPreviousWindowTab";
+      "cmd-shift-t" = "terminal_panel::Toggle";
+      "cmd-shift-n" = "editor::ToggleFocus";
     };
   }
   {
@@ -26,12 +28,6 @@
       # edit prediction
       "alt-left" = "editor::PreviousEditPrediction";
       "alt-right" = "editor::NextEditPrediction";
-    };
-  }
-  {
-    context = "Terminal";
-    bindings = {
-      "cmd-k e" = "editor::ToggleFocus";
     };
   }
 
