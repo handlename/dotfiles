@@ -106,9 +106,6 @@
   edit_predictions = {
     mode = "eager";
   };
-  features = {
-    edit_prediction_provider = "zed";
-  };
 
   # languages
 
