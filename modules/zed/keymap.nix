@@ -1,22 +1,17 @@
 [
   {
+    context = "Workspace";
     bindings = {
       "ctrl->" = "window::ShowNextWindowTab";
       "ctrl-<" = "window::ShowPreviousWindowTab";
+      "cmd-t cmd-h" = "terminal_panel::ToggleFocus";
+      "cmd-t cmd-t" = "editor::ToggleFocus";
+      "cmd-t cmd-n" = "agent::ToggleFocus";
     };
   }
-  {
-    context = "!Terminal";
-    bindings = {
-      "cmd-shift-t" = "terminal_panel::ToggleFocus";
-    };
-  }
-  {
-    context = "!Editor";
-    bindings = {
-      "cmd-shift-n" = "editor::ToggleFocus";
-    };
-  }
+
+  # editor
+
   {
     context = "Editor";
     bindings = {
