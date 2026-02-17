@@ -3,7 +3,17 @@
     bindings = {
       "ctrl->" = "window::ShowNextWindowTab";
       "ctrl-<" = "window::ShowPreviousWindowTab";
-      "cmd-shift-t" = "terminal_panel::Toggle";
+    };
+  }
+  {
+    context = "!Terminal";
+    bindings = {
+      "cmd-shift-t" = "terminal_panel::ToggleFocus";
+    };
+  }
+  {
+    context = "!Editor";
+    bindings = {
       "cmd-shift-n" = "editor::ToggleFocus";
     };
   }

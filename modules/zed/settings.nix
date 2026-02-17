@@ -1,6 +1,10 @@
 {
   # appearance
 
+  active_pane_modifiers = {
+    border_size = 1.0;
+    inactive_opacity = 0.5;
+  };
   buffer_font_family = "MonaspiceAr Nerd Font Mono";
   buffer_font_size = 12;
   colorize_brackets = true;
@@ -74,7 +78,7 @@
     font_family = "Moralerspace Argon NF";
     font_size = 12;
     dock = "left";
-    default_width = 1100;
+    default_width = 1000;
   };
 
   # ai
@@ -95,6 +99,9 @@
     claude = {
       default_mode = "bypassPermissions";
     };
+  };
+  collaboration_panel = {
+    default_width = 1000;
   };
   edit_predictions = {
     mode = "eager";
