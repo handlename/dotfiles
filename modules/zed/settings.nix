@@ -79,6 +79,9 @@
     font_size = 12;
     dock = "left";
     default_width = 1000;
+    line_height = {
+      custom = 1.21;
+    };
   };
 
   # ai
