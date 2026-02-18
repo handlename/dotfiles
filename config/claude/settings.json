@@ -55,7 +55,7 @@
     "hooks": {
       "PreToolUse": [
         {
-          "matcher": "Bash",
+          "matcher": "Bash|mcp__acp__Bash|mcp__plugin_serena_serena__execute_shell_command",
           "hooks": [
             {
               "type": "confirm",
