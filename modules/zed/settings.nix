@@ -103,12 +103,16 @@
       default_mode = "bypassPermissions";
     };
   };
-  collaboration_panel = {
-    default_width = 1000;
-  };
   edit_predictions = {
     mode = "eager";
   };
+
+  # other panels
+
+  collaboration_panel.default_width = 1000;
+  git_panel.default_width = 1000;
+  outline_panel.default_width = 1000;
+  project_panel.default_width = 1000;
 
   # languages
 
