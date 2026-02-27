@@ -91,6 +91,7 @@ with lib;
     nixd
     nixfmt-rfc-style
     openssl
+    patchutils # for filterdiff
     pcre
     pinact
     pkg-config
