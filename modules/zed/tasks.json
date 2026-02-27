@@ -1,11 +1,11 @@
 [
   {
     "label": "Run Go Test: ${ZED_SYMBOL}",
-    "command": "gotestsum --format testname -- ${ZED_DIRNAME} -run ${ZED_SYMBOL}",
+    "command": "gotestsum --format testname -- ${ZED_DIRNAME} -run ${ZED_SYMBOL} -count=1 -failfast",
   },
   {
     "label": "Run Go Tests in file: ${ZED_RELATIVE_FILE}",
-    "command": "gotestsum --format testname -- ${ZED_DIRNAME} -run (cat ${ZED_FILENAME} | rg '^func Test' | perl -nlE 'push @a, $1 while /(Test[^(]+)/g; END { say join \"|\", @a }')",
+    "command": "gotestsum --format testname -- ${ZED_DIRNAME} -run (cat ${ZED_FILENAME} | rg '^func Test' | perl -nlE 'push @a, $1 while /(Test[^(]+)/g; END { say join \"|\", @a }') -count=1 -failfast",
   },
   {
     "label": "Run Cargo test (--nocapture): ${ZED_SYMBOL}",
