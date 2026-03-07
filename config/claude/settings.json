@@ -72,6 +72,41 @@
               "type": "confirm",
               "message": "git commit を実行しようとしています。続行しますか？",
               "condition": "(command.includes('git commit') || (command.includes('git') && command.includes('commit'))) && !require('fs').existsSync('.claude/.commit-allowed')"
+            },
+            {
+              "type": "confirm",
+              "message": ".commit-allowed ファイルを操作しようとしています。続行しますか？",
+              "condition": "command.includes('.commit-allowed')"
+            }
+          ]
+        },
+        {
+          "matcher": "Write",
+          "hooks": [
+            {
+              "type": "confirm",
+              "message": ".commit-allowed ファイルを操作しようとしています。続行しますか？",
+              "condition": "file_path && file_path.includes('.commit-allowed')"
+            }
+          ]
+        },
+        {
+          "matcher": "Edit|MultiEdit",
+          "hooks": [
+            {
+              "type": "confirm",
+              "message": ".commit-allowed ファイルを操作しようとしています。続行しますか？",
+              "condition": "file_path && file_path.includes('.commit-allowed')"
+            }
+          ]
+        },
+        {
+          "matcher": "mcp__plugin_serena_serena__create_text_file",
+          "hooks": [
+            {
+              "type": "confirm",
+              "message": ".commit-allowed ファイルを操作しようとしています。続行しますか？",
+              "condition": "relative_path && relative_path.includes('.commit-allowed')"
             }
           ]
         }
@@ -94,13 +129,12 @@
     "command": "npx ccusage@latest statusline"
   },
   "enabledPlugins": {
-    "superpowers@claude-plugins-official": true,
     "serena@claude-plugins-official": true,
-    "context7@claude-plugins-official": true
+    "context7@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true
   },
   "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1753952965497
-  },
-  "effortLevel": "medium"
+  }
 }
