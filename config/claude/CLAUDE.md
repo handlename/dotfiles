@@ -75,6 +75,17 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 co-autherについては以下のドキュメントを参照せよ。
 https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors
 
+# (MUST) GitHub 投稿時の投稿者明示
+
+GitHub に投稿するテキスト(Issue と Pull Request の description、およびコメントなど)を投稿する場合は、その末尾に Claude Code による投稿であることを明示せよ。
+
+```
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+```
+
+ただし、ユーザーによる指示がある場合はこの明示は省略せよ。
+
 # (SHOULD) git コマンドを実行する際は --no-pager フラグを付与する
 
 pager の使用によりコマンドの実行が終了せず、その後の処理に進めなくなってしまう。
