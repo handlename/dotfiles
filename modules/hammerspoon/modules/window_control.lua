@@ -8,6 +8,19 @@ local WIN_SEQUENCE = {
     { from = WIN_SMALL, to = WIN_HALF }
 }
 
+-- screen
+local SCREEN_MAIN <const> = "main"
+local SCREEN_SUB <const> = "sub"
+
+-- position
+local POS_LEFT <const> = "left"
+local POS_RIGHT <const> = "right"
+local POS_CENTER <const> = "center"
+
+-- size unit
+local UNIT_RATIO <const> = "ratio"
+local UNIT_PX <const> = "px"
+
 local log = hs.logger.new("init.lua", "info")
 
 -- disable animation
@@ -40,6 +53,101 @@ local function updateFrame(win, frame)
 
     win:setFrame(f)
 end
+
+local function calcFrame(screenFrame, position, size)
+    local w, h
+    if size.unit == UNIT_PX then
+        w = size.w
+        h = size.h or screenFrame.h
+    else
+        w = screenFrame.w * size.w
+        h = screenFrame.h * (size.h or 1)
+    end
+
+    local x
+    if position == POS_LEFT then
+        x = screenFrame.x
+    elseif position == POS_RIGHT then
+        x = screenFrame.x + screenFrame.w - w
+    else -- POS_CENTER
+        x = screenFrame.x + (screenFrame.w - w) / 2
+    end
+    local y = screenFrame.y + (screenFrame.h - h) / 2
+
+    return { x = x, y = y, w = w, h = h }
+end
+
+local function getScreen(screenType)
+    local primary = hs.screen.primaryScreen()
+    if screenType == SCREEN_MAIN then
+        return primary
+    end
+    for _, s in ipairs(hs.screen.allScreens()) do
+        if s ~= primary then
+            return s
+        end
+    end
+    log.d("No sub screen found, falling back to primary")
+    return primary
+end
+
+local function detectDisplayConfig()
+    if #hs.screen.allScreens() >= 2 then
+        return "main_sub"
+    end
+    return "main_only"
+end
+
+local presets = {
+    ["main_only"] = {
+        { app = "1Password",   screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_RATIO, w = 2 / 3, h = 2 / 3 } },
+        { app = "Alacritty",   screen = SCREEN_MAIN, position = POS_LEFT,   size = { unit = UNIT_RATIO, w = 1 / 2 } },
+        { app = "Claude",      screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_RATIO, w = 0.8, h = 0.8 } },
+        { app = "Obsidian",    screen = SCREEN_MAIN, position = POS_LEFT,   size = { unit = UNIT_RATIO, w = 1 / 2 } },
+        { app = "Slack",       screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_RATIO, w = 0.6, h = 0.6 } },
+        { app = "Toggl Track", screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_PX, w = 300, h = 500 } },
+        { app = "Zed",         screen = SCREEN_MAIN, position = POS_LEFT,   size = { unit = UNIT_RATIO, w = 1 } },
+        { app = "Zen Browser", screen = SCREEN_MAIN, position = POS_LEFT,   size = { unit = UNIT_RATIO, w = 2 / 3 } },
+    },
+    ["main_sub"] = {
+        { app = "1Password",   screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_RATIO, w = 2 / 3, h = 2 / 3 } },
+        { app = "Alacritty",   screen = SCREEN_MAIN, position = POS_LEFT,   size = { unit = UNIT_RATIO, w = 1 / 2 } },
+        { app = "Claude",      screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_RATIO, w = 0.8, h = 0.8 } },
+        { app = "Obsidian",    screen = SCREEN_MAIN, position = POS_LEFT,   size = { unit = UNIT_RATIO, w = 1 / 2 } },
+        { app = "Slack",       screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_RATIO, w = 0.6, h = 0.6 } },
+        { app = "Toggl Track", screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_PX, w = 300, h = 500 } },
+        { app = "Zed",         screen = SCREEN_MAIN, position = POS_LEFT,   size = { unit = UNIT_RATIO, w = 1 } },
+        { app = "Zen Browser", screen = SCREEN_MAIN, position = POS_LEFT,   size = { unit = UNIT_RATIO, w = 2 / 3 } },
+    },
+}
+
+local function applyPreset()
+    local configName = detectDisplayConfig()
+    local preset = presets[configName]
+    if not preset then return end
+
+    log.i("Applying preset: " .. configName)
+    hs.alert.show("Preset: " .. configName)
+
+    for _, entry in ipairs(preset) do
+        local app = hs.application.get(entry.app)
+        if not app then
+            log.d("App not running: " .. entry.app)
+        else
+            local win = app:mainWindow()
+            if not win then
+                log.d("No main window: " .. entry.app)
+            else
+                local screen = getScreen(entry.screen)
+                win:moveToScreen(screen)
+                local frame = calcFrame(screen:frame(), entry.position, entry.size)
+                updateFrame(win, frame)
+            end
+        end
+    end
+end
+
+hs.hotkey.bind({ "cmd", "ctrl" }, "R", applyPreset)
 
 -- simple key remap
 
@@ -89,14 +197,7 @@ local keyConfigs = {
         action = function()
             local win = hs.window.focusedWindow()
             local max = windowMaxFrame(win)
-            local newW = max.w * 0.8
-            local newH = max.h * 0.8
-            updateFrame(win, {
-                x = max.x + (max.w - newW) / 2,
-                y = max.y + (max.h - newH) / 2,
-                w = newW,
-                h = newH,
-            })
+            updateFrame(win, calcFrame(max, POS_CENTER, { unit = UNIT_RATIO, w = 0.8, h = 0.8 }))
         end
     },
     {
@@ -104,14 +205,7 @@ local keyConfigs = {
         action = function()
             local win = hs.window.focusedWindow()
             local max = windowMaxFrame(win)
-            local newW = max.w * 0.6
-            local newH = max.h * 0.6
-            updateFrame(win, {
-                x = max.x + (max.w - newW) / 2,
-                y = max.y + (max.h - newH) / 2,
-                w = newW,
-                h = newH,
-            })
+            updateFrame(win, calcFrame(max, POS_CENTER, { unit = UNIT_RATIO, w = 0.6, h = 0.6 }))
         end
     },
 }
