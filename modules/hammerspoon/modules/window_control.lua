@@ -92,29 +92,51 @@ local function getScreen(screenType)
 end
 
 local function detectDisplayConfig()
-    if #hs.screen.allScreens() >= 2 then
-        return "main_sub"
+    local screens = hs.screen.allScreens()
+    if #screens < 2 then return "main_only" end
+
+    local primary = hs.screen.primaryScreen()
+    for _, s in ipairs(screens) do
+        if s ~= primary then
+            local _, y = s:position()
+            if y ~= 0 then
+                return "main_sub_vertical"
+            else
+                return "main_sub_horizontal"
+            end
+        end
     end
+
     return "main_only"
 end
 
 local presets = {
     ["main_only"] = {
-        { app = "1Password",   screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_RATIO, w = 2 / 3, h = 2 / 3 } },
+        { app = "1Password",   screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_PX, w = 1200, h = 1000 } },
         { app = "Alacritty",   screen = SCREEN_MAIN, position = POS_LEFT,   size = { unit = UNIT_RATIO, w = 1 / 2 } },
-        { app = "Claude",      screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_RATIO, w = 0.8, h = 0.8 } },
+        { app = "Claude",      screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_RATIO, w = 0.6, h = 0.8 } },
         { app = "Obsidian",    screen = SCREEN_MAIN, position = POS_RIGHT,  size = { unit = UNIT_RATIO, w = 1 / 2 } },
         { app = "Slack",       screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_RATIO, w = 0.6, h = 0.6 } },
         { app = "Toggl Track", screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_PX, w = 300, h = 600 } },
         { app = "Zed",         screen = SCREEN_MAIN, position = POS_LEFT,   size = { unit = UNIT_RATIO, w = 1 } },
         { app = "Zen Browser", screen = SCREEN_MAIN, position = POS_LEFT,   size = { unit = UNIT_RATIO, w = 2 / 3 } },
     },
-    ["main_sub"] = {
-        { app = "1Password",   screen = SCREEN_SUB, position = POS_CENTER, size = { unit = UNIT_RATIO, w = 2 / 3, h = 2 / 3 } },
+    ["main_sub_horizontal"] = {
+        { app = "1Password",   screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_PX, w = 1200, h = 1000 } },
         { app = "Alacritty",   screen = SCREEN_MAIN, position = POS_LEFT,   size = { unit = UNIT_RATIO, w = 1 / 2 } },
-        { app = "Claude",      screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_RATIO, w = 0.8, h = 0.8 } },
+        { app = "Claude",      screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_RATIO, w = 0.6, h = 0.8 } },
+        { app = "Obsidian",    screen = SCREEN_MAIN, position = POS_RIGHT,  size = { unit = UNIT_RATIO, w = 1 } },
+        { app = "Slack",       screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_RATIO, w = 0.6, h = 0.8 } },
+        { app = "Toggl Track", screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_PX, w = 300, h = 600 } },
+        { app = "Zed",         screen = SCREEN_MAIN, position = POS_LEFT,   size = { unit = UNIT_RATIO, w = 1 } },
+        { app = "Zen Browser", screen = SCREEN_MAIN, position = POS_LEFT,   size = { unit = UNIT_RATIO, w = 1 / 2 } },
+    },
+    ["main_sub_vertical"] = {
+        { app = "1Password",   screen = SCREEN_SUB, position = POS_CENTER, size = { unit = UNIT_PX, w = 1200, h = 1000 } },
+        { app = "Alacritty",   screen = SCREEN_MAIN, position = POS_LEFT,   size = { unit = UNIT_RATIO, w = 1 / 2 } },
+        { app = "Claude",      screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_RATIO, w = 0.6, h = 0.8 } },
         { app = "Obsidian",    screen = SCREEN_SUB, position = POS_RIGHT,  size = { unit = UNIT_RATIO, w = 1 } },
-        { app = "Slack",       screen = SCREEN_SUB, position = POS_CENTER, size = { unit = UNIT_RATIO, w = 0.8, h = 0.8 } },
+        { app = "Slack",       screen = SCREEN_SUB, position = POS_CENTER, size = { unit = UNIT_RATIO, w = 0.6, h = 0.8 } },
         { app = "Toggl Track", screen = SCREEN_SUB, position = POS_CENTER, size = { unit = UNIT_PX, w = 300, h = 600 } },
         { app = "Zed",         screen = SCREEN_MAIN, position = POS_LEFT,   size = { unit = UNIT_RATIO, w = 1 } },
         { app = "Zen Browser", screen = SCREEN_MAIN, position = POS_LEFT,   size = { unit = UNIT_RATIO, w = 1 / 2 } },
