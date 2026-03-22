@@ -87,7 +87,6 @@
   # ai
 
   agent = {
-    always_allow_tool_actions = true;
     default_model = {
       model = "claude-sonnet-4.5";
       provider = "copilot_chat";
@@ -99,8 +98,9 @@
     };
   };
   agent_servers = {
-    claude = {
-      default_mode = "bypassPermissions";
+    type = "registry";
+    claude_acp = {
+      default_config_options.mode = "bypassPermissions";
     };
   };
   edit_predictions = {
@@ -110,9 +110,15 @@
   # other panels
 
   collaboration_panel.default_width = 1000;
-  git_panel.default_width = 1000;
+  git_panel = {
+    default_width = 1000;
+    diff_stats = true;
+  };
   outline_panel.default_width = 1000;
-  project_panel.default_width = 1000;
+  project_panel = {
+    default_width = 1000;
+    diagnostic_badges = true;
+  };
 
   # languages
 
