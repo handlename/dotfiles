@@ -9,8 +9,9 @@
     zellij_run_on_git_repository = builtins.readFile ./functions/zellij_run_on_git_repository.fish;
   };
 
-  programs.fish.shellInit = ''
-    bind \cxzr zellij_run_with_layout
-    bind \cxzg zellij_run_on_git_repository
-  '';
+  # keybindings disabled: \cxz prefix is now used for Zed
+  # programs.fish.shellInit = ''
+  #   bind \cxzr zellij_run_with_layout
+  #   bind \cxzg zellij_run_on_git_repository
+  # '';
 }
