@@ -98,9 +98,12 @@
     };
   };
   agent_servers = {
-    type = "registry";
-    claude_acp = {
-      default_config_options.mode = "bypassPermissions";
+    "claude-acp" = {
+      type = "registry";
+      default_config_options = {
+        mode = "bypassPermissions";
+        model = "default";
+      };
     };
   };
   edit_predictions = {
