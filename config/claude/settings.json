@@ -47,11 +47,7 @@
       "mcp__context7__get-library-docs",
       "mcp__context7__resolve-library-id"
     ],
-    "deny": [
-      "Bash(git push:*)",
-      "Bash(sudo:*)",
-      "Bash(rm -rf:*)"
-    ],
+    "deny": ["Bash(sudo:*)", "Bash(rm -rf:*)"],
     "hooks": {
       "SessionStart": [
         {
@@ -129,9 +125,18 @@
     "command": "npx ccusage@latest statusline"
   },
   "enabledPlugins": {
-    "serena@claude-plugins-official": true,
     "context7@claude-plugins-official": true,
-    "superpowers@claude-plugins-official": true
+    "superpowers@claude-plugins-official": true,
+    "serena@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "datadog-api-claude-plugin": {
+      "source": {
+        "source": "github",
+        "repo": "Datadog/datadog-api-claude-plugin"
+      }
+    }
   },
   "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {
