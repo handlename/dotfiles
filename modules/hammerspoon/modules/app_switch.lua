@@ -1,10 +1,10 @@
 local apps = {
     { key = "G", id = "md.obsidian" },
     { key = "K", id = "com.toggl.daneel" },
-    { key = "R", id = "com.kapeli.dashdoc" },
 
     { key = "H", id = "dev.zed.Zed" },
-    { key = "T", id = "org.alacritty" },
+    -- { key = "T", id = "org.alacritty" },
+    { key = "T", id = "com.cmuxterm.app" },
     { key = "N", id = "app.zen-browser.zen" },
 
     { key = "M", id = "com.anthropic.claudefordesktop" },
