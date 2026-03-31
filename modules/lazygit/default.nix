@@ -3,6 +3,9 @@
     enable = true;
 
     settings = {
+      gui = {
+        language = "en";
+      };
       os = {
         open = "zed {{filename}}";
       };
