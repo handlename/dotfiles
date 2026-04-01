@@ -47,7 +47,10 @@
       "mcp__context7__get-library-docs",
       "mcp__context7__resolve-library-id"
     ],
-    "deny": ["Bash(sudo:*)", "Bash(rm -rf:*)"],
+    "deny": [
+      "Bash(sudo:*)",
+      "Bash(rm -rf:*)"
+    ],
     "hooks": {
       "SessionStart": [
         {
@@ -126,9 +129,11 @@
   },
   "enabledPlugins": {
     "context7@claude-plugins-official": true,
-    "superpowers@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": false,
     "serena@claude-plugins-official": true,
-    "skill-creator@claude-plugins-official": true
+    "skill-creator@claude-plugins-official": true,
+    "using-cmux@hummer98-using-cmux": true,
+    "oh-my-claudecode@omc": true
   },
   "extraKnownMarketplaces": {
     "datadog-api-claude-plugin": {
@@ -136,10 +141,29 @@
         "source": "github",
         "repo": "Datadog/datadog-api-claude-plugin"
       }
+    },
+    "hummer98-using-cmux": {
+      "source": {
+        "source": "github",
+        "repo": "hummer98/using-cmux"
+      }
+    },
+    "omc": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/Yeachan-Heo/oh-my-claudecode.git"
+      }
+    },
+    "runestone-workflow": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/handlename/obsidian-plugin-runestone.git"
+      }
     }
   },
   "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1753952965497
-  }
+  },
+  "skipAutoPermissionPrompt": true
 }
