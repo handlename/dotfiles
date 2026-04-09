@@ -87,6 +87,7 @@
       "slack"
       "visual-studio-code"
       "zed"
+      "zen"
     ];
 
     masApps = {
