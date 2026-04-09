@@ -166,8 +166,8 @@
     }
   },
   "skipDangerousModePermissionPrompt": true,
+  "skipAutoPermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1753952965497
-  },
-  "skipAutoPermissionPrompt": true
+  }
 }
