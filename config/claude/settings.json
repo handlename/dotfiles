@@ -120,7 +120,7 @@
             },
             {
               "type": "command",
-              "command": "~/.claude/hooks/tmux-markdown-preview.sh"
+              "command": "~/.claude/hooks/cmux-markdown-preview.sh"
             }
           ]
         }

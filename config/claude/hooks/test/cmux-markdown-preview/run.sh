@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Test script for tmux-markdown-preview.sh hook
-# tmux なしでも入力パースと判定ロジックをテストできる
+# Test script for cmux-markdown-preview.sh hook
+# cmux 外でも入力パースと判定ロジックをテストできる
 
 set -euo pipefail
 
@@ -12,7 +12,7 @@ BLUE='\033[0;34m'
 NC='\033[0m'
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-HOOK_SCRIPT="$SCRIPT_DIR/../../tmux-markdown-preview.sh"
+HOOK_SCRIPT="$SCRIPT_DIR/../../cmux-markdown-preview.sh"
 TEST_FILES_DIR="$SCRIPT_DIR/target-files"
 TEST_DIR="$SCRIPT_DIR/tmp"
 
@@ -33,8 +33,7 @@ setup_test_files() {
 }
 
 # フックを実行して終了コードを返す
-# tmux 外で実行するため、Markdown ファイルでも exit 0（tmux チェックで早期終了）になる
-# 判定ロジックのテストには TMUX 環境変数を設定してテストする
+# cmux 外で実行するため、Markdown ファイルでも exit 0（CMUX_SOCKET_PATH チェックで早期終了）になる
 run_hook() {
     local json_input=$1
     echo "$json_input" | bash "$HOOK_SCRIPT" 2>/dev/null
@@ -145,18 +144,18 @@ test_nonexistent_file_skipped() {
     assert_exit_code "nonexistent .md file" 0 $?
 }
 
-test_markdown_without_tmux_skipped() {
-    print_status "$BLUE" "Test: markdown file without tmux is skipped"
+test_markdown_without_cmux_skipped() {
+    print_status "$BLUE" "Test: markdown file without cmux is skipped"
 
-    # TMUX 環境変数を未設定にして実行
+    # CMUX_SOCKET_PATH を未設定にして実行
     local json
     json=$(build_json "Write" "$TEST_DIR/test.md")
-    TMUX="" run_hook "$json"
-    assert_exit_code "Write .md without TMUX" 0 $?
+    CMUX_SOCKET_PATH="" run_hook "$json"
+    assert_exit_code "Write .md without CMUX_SOCKET_PATH" 0 $?
 
     json=$(build_json "Edit" "$TEST_DIR/test.md")
-    TMUX="" run_hook "$json"
-    assert_exit_code "Edit .md without TMUX" 0 $?
+    CMUX_SOCKET_PATH="" run_hook "$json"
+    assert_exit_code "Edit .md without CMUX_SOCKET_PATH" 0 $?
 }
 
 test_empty_input_skipped() {
@@ -177,7 +176,7 @@ EOF
 }
 
 main() {
-    print_status "$BLUE" "=== tmux-markdown-preview hook tests ==="
+    print_status "$BLUE" "=== cmux-markdown-preview hook tests ==="
     echo
 
     if [[ ! -f "$HOOK_SCRIPT" ]]; then
@@ -197,7 +196,7 @@ main() {
     echo
     test_nonexistent_file_skipped
     echo
-    test_markdown_without_tmux_skipped
+    test_markdown_without_cmux_skipped
     echo
     test_empty_input_skipped
     echo

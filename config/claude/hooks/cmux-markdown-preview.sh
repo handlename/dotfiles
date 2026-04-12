@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# tmux Markdown preview hook for Claude Code
-# PostToolUse で .md ファイルの変更を検知し、tmux の右ペインに glow でプレビュー表示する
+# cmux Markdown preview hook for Claude Code
+# PostToolUse で .md ファイルの変更を検知し、cmux の右ペインに glow でプレビュー表示する
 
 set -euo pipefail
 
@@ -44,8 +44,13 @@ case "$extension_lower" in
         ;;
 esac
 
-# tmux 内で実行されているか確認
-if [[ -z "${TMUX:-}" ]]; then
+# cmux 内で実行されているか確認
+if [[ -z "${CMUX_SOCKET_PATH:-}" ]]; then
+    exit 0
+fi
+
+# cmux CLI が利用可能か確認
+if ! command -v cmux >/dev/null 2>&1; then
     exit 0
 fi
 
@@ -54,32 +59,32 @@ if ! command -v glow >/dev/null 2>&1; then
     exit 0
 fi
 
-# tmux ウィンドウごとにプレビューペインを管理
+# ワークスペースごとにプレビュー surface を管理
 state_dir="/tmp/claude-md-preview"
 mkdir -p "$state_dir"
-current_window=$(tmux display-message -p '#{window_id}')
-state_file="${state_dir}/${current_window}"
+workspace_id="${CMUX_WORKSPACE_ID:-default}"
+state_file="${state_dir}/${workspace_id}"
 
-# プレビューペインが生存しているか確認
-pane_alive=false
+# プレビュー surface が生存しているか確認
+surface_alive=false
 if [[ -f "$state_file" ]]; then
-    preview_pane=$(cat "$state_file")
-    if tmux list-panes -F '#{pane_id}' 2>/dev/null | grep -qF "$preview_pane"; then
-        pane_alive=true
+    preview_surface=$(cat "$state_file")
+    if cmux list-panels 2>/dev/null | grep -qF "$preview_surface"; then
+        surface_alive=true
     fi
 fi
 
 escaped_path=$(printf '%q' "$file_path")
 
-if $pane_alive; then
+if $surface_alive; then
     # 既存ペインを更新（実行中のプロセスを中断してから再描画）
-    tmux send-keys -t "$preview_pane" C-c 2>/dev/null || true
-    tmux send-keys -t "$preview_pane" " clear && glow ${escaped_path}" Enter
+    cmux send-key --surface "$preview_surface" ctrl-c 2>/dev/null || true
+    cmux send --surface "$preview_surface" "clear && glow ${escaped_path}\n"
 else
-    # 右側に新しいプレビューペインを作成（幅40%、フォーカスは移さない）
-    preview_pane=$(tmux split-window -h -l '40%' -d -P -F '#{pane_id}')
-    echo "$preview_pane" > "$state_file"
-    tmux send-keys -t "$preview_pane" " glow ${escaped_path}" Enter
+    # 右側に新しいプレビューペインを作成
+    preview_surface=$(cmux new-split right | awk '{print $2}')
+    echo "$preview_surface" > "$state_file"
+    cmux send --surface "$preview_surface" "glow ${escaped_path}\n"
 fi
 
 exit 0
