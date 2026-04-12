@@ -117,6 +117,10 @@
             {
               "type": "command",
               "command": "~/.claude/hooks/format-code.sh"
+            },
+            {
+              "type": "command",
+              "command": "~/.claude/hooks/tmux-markdown-preview.sh"
             }
           ]
         }
