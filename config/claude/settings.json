@@ -51,6 +51,7 @@
       "Bash(sudo:*)",
       "Bash(rm -rf:*)"
     ],
+    "defaultMode": "auto",
     "hooks": {
       "SessionStart": [
         {
