@@ -1,12 +1,34 @@
 [
+  # switch panels
+
   {
     context = "Workspace";
     bindings = {
       "ctrl->" = "window::ShowNextWindowTab";
       "ctrl-<" = "window::ShowPreviousWindowTab";
-      "cmd-t cmd-h" = "terminal_panel::ToggleFocus";
-      "cmd-t cmd-t" = "editor::ToggleFocus";
-      "cmd-t cmd-n" = "agent::ToggleFocus";
+
+      "ctrl-shift-d" = "multi_workspace::FocusWorkspaceSidebar";
+      "ctrl-shift-h" = "agent::ToggleFocus";
+      "ctrl-shift-n" = "terminal_panel::ToggleFocus";
+      "ctrl-shift-t" = "editor::ToggleFocus";
+    };
+  }
+  {
+    context = "Terminal";
+    unbind = {
+      "ctrl-shift-n" = "terminal_panel::ToggleFocus";
+    };
+  }
+  {
+    context = "AgentPanel";
+    unbind = {
+      "ctrl-shift-h" = "agent::FocusAgent";
+    };
+  }
+  {
+    context = "AcpThread > Editor";
+    unbind = {
+      "ctrl-shift-d" = "git::Diff";
     };
   }
 

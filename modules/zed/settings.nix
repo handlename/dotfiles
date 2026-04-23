@@ -77,8 +77,8 @@
     };
     font_family = "Moralerspace Argon NF";
     font_size = 12;
-    dock = "left";
-    default_width = 1000;
+    dock = "right";
+    default_width = 800;
     line_height = {
       custom = 1.21;
     };
@@ -96,6 +96,8 @@
       model = "claude-sonnet-4.5";
       provider = "copilot_chat";
     };
+    dock = "left";
+    default_width = 800;
   };
   agent_servers = {
     "claude-acp" = {
@@ -112,14 +114,14 @@
 
   # other panels
 
-  collaboration_panel.default_width = 1000;
+  collaboration_panel.default_width = 600;
   git_panel = {
-    default_width = 1000;
+    default_width = 600;
     diff_stats = true;
   };
-  outline_panel.default_width = 1000;
+  outline_panel.default_width = 600;
   project_panel = {
-    default_width = 1000;
+    default_width = 600;
     diagnostic_badges = true;
   };
 
