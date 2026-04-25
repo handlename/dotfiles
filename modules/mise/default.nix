@@ -11,7 +11,15 @@ in
     enable = true;
     enableFishIntegration = true;
     globalConfig = {
-      settings.experimental = true;
+      settings = {
+        # install_before = "14d"; # needs mise v2026.04
+        disable_backends = [
+          "asdf"
+          "vfox"
+        ];
+        experimental = true;
+      };
+
       env = {
         _.path = [
           "${config.home.homeDirectory}/bin"
@@ -27,6 +35,7 @@ in
         ZELLIJ_LAYOUT_DIR = "${config.xdg.configHome}/zellij/layouts";
         ZELLIJ_LAYOUT_ROOT = "${config.home.homeDirectory}";
       };
+
       tools = {
         usage = "latest";
         go = "latest";
