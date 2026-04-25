@@ -77,8 +77,8 @@
     };
     font_family = "Moralerspace Argon NF";
     font_size = 12;
-    dock = "right";
-    default_width = 800;
+    dock = "bottom";
+    default_height = 600;
     line_height = {
       custom = 1.21;
     };
@@ -114,15 +114,23 @@
 
   # other panels
 
-  collaboration_panel.default_width = 600;
+  collaboration_panel = {
+    default_width = 600;
+    dock = "right";
+  };
   git_panel = {
     default_width = 600;
     diff_stats = true;
+    dock = "right";
   };
-  outline_panel.default_width = 600;
+  outline_panel = {
+    default_width = 600;
+    dock = "right";
+  };
   project_panel = {
     default_width = 600;
     diagnostic_badges = true;
+    dock = "right";
   };
 
   # languages
