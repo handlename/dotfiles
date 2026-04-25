@@ -64,6 +64,7 @@ with lib;
     awscli2
     bat
     colima
+    delve
     docker
     fastfetch
     ffmpeg
@@ -76,7 +77,10 @@ with lib;
     glow
     gnupg
     golangci-lint
+    gopls
     goreleaser
+    gotestsum
+    gotools
     graphviz
     imagemagick
     inetutils
