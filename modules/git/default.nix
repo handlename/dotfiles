@@ -115,6 +115,7 @@
       "*.local.md"
       ".mise.local.toml"
       ".DS_Store"
+      ".claude/*.lock"
     ];
 
     includes =
