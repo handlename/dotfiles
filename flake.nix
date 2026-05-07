@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/release-25.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     darwin = {
       url = "github:lnl7/nix-darwin/nix-darwin-25.11";
@@ -24,9 +25,16 @@
     }:
     let
       system = "aarch64-darwin";
+      overlayUnstable = final: prev: {
+        gh = (import inputs.nixpkgs-unstable {
+          inherit system;
+          config.allowUnfree = true;
+        }).gh;
+      };
       pkgs = import nixpkgs {
         system = system;
         config.allowUnfree = true;
+        overlays = [ overlayUnstable ];
       };
     in
     {
