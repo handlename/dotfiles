@@ -69,7 +69,7 @@ with lib;
     fastfetch
     ffmpeg
     fzf
-    gh
+    gh # install via nixpkgs-unstable
     ghq
     gibo
     git-secrets
@@ -77,7 +77,7 @@ with lib;
     glow
     gnupg
     golangci-lint
-    gopls
+    gopls # install via nixpkgs-unstable
     goreleaser
     gotestsum
     gotools

@@ -25,11 +25,12 @@
     }:
     let
       system = "aarch64-darwin";
+      unstable = import inputs.nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
       overlayUnstable = final: prev: {
-        gh = (import inputs.nixpkgs-unstable {
-          inherit system;
-          config.allowUnfree = true;
-        }).gh;
+        inherit (unstable) gh gopls;
       };
       pkgs = import nixpkgs {
         system = system;
