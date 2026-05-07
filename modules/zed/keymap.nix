@@ -65,6 +65,7 @@
     bindings = {
       "s" = "vim::PushSneak";
       "S" = "vim::PushSneakBackward";
+      "g j" = "vim::HelixJumpToWord";
       "g D" = "editor::OpenDocs";
       "g o" = "editor::OpenExcerpts";
       "ctrl-w g o" = "editor::OpenExcerptsSplit";
