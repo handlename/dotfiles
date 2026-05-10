@@ -1,4 +1,8 @@
 {
+  username,
+}:
+
+{
   # appearance
 
   active_pane_modifiers = {
@@ -73,7 +77,7 @@
 
   terminal = {
     shell = {
-      program = "/Users/handlename/.nix-profile/bin/fish";
+      program = "/Users/${username}/.nix-profile/bin/fish";
     };
     font_family = "Moralerspace Argon NF";
     font_size = 12;

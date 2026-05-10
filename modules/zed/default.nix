@@ -1,5 +1,6 @@
 {
   config,
+  username,
   ...
 }:
 
@@ -8,7 +9,7 @@
     enable = true;
 
     extensions = import ./extensions.nix;
-    userSettings = import ./settings.nix;
+    userSettings = import ./settings.nix { inherit username; };
     userKeymaps = import ./keymap.nix;
   };
 
