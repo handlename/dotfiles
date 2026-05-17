@@ -92,13 +92,13 @@
 
   agent = {
     default_model = {
-      model = "claude-sonnet-4.5";
-      provider = "copilot_chat";
+      model = "claude-sonnet-4.6";
+      provider = "zed.dev";
     };
     default_profile = "ask";
     inline_assistant_model = {
-      model = "claude-sonnet-4.5";
-      provider = "copilot_chat";
+      model = "claude-sonnet-4.6";
+      provider = "zed.dev";
     };
     dock = "left";
     default_width = 800;
