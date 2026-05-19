@@ -115,7 +115,12 @@
       "*.local.md"
       ".mise.local.toml"
       ".DS_Store"
+
+      # for AI Agents
       ".claude/*.lock"
+      ".claude/.commit-allowed"
+      ".omc/*"
+      ".serena/*"
     ];
 
     includes =
