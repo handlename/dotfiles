@@ -171,8 +171,10 @@
     }
   },
   "skipDangerousModePermissionPrompt": true,
+  "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1753952965497
-  }
+  },
+  "tui": "fullscreen"
 }
