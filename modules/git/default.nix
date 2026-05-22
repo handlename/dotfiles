@@ -117,6 +117,7 @@
       ".DS_Store"
 
       # for AI Agents
+      ".antigravitycli/*"
       ".claude/*.lock"
       ".claude/.commit-allowed"
       ".omc/*"
