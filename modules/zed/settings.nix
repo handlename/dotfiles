@@ -102,6 +102,7 @@
     };
     dock = "left";
     default_width = 800;
+    flexible = false;
   };
   agent_servers = {
     "claude-acp" = {
