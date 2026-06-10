@@ -117,11 +117,11 @@
       ".DS_Store"
 
       # for AI Agents
-      ".antigravitycli/*"
+      ".antigravitycli/"
       ".claude/*.lock"
       ".claude/.commit-allowed"
-      ".omc/*"
-      ".serena/*"
+      ".omc/"
+      ".serena/"
     ];
 
     includes =
