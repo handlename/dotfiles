@@ -101,7 +101,7 @@
       provider = "zed.dev";
     };
     dock = "left";
-    default_width = 800;
+    default_width = 1000;
     flexible = false;
   };
   agent_servers = {
@@ -167,6 +167,18 @@
     };
     YAML = {
       tab_size = 2;
+    };
+  };
+
+  # profiles
+
+  profiles = {
+    Laptop = {
+      settings = {
+        agent = {
+          default_width = 700;
+        };
+      };
     };
   };
 
