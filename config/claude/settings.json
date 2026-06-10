@@ -141,7 +141,6 @@
     "superpowers@claude-plugins-official": false,
     "serena@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
-    "using-cmux@hummer98-using-cmux": true,
     "oh-my-claudecode@omc": true
   },
   "extraKnownMarketplaces": {
@@ -170,11 +169,14 @@
       }
     }
   },
+  "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
+  "theme": "dark",
+  "preferredNotifChannel": "auto",
+  "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1753952965497
-  },
-  "tui": "fullscreen"
+  }
 }
