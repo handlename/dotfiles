@@ -122,6 +122,8 @@
       ".claude/.commit-allowed"
       ".omc/"
       ".serena/"
+      "docs/superpowers/"
+      ".superpowers/"
     ];
 
     includes =
