@@ -4,6 +4,10 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/release-26.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    mise-src = {
+      url = "github:jdx/mise/v2026.6.1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     darwin = {
       url = "github:lnl7/nix-darwin/nix-darwin-26.05";
@@ -32,10 +36,13 @@
       overlayUnstable = final: prev: {
         inherit (unstable) gh gopls;
       };
+      overlayMise = final: prev: {
+        mise = inputs.mise-src.packages.${system}.default;
+      };
       pkgs = import nixpkgs {
         system = system;
         config.allowUnfree = true;
-        overlays = [ overlayUnstable ];
+        overlays = [ overlayUnstable overlayMise ];
       };
     in
     {
