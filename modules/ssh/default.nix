@@ -16,20 +16,16 @@ in
     enable = true;
     enableDefaultConfig = false;
 
-    matchBlocks = {
+    settings = {
       "*" = {
-        forwardAgent = true;
-        extraOptions = {
-          IdentityAgent = ''"~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"'';
-        };
+        ForwardAgent = true;
+        IdentityAgent = ''"~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"'';
       };
       "github.com" = {
-        user = "git";
-        identityFile = "~/.ssh/id_ed25519_github.pub";
-        identitiesOnly = true;
-        extraOptions = {
-          IdentityAgent = ''"~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"'';
-        };
+        User = "git";
+        IdentityFile = "~/.ssh/id_ed25519_github.pub";
+        IdentitiesOnly = true;
+        IdentityAgent = ''"~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"'';
       };
     };
 
