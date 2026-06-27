@@ -61,27 +61,12 @@
   # vim
 
   {
-    context = "Editor && (vim_mode == normal)";
+    context = "Editor && ((vim_mode == normal) || (vim_mode == helix_normal))";
     bindings = {
-      "s" = "vim::PushSneak";
-      "S" = "vim::PushSneakBackward";
       "g j" = "vim::HelixJumpToWord";
       "g D" = "editor::OpenDocs";
       "g o" = "editor::OpenExcerpts";
       "ctrl-w g o" = "editor::OpenExcerptsSplit";
-    };
-  }
-  {
-    context = "Editor && (vim_mode == visual)";
-    bindings = {
-      "S" = "vim::PushAddSurrounds";
-    };
-  }
-  {
-    context = "Editor && (vim_mode == insert)";
-    bindings = {
-      "cmd-a S" = "copilot::PreviousSuggestion";
-      "cmd-a s" = "copilot::NextSuggestion";
     };
   }
 
