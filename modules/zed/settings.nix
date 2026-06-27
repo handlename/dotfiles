@@ -82,7 +82,7 @@
     font_family = "Moralerspace Argon NF";
     font_size = 12;
     dock = "bottom";
-    default_height = 600;
+    default_height = 1200;
     line_height = {
       custom = 1.21;
     };
