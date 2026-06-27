@@ -63,6 +63,7 @@
     ./fzf.nix
     ./git.nix # bind prefix: \cxg
     ./github.nix # bind prefix: \cxh
+    ./jj.nix
     ./ssh.nix
     ./terraform.nix
     ./tide.nix
