@@ -26,7 +26,7 @@ in
           "${config.home.homeDirectory}/.local/bin"
         ];
         SHELL = "${config.home.homeDirectory}/.nix-profile/bin/fish";
-        EDITOR = "vim";
+        EDITOR = "hx";
         XDG_CACHE_HOME = "${config.xdg.cacheHome}";
         XDG_CONFIG_HOME = "${config.xdg.configHome}";
         XDG_DATA_HOME = "${config.xdg.dataHome}";

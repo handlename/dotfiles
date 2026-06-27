@@ -82,6 +82,7 @@ with lib;
     gotestsum
     gotools
     graphviz
+    helix
     imagemagick
     inetutils
     jq
