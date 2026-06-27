@@ -29,6 +29,7 @@ with lib;
     ./modules/emacs
     ./modules/fish
     ./modules/git
+    ./modules/jujutsu
     ./modules/lazygit
     ./modules/mise
     ./modules/nushell
@@ -87,7 +88,6 @@ with lib;
     inetutils
     jq
     jsonnet
-    jujutsu
     keychain
     kubectl # for fish `_tide_item_kubectl`
     miller
