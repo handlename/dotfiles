@@ -150,12 +150,6 @@
         "repo": "Datadog/datadog-api-claude-plugin"
       }
     },
-    "hummer98-using-cmux": {
-      "source": {
-        "source": "github",
-        "repo": "hummer98/using-cmux"
-      }
-    },
     "omc": {
       "source": {
         "source": "git",
