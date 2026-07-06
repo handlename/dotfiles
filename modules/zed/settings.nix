@@ -65,7 +65,7 @@
     };
   };
   relative_line_numbers = "enabled";
-  helix_mode = true;
+  vim_mode = true;
   vim = {
     use_smartcase_find = true;
   };
