@@ -7,6 +7,7 @@
 {
   programs.zed-editor = {
     enable = true;
+    package = null;
 
     extensions = import ./extensions.nix;
     userSettings = import ./settings.nix { inherit username; };
