@@ -30,6 +30,7 @@ with lib;
     ./modules/fish
     ./modules/git
     ./modules/jujutsu
+    ./modules/hammerspoon
     ./modules/karabiner-elements
     ./modules/lazygit
     ./modules/mise

@@ -16,6 +16,11 @@
       softwareupdate --install-rosetta --agree-to-license
     '';
 
+    keyboard = {
+      enableKeyMapping = true;
+      remapCapsLockToControl = true;
+    };
+
     defaults = {
       # To fill gaps between windows.
       # Use BetterTouchTool to manage window tiling instead.
@@ -53,6 +58,12 @@
       trackpad = {
         Clicking = true;
       };
+
+      CustomUserPreferences = {
+        "org.hammerspoon.Hammerspoon" = {
+          MJConfigFile = "~/.config/hammerspoon/init.lua";
+        };
+      };
     };
   };
 
@@ -80,6 +91,7 @@
       "font-moralerspace-nf"
       "google-chrome"
       "google-japanese-ime"
+      "hammerspoon"
       "jordanbaird-ice"
       "karabiner-elements"
       "obsidian"
