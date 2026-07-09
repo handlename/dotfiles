@@ -79,7 +79,7 @@
     shell = {
       program = "/Users/${username}/.nix-profile/bin/fish";
     };
-    font_family = "Moralerspace Argon NF";
+    font_family = "Moralerspace Argon";
     font_size = 12;
     dock = "bottom";
     default_height = 1200;

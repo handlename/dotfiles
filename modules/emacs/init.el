@@ -154,10 +154,10 @@
   :config
   (setq fontaine-presets
 	'((regular
-	   :default-family "Moralerspace Xenon NF"
-	   :fixed-pitch-family "Moralerspace Xenon NF"
-	   :variable-pitch-family "Moralerspace Xenon NF"
-	   :italic-family "Moralerspace Xenon NF")))
+	   :default-family "Moralerspace Xenon"
+	   :fixed-pitch-family "Moralerspace Xenon"
+	   :variable-pitch-family "Moralerspace Xenon"
+	   :italic-family "Moralerspace Xenon")))
   (fontaine-set-preset (or (fontaine-restore-latest-preset) 'regular))
   (add-hook 'kill-emacs-hook #'fontaine-store-latest-preset))
 

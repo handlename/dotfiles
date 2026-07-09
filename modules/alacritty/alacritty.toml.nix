@@ -11,7 +11,7 @@
   option_as_alt = "Both"
 
   [font]
-  normal = { family = "Moralerspace Argon NF" }
+  normal = { family = "Moralerspace Argon" }
   size = 13
 
   [hints]
