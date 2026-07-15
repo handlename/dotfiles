@@ -40,6 +40,10 @@
         "com.apple.trackpad.scaling" = 3.0;
       };
 
+      ".GlobalPreferences" = {
+        "com.apple.mouse.scaling" = 3.0;
+      };
+
       dock = {
         autohide = true;
         show-recents = false;
@@ -57,6 +61,10 @@
 
       trackpad = {
         Clicking = true;
+      };
+
+      universalaccess = {
+        mouseDriverCursorSize = 2.0;
       };
 
       CustomUserPreferences = {
