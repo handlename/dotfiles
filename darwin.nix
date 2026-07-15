@@ -12,9 +12,6 @@
 
   system = {
     primaryUser = username;
-    activationScripts.extraActivation.text = ''
-      softwareupdate --install-rosetta --agree-to-license
-    '';
 
     keyboard = {
       enableKeyMapping = true;
