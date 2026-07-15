@@ -31,6 +31,7 @@ with lib;
     ./modules/git
     ./modules/jujutsu
     ./modules/hammerspoon
+    ./modules/hunk
     ./modules/karabiner-elements
     ./modules/lazygit
     ./modules/mise
