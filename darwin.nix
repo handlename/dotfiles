@@ -86,6 +86,7 @@
       "1password-cli"
       "alacritty"
       "alfred"
+      "antigravity-cli"
       "appcleaner"
       "aqua"
       "dash"
