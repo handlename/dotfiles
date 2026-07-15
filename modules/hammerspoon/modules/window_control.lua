@@ -174,7 +174,7 @@ hs.hotkey.bind({ "cmd", "ctrl" }, "R", applyPreset)
 -- simple key remap
 
 local keyRemaps = {
-    { from = { mod = "ctrl", key = "'" }, to = { mod = "cmd", key = "`" } },              -- Move focus to next window
+    { from = { mod = "ctrl", key = "'" }, to = { mod = { "cmd", "shift" }, key = "2" } }, -- Move focus to next window
     { from = { mod = "ctrl", key = "," }, to = { mod = { "cmd", "shift" }, key = "[" } }, -- Next tab
     { from = { mod = "ctrl", key = "." }, to = { mod = { "cmd", "shift" }, key = "]" } }, -- Previous tab
 }
