@@ -29,6 +29,7 @@ with lib;
     ./modules/emacs
     ./modules/fish
     ./modules/git
+    ./modules/helix
     ./modules/jujutsu
     ./modules/hammerspoon
     ./modules/hunk
@@ -86,7 +87,6 @@ with lib;
     gotestsum
     gotools
     graphviz
-    helix
     imagemagick
     inetutils
     jq
