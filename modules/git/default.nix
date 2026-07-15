@@ -124,6 +124,7 @@
       ".serena/"
       "docs/superpowers/"
       ".superpowers/"
+      ".playwright-cli/"
     ];
 
     includes =
