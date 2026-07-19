@@ -386,32 +386,6 @@
                 "type": "basic"
               }
             ]
-          },
-          {
-            "description": "H,Tの同時押しでEsc入力",
-            "manipulators": [
-              {
-                "from": {
-                  "modifiers": {
-                    "optional": ["any"]
-                  },
-                  "simultaneous": [
-                    {
-                      "key_code": "h"
-                    },
-                    {
-                      "key_code": "t"
-                    }
-                  ]
-                },
-                "to": [
-                  {
-                    "key_code": "escape"
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
           }
         ]
       },
