@@ -7,7 +7,6 @@
 {
   programs.zed-editor = {
     enable = true;
-    package = null;
 
     # To avoid full build
     # Zed will be installed via Homebrew cask
