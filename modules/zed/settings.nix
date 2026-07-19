@@ -178,6 +178,9 @@
         agent = {
           default_width = 700;
         };
+        terminal = {
+          default_height = 800;
+        };
       };
     };
   };
