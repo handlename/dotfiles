@@ -13,6 +13,9 @@
           enable = true;
         };
       };
+      keys.normal = {
+        y = ["yank" ":clipboard-yank"];
+      };
     };
   };
 }
