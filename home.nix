@@ -25,6 +25,7 @@ with lib;
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   imports = [
+    ./modules/agent
     ./modules/alacritty
     ./modules/emacs
     ./modules/fish
