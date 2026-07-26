@@ -103,6 +103,7 @@
     dock = "left";
     default_width = 1000;
     flexible = false;
+    terminal_init_command = "agent"; # modules/agent/agent.sh
   };
   agent_servers = {
     "claude-acp" = {
