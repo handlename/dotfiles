@@ -161,6 +161,12 @@
         "source": "git",
         "url": "https://github.com/handlename/obsidian-plugin-runestone.git"
       }
+    },
+    "handlename": {
+      "source": {
+        "source": "directory",
+        "path": "/Users/handlename/src/github.com/handlename/agent-skills"
+      }
     }
   },
   "tui": "fullscreen",
