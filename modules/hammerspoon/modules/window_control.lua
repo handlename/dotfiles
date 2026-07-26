@@ -174,7 +174,9 @@ hs.hotkey.bind({ "cmd", "ctrl" }, "R", applyPreset)
 -- simple key remap
 
 local keyRemaps = {
-    { from = { mod = "ctrl", key = "'" }, to = { mod = { "cmd", "shift" }, key = "2" } }, -- Move focus to next window
+    -- Move focus to next window:
+    -- Must change system default shortcut "Cmd+@" to "Ctrl+`", because connflict with shottr's one.
+    { from = { mod = "ctrl", key = "'" }, to = { mod = "ctrl", key = "`" } },
     { from = { mod = "ctrl", key = "," }, to = { mod = { "cmd", "shift" }, key = "[" } }, -- Next tab
     { from = { mod = "ctrl", key = "." }, to = { mod = { "cmd", "shift" }, key = "]" } }, -- Previous tab
 }
