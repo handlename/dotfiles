@@ -4,6 +4,10 @@
   ...
 }:
 
+let
+  # SSH public key used both for signing and for local signature verification.
+  signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINTVcp7Sd0Z99l0sQ6wIvaS4sq7an3AnpZ3ZOxZfxwWT";
+in
 {
   programs.git = {
     enable = true;
@@ -133,13 +137,14 @@
           {
             contents = {
               user = {
-                signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINTVcp7Sd0Z99l0sQ6wIvaS4sq7an3AnpZ3ZOxZfxwWT";
+                signingkey = signingKey;
               };
               gpg = {
                 format = "ssh";
               };
               gpg."ssh" = {
                 program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
+                allowedSignersFile = "${config.xdg.configHome}/git/allowed_signers";
               };
               commit = {
                 gpgsign = "true";
@@ -156,4 +161,9 @@
     enable = true;
     enableGitIntegration = true;
   };
+
+  # allowed_signers lets `git verify-commit` / `%G?` validate SSH signatures locally.
+  xdg.configFile."git/allowed_signers".text = ''
+    nagata@handlena.me ${signingKey}
+  '';
 }
