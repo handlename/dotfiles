@@ -4,42 +4,18 @@ rec {
   toSimpleModifications =
     mapping:
     lib.mapAttrsToList (from: to: {
-      from = {
-        key_code = from;
-      };
-      to = [
-        {
-          key_code = to;
-        }
-      ];
+      from = { key_code = from; };
+      to = [ { key_code = to; } ];
     }) mapping;
 
   keyboards = {
     # On Apple Silicon Macs, the built-in keyboard is reported with vendor_id and product_id both 0.
-    appleSiliconInternal = {
-      vendor_id = 0;
-      product_id = 0;
-    };
-    appleInternal1 = {
-      vendor_id = 1452;
-      product_id = 631;
-    };
-    appleInternal2 = {
-      vendor_id = 1452;
-      product_id = 627;
-    };
-    magicKeyboard1 = {
-      vendor_id = 1452;
-      product_id = 635;
-    };
-    magicKeyboard2 = {
-      vendor_id = 1452;
-      product_id = 641;
-    };
-    customKeyboard = {
-      vendor_id = 65261;
-      product_id = 4871;
-    };
+    appleSiliconInternal = { vendor_id = 0; product_id = 0; };
+    appleInternal1 = { vendor_id = 1452; product_id = 631; };
+    appleInternal2 = { vendor_id = 1452; product_id = 627; };
+    magicKeyboard1 = { vendor_id = 1452; product_id = 635; };
+    magicKeyboard2 = { vendor_id = 1452; product_id = 641; };
+    customKeyboard = { vendor_id = 65261; product_id = 4871; };
   };
 
   mkKeyboard =
