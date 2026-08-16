@@ -5,6 +5,8 @@
     settings = {
       gui = {
         language = "en";
+        nerdFontVersion = "3";
+        border = "single";
       };
       os = {
         open = "zed {{filename}}";
