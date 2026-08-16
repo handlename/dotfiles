@@ -8,6 +8,7 @@ claude/install/%:
 
 antigravity/install-all:
 	$(MAKE) antigravity/install/handlename/agent-skills:3d269dfef1b9273a444696f3dbe59ec2a0876e4f
+	$(MAKE) antigravity/install/handlename/reviewer:v0.4.0
 	$(MAKE) antigravity/install/obra/superpowers:v6.1.1
 	$(MAKE) antigravity/install/modem-dev/hunk:v0.17.0
 
