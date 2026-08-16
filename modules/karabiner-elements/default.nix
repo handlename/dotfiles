@@ -12,32 +12,13 @@ let
   dvorakSimpleModifications = toSimpleModifications (import ./simple-modifications/dvorak.nix);
   fnFunctionKeys = toSimpleModifications (import ./simple-modifications/fn-function-keys.nix);
 
-  complexModificationsRules = [
-    (import ./complex-modifications/exchange-numbers-and-symbols.nix)
-    (import ./complex-modifications/spacebar-to-left-shift.nix)
-    (import ./complex-modifications/command-to-eisuu-kana.nix)
+  dvorakDevices = with keyboards; [
+    (mkKeyboard { identifiers = customKeyboard; simple_modifications = [ ]; })
+    (mkKeyboard { identifiers = appleInternal1; simple_modifications = dvorakSimpleModifications; })
+    (mkKeyboard { identifiers = appleInternal2; simple_modifications = dvorakSimpleModifications; })
+    (mkKeyboard { identifiers = magicKeyboard1; simple_modifications = dvorakSimpleModifications; })
+    (mkKeyboard { identifiers = magicKeyboard2; simple_modifications = dvorakSimpleModifications; })
   ];
-
-  dvorakTargetKeyboards = with keyboards; [
-    appleInternal1
-    appleInternal2
-    magicKeyboard1
-    magicKeyboard2
-  ];
-
-  customTargetKeyboards = with keyboards; [
-    customKeyboard
-  ];
-
-  dvorakDevices =
-    (map (identifiers: mkKeyboard {
-      inherit identifiers;
-      simple_modifications = [ ];
-    }) customTargetKeyboards)
-    ++ (map (identifiers: mkKeyboard {
-      inherit identifiers;
-      simple_modifications = dvorakSimpleModifications;
-    }) dvorakTargetKeyboards);
 
   commonProfileParameters = {
     delay_milliseconds_before_open_device = 1000;
@@ -74,7 +55,11 @@ let
         virtual_hid_keyboard = commonVirtualHidKeyboard;
         complex_modifications = {
           parameters = commonComplexModificationsParameters;
-          rules = complexModificationsRules;
+          rules = [
+            (import ./complex-modifications/exchange-numbers-and-symbols.nix)
+            (import ./complex-modifications/spacebar-to-left-shift.nix)
+            (import ./complex-modifications/command-to-eisuu-kana.nix)
+          ];
         };
         fn_function_keys = fnFunctionKeys;
         devices = dvorakDevices;
