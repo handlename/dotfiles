@@ -1,0 +1,27 @@
+{
+  description = "コマンドキーを単体で押したときに、英数・かなキーを送信する。（左コマンドキーは英数、右コマンドキーはかな）";
+  manipulators = [
+    {
+      from = {
+        key_code = "left_command";
+        modifiers = {
+          optional = [ "any" ];
+        };
+      };
+      to = [ { key_code = "left_command"; } ];
+      to_if_alone = [ { key_code = "japanese_eisuu"; } ];
+      type = "basic";
+    }
+    {
+      from = {
+        key_code = "right_command";
+        modifiers = {
+          optional = [ "any" ];
+        };
+      };
+      to = [ { key_code = "right_command"; } ];
+      to_if_alone = [ { key_code = "japanese_kana"; } ];
+      type = "basic";
+    }
+  ];
+}
