@@ -72,6 +72,7 @@ with lib;
     colima
     delve
     docker
+    eza
     fastfetch
     ffmpeg
     fzf

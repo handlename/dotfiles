@@ -40,10 +40,10 @@
   programs.fish.shellAliases = {
     # ls
     l = "less";
-    ls = "ls -G";
-    la = "ls -aG";
-    ll = "ls -lhG";
-    lla = "ls -lahG";
+    ls = "eza";
+    la = "eza -a";
+    ll = "eza -lh";
+    lla = "eza -lah";
 
     # rsync
     rsync = "rsync -P";
