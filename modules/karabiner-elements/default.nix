@@ -14,6 +14,7 @@ let
 
   dvorakDevices = with keyboards; [
     (mkKeyboard { identifiers = customKeyboard; simple_modifications = [ ]; })
+    (mkKeyboard { identifiers = appleSiliconInternal; simple_modifications = dvorakSimpleModifications; })
     (mkKeyboard { identifiers = appleInternal1; simple_modifications = dvorakSimpleModifications; })
     (mkKeyboard { identifiers = appleInternal2; simple_modifications = dvorakSimpleModifications; })
     (mkKeyboard { identifiers = magicKeyboard1; simple_modifications = dvorakSimpleModifications; })

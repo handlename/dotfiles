@@ -15,6 +15,11 @@ rec {
     }) mapping;
 
   keyboards = {
+    # On Apple Silicon Macs, the built-in keyboard is reported with vendor_id and product_id both 0.
+    appleSiliconInternal = {
+      vendor_id = 0;
+      product_id = 0;
+    };
     appleInternal1 = {
       vendor_id = 1452;
       product_id = 631;
