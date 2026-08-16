@@ -40,15 +40,15 @@ agy_has_resumable_session() {
 main() {
   if claude_has_login; then
     if claude_has_resumable_session; then
-      exec ztx run -- claude --continue
+      exec ztx run --force -- claude --continue
     fi
-    exec ztx run -- claude
+    exec ztx run --force -- claude
   fi
 
   if agy_has_resumable_session; then
-    exec ztx run -- agy --continue
+    exec ztx run --force -- agy --continue
   fi
-  exec ztx run -- agy
+  exec ztx run --force -- agy
 }
 
 main "$@"
