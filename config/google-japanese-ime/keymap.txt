@@ -1,0 +1,52 @@
+status	key	command
+Composition	Ctrl b	MoveCursorLeft
+Conversion	Ctrl d	Delete
+Composition	Ctrl d	Delete
+Conversion	Ctrl e	SegmentFocusRight
+Composition	Ctrl f	MoveCursorRight
+Conversion	Ctrl g	ConvertToHiragana
+Composition	Ctrl g	ConvertToHiragana
+Conversion	Ctrl h	Cancel
+Composition	Ctrl h	Backspace
+Prediction	Ctrl h	Cancel
+Suggestion	Ctrl h	Backspace
+Composition	Ctrl i	PredictAndConvert
+Conversion	Ctrl k	ConvertToFullKatakana
+Composition	Ctrl k	ConvertToFullKatakana
+Conversion	Ctrl m	Commit
+Composition	Ctrl m	Commit
+Conversion	Ctrl n	SegmentWidthExpand
+Conversion	Ctrl o	SegmentFocusLeft
+Conversion	Ctrl r	ConvertToHalfAlphanumeric
+Composition	Ctrl r	ConvertToHalfAlphanumeric
+Conversion	Ctrl t	SegmentWidthShrink
+Composition	Escape	Cancel
+Conversion	Escape	Cancel
+Suggestion	Escape	Cancel
+Prediction	Escape	Cancel
+Composition	Space	Convert
+Conversion	Space	ConvertNext
+Composition	Backspace	Backspace
+Conversion	Backspace	Cancel
+Suggestion	Backspace	Backspace
+Prediction	Backspace	Cancel
+Composition	Enter	Commit
+Conversion	Enter	Commit
+Suggestion	Enter	Commit
+Prediction	Enter	Commit
+Composition	Ctrl b	MoveCursorLeft
+Conversion	Ctrl b	MoveCursorLeft
+Composition	Ctrl f	MoveCursorRight
+Conversion	Ctrl f	MoveCursorRight
+Composition	Tab	PredictAndConvert
+Conversion	Shift Space	ConvertPrev
+Conversion	Ctrl v	ConvertNextPage
+Conversion	Ctrl Shift v	ConvertPrevPage
+DirectInput	Hankaku/Zenkaku	IMEOn
+DirectInput	Kanji	IMEOn
+Conversion	Hankaku/Zenkaku	IMEOff
+Conversion	Kanji	IMEOff
+Precomposition	Hankaku/Zenkaku	IMEOff
+Precomposition	Kanji	IMEOff
+Composition	Hankaku/Zenkaku	IMEOff
+Composition	Kanji	IMEOff
