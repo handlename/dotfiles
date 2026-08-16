@@ -34,6 +34,7 @@
         NSAutomaticDashSubstitutionEnabled = false;
         NSAutomaticPeriodSubstitutionEnabled = false;
         NSAutomaticQuoteSubstitutionEnabled = false;
+        "com.apple.keyboard.fnState" = true;
         "com.apple.trackpad.scaling" = 3.0;
       };
 
@@ -45,6 +46,7 @@
         autohide = true;
         show-recents = false;
         orientation = "left";
+        persistent-apps = [];
       };
 
       finder = {
@@ -112,6 +114,7 @@
       kindle = 302584613;
       reeder = 6475002485;
       snippety = 1530751461;
+      tailscale = 1475387142;
       toggl-track = 1291898086;
     };
   };
