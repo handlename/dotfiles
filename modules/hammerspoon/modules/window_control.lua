@@ -23,6 +23,11 @@ local UNIT_PX <const> = "px"
 
 local log = hs.logger.new("init.lua", "info")
 
+-- hs.application:mainWindow()/:allWindows()/:focusedWindow() are attached to
+-- hs.application only after hs.window is loaded. Require it explicitly so
+-- applyPreset() never depends on incidental load order.
+require("hs.window")
+
 -- disable animation
 hs.window.animationDuration = 0
 
