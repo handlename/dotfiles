@@ -15,6 +15,16 @@ set -euo pipefail
 readonly CLAUDE_KEYCHAIN_SERVICE="Claude Code-credentials"
 readonly CLAUDE_PROJECTS_DIR="${HOME}/.claude/projects"
 readonly AGY_LAST_CONVERSATIONS="${HOME}/.gemini/antigravity-cli/cache/last_conversations.json"
+readonly MISE_SHIMS_DIR="${HOME}/.local/share/mise/shims"
+
+# Claude Code plugin hooks call `node` through a non-interactive /bin/sh that
+# inherits this launcher's PATH. mise keeps node behind its shims dir, which a
+# shell started before mise activation lacks, so put it on PATH here to keep the
+# agent (and everything it spawns) able to resolve node regardless of how the
+# launcher itself was started.
+if [[ -d "${MISE_SHIMS_DIR}" ]]; then
+  export PATH="${MISE_SHIMS_DIR}:${PATH}"
+fi
 
 # claude stores its login credentials in the macOS Keychain.
 claude_has_login() {
