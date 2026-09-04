@@ -39,7 +39,7 @@
         config.allowUnfree = true;
       };
       overlayUnstable = final: prev: {
-        inherit (unstable) gh gopls;
+        inherit (unstable) gopls;
       };
       overlayMise = final: prev: {
         mise = inputs.mise-src.packages.${system}.default;

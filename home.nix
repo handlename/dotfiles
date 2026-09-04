@@ -76,7 +76,7 @@ with lib;
     fastfetch
     ffmpeg
     fzf
-    gh # install via nixpkgs-unstable
+    gh
     ghq
     gibo
     git-secrets
