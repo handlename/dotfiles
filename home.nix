@@ -41,6 +41,7 @@ with lib;
     ./modules/oh-my-posh
     ./modules/ssh
     ./modules/vim
+    ./modules/worktree-setup
     ./modules/yazi
     ./modules/zellij
     ./modules/zed
