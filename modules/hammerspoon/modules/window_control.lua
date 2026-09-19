@@ -23,11 +23,6 @@ local UNIT_PX <const> = "px"
 
 local log = hs.logger.new("init.lua", "info")
 
--- hs.application:mainWindow()/:allWindows()/:focusedWindow() are attached to
--- hs.application only after hs.window is loaded. Require it explicitly so
--- applyPreset() never depends on incidental load order.
-require("hs.window")
-
 -- disable animation
 hs.window.animationDuration = 0
 
@@ -154,7 +149,10 @@ local function applyPreset()
     hs.alert.show("Preset: " .. configName)
 
     for _, entry in ipairs(preset) do
-        local app = hs.application.get(entry.app)
+        -- hs.application.get() falls back to a window title search when no app
+        -- name matches, and can return an hs.window. find() with exact=true
+        -- stays on app names only.
+        local app = (hs.application.find(entry.app, true))
         if not app then
             log.d("App not running: " .. entry.app)
         else
