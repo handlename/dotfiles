@@ -101,7 +101,7 @@
       provider = "zed.dev";
     };
     dock = "left";
-    default_width = 1000;
+    default_width = 850;
     flexible = false;
     terminal_init_command = "agent"; # modules/agent/agent.sh
   };
@@ -121,20 +121,20 @@
   # other panels
 
   collaboration_panel = {
-    default_width = 600;
+    default_width = 500;
     dock = "right";
   };
   git_panel = {
-    default_width = 600;
+    default_width = 500;
     diff_stats = true;
     dock = "right";
   };
   outline_panel = {
-    default_width = 600;
+    default_width = 500;
     dock = "right";
   };
   project_panel = {
-    default_width = 600;
+    default_width = 500;
     diagnostic_badges = true;
     dock = "right";
   };
