@@ -59,6 +59,7 @@ let
           rules = [
             (import ./complex-modifications/exchange-numbers-and-symbols.nix)
             (import ./complex-modifications/spacebar-to-left-shift.nix)
+            (import ./complex-modifications/command-to-eisuu-kana.nix)
             (import ./complex-modifications/command-to-eisuu-kana-with-plover.nix {
               homeDirectory = config.home.homeDirectory;
             })
