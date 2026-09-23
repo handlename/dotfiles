@@ -82,7 +82,7 @@
     font_family = "Moralerspace Argon";
     font_size = 12;
     dock = "bottom";
-    default_height = 1200;
+    default_height = 800;
     line_height = {
       custom = 1.21;
     };
@@ -101,7 +101,7 @@
       provider = "zed.dev";
     };
     dock = "left";
-    default_width = 850;
+    default_width = 780;
     flexible = false;
     terminal_init_command = "agent"; # modules/agent/agent.sh
   };

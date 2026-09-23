@@ -124,10 +124,10 @@ local presets = {
         { app = "1Password",   screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_PX, w = 1200, h = 1000 } },
         { app = "Claude",      screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_RATIO, w = 0.6, h = 0.8 } },
         { app = "Obsidian",    screen = SCREEN_MAIN, position = POS_RIGHT,  size = { unit = UNIT_RATIO, w = 2 / 3 } },
-        { app = "Slack",       screen = SCREEN_SUB,  position = POS_CENTER, size = { unit = UNIT_PX, w = 1400, h = 1000 } },
+        { app = "Slack",       screen = SCREEN_SUB,  position = POS_CENTER, size = { unit = UNIT_PX, w = 1580, h = 950 } },
         { app = "Toggl Track", screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_PX, w = 300, h = 600 } },
         { app = "Zed",         screen = SCREEN_MAIN, position = POS_LEFT,  size = { unit = UNIT_RATIO, w = 2 / 3 } },
-        { app = "Zen",         screen = SCREEN_MAIN, position = POS_RIGHT,   size = { unit = UNIT_RATIO, w = 1 / 3 } },
+        { app = "Zen",         screen = SCREEN_MAIN, position = POS_RIGHT,   size = { unit = UNIT_PX, w = 1230 } },
     },
     ["main_sub_vertical"] = {
         { app = "1Password",   screen = SCREEN_SUB,  position = POS_CENTER, size = { unit = UNIT_PX, w = 1200, h = 1000 } },
