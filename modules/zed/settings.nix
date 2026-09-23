@@ -10,7 +10,7 @@
     inactive_opacity = 0.5;
   };
   buffer_font_family = "MonaspiceAr Nerd Font Mono";
-  buffer_font_size = 12;
+  buffer_font_size = 10;
   colorize_brackets = true;
   "experimental.theme_overrides" = {
     "terminal.background" = "#16160e";
@@ -24,7 +24,7 @@
     light = "GitHub Light";
     mode = "dark";
   };
-  ui_font_size = 16;
+  ui_font_size = 12;
   use_system_window_tabs = true; # for open projects in single window
 
   # editor
@@ -80,7 +80,7 @@
       program = "/Users/${username}/.nix-profile/bin/fish";
     };
     font_family = "Moralerspace Argon";
-    font_size = 12;
+    font_size = 10;
     dock = "bottom";
     default_height = 800;
     line_height = {
@@ -176,12 +176,15 @@
   profiles = {
     Laptop = {
       settings = {
+        buffer_font_size = 12;
         agent = {
           default_width = 700;
         };
         terminal = {
           default_height = 800;
+          font_size = 12;
         };
+        ui_font_size = 16;
       };
     };
   };
