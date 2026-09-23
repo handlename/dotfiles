@@ -103,6 +103,7 @@
       "karabiner-elements"
       "obsidian"
       "session-manager-plugin"
+      "shottr"
       "slack"
       "visual-studio-code"
       "zed"
