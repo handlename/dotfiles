@@ -80,15 +80,14 @@
     "command": "npx ccusage@latest statusline"
   },
   "enabledPlugins": {
-    "context7@claude-plugins-official": true,
     "serena@claude-plugins-official": false,
     "skill-creator@claude-plugins-official": false,
     "oh-my-claudecode@omc": true,
-    "superpowers@claude-plugins-official": true,
     "ztx@ztx": true,
     "handlename@handlename": true,
-    "diagram-design@diagram-design": true,
-    "reviewer@reviewer": true
+    "diagram-design@diagram-design": false,
+    "reviewer@reviewer": true,
+    "ponytail@ponytail": true
   },
   "extraKnownMarketplaces": {
     "datadog-api-claude-plugin": {
@@ -132,6 +131,12 @@
       "source": {
         "source": "git",
         "url": "https://github.com/handlename/reviewer.git"
+      }
+    },
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
       }
     }
   },
