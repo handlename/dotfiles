@@ -15,14 +15,7 @@ file_path=""
 # Handle different tool types that might edit files
 case "$tool_name" in
     "Write"|"Edit"|"MultiEdit")
-        if [[ "$tool_name" == "Write" ]]; then
-            file_path=$(echo "$input" | jq -r '.tool_input.file_path // empty')
-        elif [[ "$tool_name" == "Edit" ]]; then
-            file_path=$(echo "$input" | jq -r '.tool_input.path // empty')
-        elif [[ "$tool_name" == "MultiEdit" ]]; then
-            # MultiEdit might have multiple files, we'll process the first one for now
-            file_path=$(echo "$input" | jq -r '.tool_input.files[0].path // empty')
-        fi
+        file_path=$(echo "$input" | jq -r '.tool_input.file_path // empty')
         ;;
     *)
         # Not a file editing tool, exit silently
