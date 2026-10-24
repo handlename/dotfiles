@@ -37,6 +37,7 @@ with lib;
     ./modules/karabiner-elements
     ./modules/lazygit
     ./modules/mise
+    ./modules/nh
     ./modules/nushell
     ./modules/oh-my-posh
     ./modules/ssh
