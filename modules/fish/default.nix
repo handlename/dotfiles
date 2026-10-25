@@ -38,8 +38,10 @@
   };
 
   programs.fish.shellAliases = {
+    # less
+    l = "bat -p";
+
     # ls
-    l = "less";
     ls = "eza";
     la = "eza -a";
     ll = "eza -lh";
