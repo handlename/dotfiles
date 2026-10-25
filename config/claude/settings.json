@@ -48,8 +48,7 @@
       "mcp__context7__resolve-library-id"
     ],
     "deny": [
-      "Bash(sudo:*)",
-      "Bash(rm -rf:*)"
+      "Bash(sudo:*)"
     ],
     "ask": [
       "Edit(~/.claude/settings.json)",
@@ -147,6 +146,12 @@
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
+  "autoMode": {
+    "soft_deny": [
+      "$defaults",
+      "Recursive deletion (rm -rf, rm -fr, rm -r -f, rm -r, find -delete) of anything outside the session scratchpad (/private/tmp/claude-*/…/scratchpad) or /tmp/claude-*"
+    ]
+  },
   "feedbackSurveyState": {
     "lastShownTime": 1753952965497
   }
