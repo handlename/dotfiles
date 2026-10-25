@@ -21,6 +21,8 @@ local POS_CENTER <const> = "center"
 local UNIT_RATIO <const> = "ratio"
 local UNIT_PX <const> = "px"
 
+local SUB_WINDOW_OFFSET_DEFAULT <const> = 28 -- titlebar height (px)
+
 local log = hs.logger.new("init.lua", "info")
 
 -- disable animation
@@ -77,6 +79,43 @@ local function calcFrame(screenFrame, position, size)
     return { x = x, y = y, w = w, h = h }
 end
 
+local function calcSubWindowFrame(mainFrame, subWindows)
+    local offset = subWindows.offset or SUB_WINDOW_OFFSET_DEFAULT
+    return {
+        x = mainFrame.x + offset,
+        y = mainFrame.y + offset,
+        w = subWindows.width,
+        h = mainFrame.h - offset,
+    }
+end
+
+-- Titles cannot tell main from sub (a channel opened in a new window looks
+-- like the main one), so the oldest window, i.e. the smallest id, is the main.
+-- A minimized main returns nil so that a sub is never mistaken for it.
+local function partitionWindows(app)
+    local main
+    local windows = {}
+    for _, w in ipairs(app:allWindows()) do
+        if w:isStandard() then
+            table.insert(windows, w)
+            if not main or w:id() < main:id() then
+                main = w
+            end
+        end
+    end
+    if not main or main:isMinimized() then
+        return nil, {}
+    end
+
+    local subs = {}
+    for _, w in ipairs(windows) do
+        if w:id() ~= main:id() and not w:isMinimized() then
+            table.insert(subs, w)
+        end
+    end
+    return main, subs
+end
+
 local function getScreen(screenType)
     local primary = hs.screen.primaryScreen()
     if screenType == SCREEN_MAIN then
@@ -115,28 +154,28 @@ local presets = {
         { app = "1Password",   screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_PX, w = 1200, h = 1000 } },
         { app = "Claude",      screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_RATIO, w = 0.8, h = 0.8 } },
         { app = "Obsidian",    screen = SCREEN_MAIN, position = POS_RIGHT,  size = { unit = UNIT_RATIO, w = 1 } },
-        { app = "Slack",       screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_PX, w = 1400, h = 1000 } },
+        { app = "Slack",       screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_PX, w = 1400, h = 1000 }, subWindows = { width = 600 } },
         { app = "Toggl Track", screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_PX, w = 300, h = 600 } },
         { app = "Zed",         screen = SCREEN_MAIN, position = POS_LEFT,   size = { unit = UNIT_RATIO, w = 1 } },
         { app = "Zen",         screen = SCREEN_MAIN, position = POS_LEFT,   size = { unit = UNIT_RATIO, w = 2 / 3 } },
     },
     ["main_sub_horizontal"] = {
         { app = "1Password",   screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_PX, w = 1200, h = 1000 } },
-        { app = "Claude",      screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_RATIO, w = 0.6, h = 0.8 } },
+        { app = "Claude",      screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_RATIO, w = 0.9, h = 0.9 } },
         { app = "Obsidian",    screen = SCREEN_MAIN, position = POS_RIGHT,  size = { unit = UNIT_RATIO, w = 2 / 3 } },
-        { app = "Slack",       screen = SCREEN_SUB,  position = POS_CENTER, size = { unit = UNIT_PX, w = 1580, h = 950 } },
+        { app = "Slack",       screen = SCREEN_SUB,  position = POS_CENTER, size = { unit = UNIT_PX, w = 1580, h = 950 }, subWindows = { width = 600 } },
         { app = "Toggl Track", screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_PX, w = 300, h = 600 } },
         { app = "Zed",         screen = SCREEN_MAIN, position = POS_LEFT,  size = { unit = UNIT_RATIO, w = 2 / 3 } },
-        { app = "Zen",         screen = SCREEN_MAIN, position = POS_RIGHT,   size = { unit = UNIT_PX, w = 1230 } },
+        { app = "Zen",         screen = SCREEN_MAIN, position = POS_RIGHT,   size = { unit = UNIT_RATIO, w = 1 / 2 } },
     },
     ["main_sub_vertical"] = {
         { app = "1Password",   screen = SCREEN_SUB,  position = POS_CENTER, size = { unit = UNIT_PX, w = 1200, h = 1000 } },
-        { app = "Claude",      screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_RATIO, w = 0.6, h = 0.8 } },
+        { app = "Claude",      screen = SCREEN_MAIN, position = POS_CENTER, size = { unit = UNIT_RATIO, w = 0.9, h = 0.9 } },
         { app = "Obsidian",    screen = SCREEN_SUB,  position = POS_RIGHT,  size = { unit = UNIT_RATIO, w = 1 } },
-        { app = "Slack",       screen = SCREEN_SUB,  position = POS_CENTER, size = { unit = UNIT_RATIO, w = 0.8, h = 0.8 } },
+        { app = "Slack",       screen = SCREEN_SUB,  position = POS_CENTER, size = { unit = UNIT_RATIO, w = 0.8, h = 0.8 }, subWindows = { width = 600 } },
         { app = "Toggl Track", screen = SCREEN_SUB,  position = POS_CENTER, size = { unit = UNIT_PX, w = 300, h = 600 } },
         { app = "Zed",         screen = SCREEN_MAIN, position = POS_LEFT,   size = { unit = UNIT_RATIO, w = 1 } },
-        { app = "Zen",         screen = SCREEN_MAIN, position = POS_LEFT,   size = { unit = UNIT_RATIO, w = 1 / 2 } },
+        { app = "Zen",         screen = SCREEN_MAIN, position = POS_LEFT,   size = { unit = UNIT_RATIO, w = 2 / 3 } },
     },
 }
 
@@ -156,14 +195,33 @@ local function applyPreset()
         if not app then
             log.d("App not running: " .. entry.app)
         else
-            local win = app:mainWindow()
+            -- mainWindow() returns the focused window, so apps with sub windows
+            -- identify the main one by window id instead.
+            local win, subs
+            if entry.subWindows then
+                win, subs = partitionWindows(app)
+            else
+                win = app:mainWindow()
+            end
+
             if not win then
-                log.d("No main window: " .. entry.app)
+                if entry.subWindows then
+                    log.i("Main window not identified: " .. entry.app)
+                else
+                    log.d("No main window: " .. entry.app)
+                end
             else
                 local screen = getScreen(entry.screen)
                 win:moveToScreen(screen)
                 local frame = calcFrame(screen:frame(), entry.position, entry.size)
                 updateFrame(win, frame)
+
+                if subs then
+                    local mainFrame = win:frame()
+                    for _, w in ipairs(subs) do
+                        updateFrame(w, calcSubWindowFrame(mainFrame, entry.subWindows))
+                    end
+                end
             end
         end
     end
