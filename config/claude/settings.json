@@ -79,14 +79,13 @@
     "command": "npx ccusage@latest statusline"
   },
   "enabledPlugins": {
-    "serena@claude-plugins-official": false,
-    "skill-creator@claude-plugins-official": false,
+    "skill-creator@claude-plugins-official": true,
     "oh-my-claudecode@omc": true,
     "ztx@ztx": true,
-    "handlename@handlename": true,
-    "diagram-design@diagram-design": false,
+    "diagram-design@diagram-design": true,
     "reviewer@reviewer": true,
-    "ponytail@ponytail": true
+    "ponytail@ponytail": true,
+    "handlename@handlename": true,
   },
   "extraKnownMarketplaces": {
     "datadog-api-claude-plugin": {
